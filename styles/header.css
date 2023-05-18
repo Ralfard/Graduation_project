@@ -1,0 +1,220 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(135, 206, 250, 0.7);
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    align-items: center;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+
+.header__left {
+    display: flex;
+    align-items: center;
+}
+
+.header__burger {
+    height: 90%;
+    width: 90%;
+    object-fit: cover;
+}
+
+.header__logo {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.header__img-burger-wrapper {
+    height: 36px;
+    width: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.header__img-logo-wrapper {
+    height: 48px;
+    width: 48px;
+    padding-left: 10px;
+}
+
+.header__add-article {
+    width: 44px;
+    height: 40px;
+    margin-right: 12px;
+    background-color: #fff;
+    box-shadow: inset 0 -1px 0 0 rgb(0 0 0 / 6%), 0 1px 2px 0 rgb(0 0 0 / 6%);
+    border-radius: 10px;
+    border: rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.header__add-article:hover {
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), inset 0 0 0 1px rgb(0 0 0 / 6%), inset 0 -1px 0 rgb(0 0 0 / 12%), inset 1px 0 0 rgb(0 0 0 / 6%), inset -1px 0 0 rgb(0 0 0 / 6%);
+}
+
+
+.header__add-icon {
+    font-size: 24px;
+}
+
+.header__add-text {
+    display: none;
+    font-size: 15px;
+    margin: 0 16px 0 8px;
+}
+
+.header__right {
+    display: none;
+    align-items: center;
+    justify-content: end;
+}
+
+.header__link {}
+
+.header__icon {
+    margin: 0 12px;
+}
+
+
+.header__link-icon-wrapper {
+    height: 30px;
+    width: 30px;
+}
+
+.header__search-icon-wrapper {
+    height: 30px;
+    width: 30px;
+    grid-column: 3/4;
+}
+
+.header__user-icon-wrapper {
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.header__user-icon-wrapper:hover {
+    box-shadow: 0px 0px 10px 2px rgba(8, 158, 252, 0.8);
+}
+
+.img_cover {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.header__search-input {
+    display: none;
+    height: 40px;
+    width: 60%;
+    background-color: rgb(135, 206, 250);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    transition: 0.5s;
+}
+
+.header__search-input:hover {
+    background-color: #fff;
+    border: 2px solid rgb(8, 158, 252);
+}
+
+.header__search-input:focus {
+    background-color: #fff;
+    border: 2px solid rgb(8, 158, 252);
+}
+
+
+
+/* // Малые девайсы («ландшафтные телефоны», >= 576px) */
+@media (min-width: 576px) {
+    .header__add-article {
+        background-color: #fff;
+        box-shadow: inset 0 -1px 0 0 rgb(0 0 0 / 6%), 0 1px 2px 0 rgb(0 0 0 / 6%);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: normal;
+    }
+
+    .header__search-wrapper {
+        display: block;
+        grid-column: 3/4;
+        grid-row: 1/2;
+    }
+
+    .header__search-icon-wrapper {
+        height: 30px;
+        width: 30px;
+    }
+
+    .header__right {
+        display: flex;
+        grid-column: 4/5;
+        grid-row: 1/2;
+    }
+
+    .header__add-article {
+        width: 115px;
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+
+    .header__add-icon {
+        font-size: 24px;
+        font-weight: normal;
+    }
+
+    .header__add-text {
+        display: inline;
+    }
+}
+
+/* // Средние девайсы («таблетки», >= 768px) */
+@media (min-width: 768px) {}
+
+/* // Большие девайсы (десктопы, >= 992px) */
+@media (min-width: 992px) {
+    .header {
+        grid-template-columns: 220px 1fr 0 320px;
+    }
+
+    .header__search-wrapper {
+        grid-column: 2;
+        grid-row: 1/2;
+    }
+
+    .header__link-search {
+        display: none;
+    }
+
+    .header__search-input {
+        display: block;
+    }
+
+    .header__right {
+        grid-column: 4;
+        grid-row: 1/2;
+    }
+
+    .header__add-article {
+        justify-self: end;
+        grid-column: 2;
+        grid-row: 1/2;
+    }
+}
+
+/* // Экстрабольшие девайсы (большие десктопы, >= 1200px) */
+@media (min-width: 1200px) {}
