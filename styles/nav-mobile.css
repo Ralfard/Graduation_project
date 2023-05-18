@@ -1,0 +1,115 @@
+.nav {
+    display: none;
+    width: 80%;
+    max-width: 300px;
+    padding: 0 16px;
+    background-color: #f0f0f0;
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.nav__header {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.img__burger-menu {
+    height: 90%;
+    width: 90%;
+    object-fit: cover;
+}
+
+.nav__img-wrapper_burger {
+    height: 36px;
+    width: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.nav__img-wrapper_logo {
+    padding-left: 10px;
+}
+
+
+
+.nav__list {
+    padding: 24px 10px;
+}
+
+.nav__item {
+    padding-left: 12px;
+    font-size: 24px;
+    font-family: roboto;
+    height: 48px;
+    margin-bottom: 3px;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+.nav__item:hover{
+    background-color: #ffffff;
+}
+
+.nav__link {
+    display: flex;
+    align-items: center;
+    color: rgb(24, 24, 24);
+}
+.nav__link:hover{
+    color: rgb(48, 48, 48);
+}
+
+.material-icons {
+    margin-right: 12px;
+}
+
+.nav__item-text {}
+
+.nav__bottom-layer {
+    display: none;
+    z-index: 1;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* // Малые девайсы («ландшафтные телефоны», >= 576px) */
+@media (min-width: 576px) {}
+
+/* // Средние девайсы («таблетки», >= 768px) */
+@media (min-width: 768px) {}
+
+/* // Большие девайсы (десктопы, >= 992px) */
+@media (min-width: 992px) {
+    .nav_mobile{
+        display: none;
+    }
+    .nav__header{
+        
+    }
+}
+
+/* // Экстрабольшие девайсы (большие десктопы, >= 1200px) */
+@media (min-width: 1200px) {}

@@ -1,0 +1,9 @@
+.img__cover {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.nav__img-wrapper{
+    height: 50px;
+    width: 50px;
+}

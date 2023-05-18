@@ -3,7 +3,7 @@
 
 
     <div class="header__left">
-        <div class="header__img-burger-wrapper ">
+        <div id="headerBurgerBtn" class="header__img-burger-wrapper ">
             <img class="header__burger" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/burgerIcon.svg" alt="">
         </div>
         <div class="header__img-logo-wrapper ">
