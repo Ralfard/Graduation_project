@@ -14,7 +14,7 @@
 
 <body>
     <?php
-    include_once('include/header.php')
+    include_once('include/header_not_authorized.php')
     ?>
 </body>
 
