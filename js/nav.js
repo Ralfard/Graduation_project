@@ -1,9 +1,9 @@
 let navMenu = document.querySelectorAll('.nav');
 let body = document.querySelector('body');
 
-const fixedScroll={
-    disabledScroll(){
-        document.body.style.cssText=`
+const fixedScroll = {// отвечает за фиксацию скрола во время появления модального окна меню, после его закрытия скрол остается на том месте на котором остановился
+    disabledScroll() {
+        document.body.style.cssText = `
         overflow:hidden;
         possition:fixed;
         top:0;
@@ -12,28 +12,51 @@ const fixedScroll={
         width:100vw;
         `;
     },
-    enabledScroll(){
-        document.body.style.cssText=``;
+    enabledScroll() {
+        document.body.style.cssText = ``;
     }
 }
 
-navBurgerBtn.onclick = hideNav;
-bottomLayer.onclick = hideNav;
 
-headerBurgerBtn.onclick = showNav;
+navBurgerBtn.onclick = showOrHide_nav;
+bottomLayer.onclick = showOrHide_nav;
 
+var navBolleanDesctop = true;
+var navBolleanMobile = false;
 
-function hideNav(){
-    navMenu[0].style.display = 'none';
-    bottomLayer.style.display = 'none';
-    fixedScroll.enabledScroll();
+headerBurgerBtn.onclick = showOrHide_nav;
+window.onresize = function(){
+    if(window.screen.width < 992){
+        navMenu[1].style.display = 'none';
+    }
+};
+
+function showOrHide_nav() {
+    if (navBolleanMobile && window.screen.width < 992) {
+        navMenu[0].style.display = 'none';
+        bottomLayer.style.display = 'none';
+        navBolleanMobile =! navBolleanMobile;
+        fixedScroll.enabledScroll();
+    }
+    else if (!navBolleanMobile  && window.screen.width < 992) {
+        navMenu[0].style.display = "block";
+        bottomLayer.style.display = 'block';
+        navBolleanMobile =! navBolleanMobile;
+        fixedScroll.disabledScroll();
+    }
+    if ((window.screen.width > 992) && (navMenu[1].style.display===''|| navMenu[1].style.display==='block')) {
+        navMenu[1].style.display = 'none';
+        navBolleanDesctop =! navBolleanDesctop;
+    }
+    else if ((window.screen.width > 992) && ( navMenu[1].style.display==='none')) {
+        navMenu[1].style.display = 'block';
+        navBolleanDesctop =! navBolleanDesctop;
+    }
 }
-function showNav() {
-    navMenu[0].style.display = "block";
-    bottomLayer.style.display = 'block';
-    fixedScroll.disabledScroll();
-}
 
-document.onclick=function(event){
-    console.log(event.target);
-}
+
+
+
+
+
+

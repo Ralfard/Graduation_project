@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/nav-mobile.css">
+<link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/nav.css">
 
 <nav class="nav nav_mobile">
     <div class="nav__header">
@@ -67,4 +67,67 @@
     </ol>
 </nav>
 <div id="bottomLayer" class="nav__bottom-layer"></div><!-- появляется как темный фон при открытии наигационной панели в мобилках  -->
+
+
+
+
+<nav class="nav nav_desctop">
+    <ol class="nav__list">
+
+        <li class="nav__item">
+            <a class="nav__link" href="">
+                <span class="material-icons">
+                    local_fire_department
+                </span>
+                <span class="nav__item-text">Популярное</span>
+            </a>
+        </li>
+
+        <li class="nav__item">
+            <a class="nav__link" href="">
+                <span class="material-icons">
+                    query_builder
+                </span>
+                <span class="nav__item-text">Свежее</span>
+            </a>
+        </li>
+
+        <li class="nav__item">
+            <a class="nav__link" href="">
+                <span class="material-icons">
+                    turned_in_not
+                </span>
+                <span class="nav__item-text">Закладки</span>
+            </a>
+        </li>
+
+        <li class="nav__item">
+            <a class="nav__link" href="">
+                <span class="material-icons">
+                    apartment
+                </span>
+                <span class="nav__item-text"> Компании</span>
+            </a>
+        </li>
+
+        <li class="nav__item">
+            <a class="nav__link" href="">
+                <span class="material-icons">
+                    laptop
+                </span>
+                <span class="nav__item-text">Вакансии</span>
+            </a>
+        </li>
+
+        <li class="nav__item">
+            <a class="nav__link" href="">
+                <span class="material-icons">
+                    format_list_bulleted
+                </span>
+                <span class="nav__item-text">Подписки</span>
+            </a>
+        </li>
+    </ol>
+</nav>
+
 <script src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/js/nav.js"></script>

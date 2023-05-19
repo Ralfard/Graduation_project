@@ -1,8 +1,11 @@
-.nav {
+.nav_mobile{
     display: none;
+}
+
+.nav {
     width: 80%;
     max-width: 300px;
-    padding: 0 16px;
+    /* padding: 0 16px; */
     background-color: #f0f0f0;
     z-index: 3;
     position: fixed;
@@ -12,6 +15,7 @@
 }
 
 .nav__header {
+    margin-left: 16px;
     height: 60px;
     width: 100%;
     display: flex;
@@ -86,7 +90,13 @@
 
 
 
-
+.nav_desctop{
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    max-width: 220px;
+}
 
 
 
@@ -106,8 +116,8 @@
     .nav_mobile{
         display: none;
     }
-    .nav__header{
-        
+    .nav_desctop{
+        display: block;
     }
 }
 
