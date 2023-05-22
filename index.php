@@ -19,9 +19,14 @@
 <body>
     <?php
     include_once('include/header_not_authorized.php');
-    include_once("include/nav.php");
-    ?>
     
+    ?>
+    <main class="main">
+        <?php
+            include_once("include/nav.php");
+            include_once("include/popular.php");
+        ?>
+    </main>
 </body>
 
 </html>

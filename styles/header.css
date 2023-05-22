@@ -5,12 +5,13 @@
     right: 0;
     width: 100%;
     height: 60px;
-    background-color: rgba(135, 206, 250, 0.7);
+    background-color: rgb(177, 225, 255);
     display: grid;
     grid-template-columns: 1fr auto auto auto;
     align-items: center;
     padding: 0 16px;
     box-sizing: border-box;
+    z-index: 3;
 }
 
 
@@ -212,7 +213,8 @@
 /* // Большие девайсы (десктопы, >= 992px) */
 @media (min-width: 992px) {
     .header {
-        grid-template-columns: 220px 1fr 0 320px;
+        grid-template-columns: 220px minmax(0, 640px) 320px;
+        justify-content: space-between;
     }
 
     .header__search-wrapper {
@@ -229,12 +231,13 @@
     }
 
     .header__right {
-        grid-column: 4;
+        grid-column: 3;
         grid-row: 1/2;
     }
 
     .header__add-article {
         justify-self: end;
+        margin: 0;
         grid-column: 2;
         grid-row: 1/2;
     }

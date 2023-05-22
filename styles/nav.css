@@ -1,14 +1,14 @@
 .nav_mobile{
     display: none;
+    position: fixed;
 }
 
 .nav {
     width: 80%;
     max-width: 300px;
-    /* padding: 0 16px; */
     background-color: #f0f0f0;
-    z-index: 3;
-    position: fixed;
+    z-index: 4;
+
     top: 0;
     left: 0;
     bottom: 0;
@@ -47,7 +47,7 @@
 
 .nav__item {
     padding-left: 12px;
-    font-size: 24px;
+    font-size: 16px;
     font-family: roboto;
     height: 48px;
     margin-bottom: 3px;
@@ -92,10 +92,12 @@
 
 .nav_desctop{
     display: none;
-    position: fixed;
+    position: sticky;
     top: 60px;
     left: 0;
-    max-width: 220px;
+    width: 100%;;
+    height: calc(100vh - 60px);
+    z-index: 2;
 }
 
 
