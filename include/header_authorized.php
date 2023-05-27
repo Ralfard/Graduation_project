@@ -6,9 +6,12 @@
         <div id="headerBurgerBtn" class="header__img-burger-wrapper ">
             <img class="header__burger" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/burgerIcon.svg" alt="">
         </div>
-        <div class="header__img-logo-wrapper ">
-            <img class="header__logo" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/mainLogo.svg" alt="">
-        </div>
+        
+        <a href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>">
+            <div class="header__img-logo-wrapper ">
+                <img class="header__logo" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/mainLogo.svg" alt="">
+            </div>
+        </a>
     </div>
 
     <div class="header__search-wrapper">
@@ -17,7 +20,7 @@
                 <img class="img_cover" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/search_black_24dp.svg" alt="">
             </div>
         </a>
-        <input class="header__search-input"  type="search" name="search" id="search" placeholder="Поиск">
+        <input class="header__search-input" type="search" name="search" id="search" placeholder="Поиск">
     </div>
     <button class="header__add-article"><span class="header__add-icon">+</span><span class="header__add-text">Создать</span></button>
 

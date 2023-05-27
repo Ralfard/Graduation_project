@@ -6,9 +6,11 @@
         <div id="headerBurgerBtn" class="header__img-burger-wrapper ">
             <img class="header__burger" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/burgerIcon.svg" alt="">
         </div>
-        <div class="header__img-logo-wrapper ">
-            <img class="header__logo" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/mainLogo.svg" alt="">
-        </div>
+        <a href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>">
+            <div class="header__img-logo-wrapper ">
+                <img class="header__logo" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/mainLogo.svg" alt="">
+            </div>
+        </a>
     </div>
 
     <div class="header__search-wrapper">
@@ -43,3 +45,37 @@
         </a>
     </div>
 </header>
+
+<div class="log-in">
+    <div class="log-in__mobile-block">
+        <div class="registration__mobile">
+            <div class="logo-wrapper__mobile-block">
+                <img class="img__cover" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/mainLogo.svg" alt="">
+            </div>
+            <h2 class="log-in__title">Регистрация</h2>
+            <form class="log-in__form" action="">
+                <input class="log-in__input" type="text" placeholder="Имя">
+                <input class="log-in__input" type="email" placeholder="Почта">
+                <input class="log-in__input" type="password" placeholder="Пароль">
+            </form>
+            <button class=""></button>
+        </div>
+        <div class="authorization__mobile">
+
+        </div>
+    </div>
+
+
+
+
+    <div class="log-in__desctop-block">
+        <div class="">
+
+        </div>
+        <div class="">
+            <form action="" method="post">
+
+            </form>
+        </div>
+    </div>
+</div>

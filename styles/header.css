@@ -41,8 +41,8 @@
 
 .header__img-logo-wrapper {
     height: 50px;
-    width: 50px;
-    padding-left: 10px;
+    width: auto;
+    padding-left: 16px;
 }
 
 .header__add-article {
@@ -140,9 +140,11 @@
     display: flex;
     align-items: center;
 }
+
 .header__login-icon {
     color: black;
     font-size: 32px;
+    margin-left: 8px;
 }
 
 .header__login-text {
@@ -151,15 +153,79 @@
     font-family: Tahoma, Verdana, Geneva, sans-serif;
     font-weight: 500;
 }
-.header__login-block:hover .header__login-icon{
+
+.header__login-block:hover .header__login-icon {
     color: rgb(8, 158, 252);
 }
-.header__login-block:hover .header__login-text{
+
+.header__login-block:hover .header__login-text {
     color: rgb(8, 158, 252);
 }
 
 
+/* 
+Окно авторизации START
+*/
 
+
+.log-in {
+    padding: 24px 16px;
+    background-color: #fff;
+    z-index: 99;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.log-in__mobile-block {}
+
+.registration__mobile {
+    display: flex;
+    flex-direction: column
+}
+
+.logo-wrapper__mobile-block {
+    display: inline-block;
+    height: 50px;
+    margin: 72px auto 20px;
+    /* background-color: rgb(177, 225, 255);
+    border: #EDEDED solid 3px;
+    border-radius: 15px; */
+}
+
+.log-in__title {
+    margin-bottom: 32px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: roboto;
+}
+.log-in__form{
+    padding: 1px;
+    width: 100%;
+}
+.log-in__input{
+    box-sizing: border-box;
+    font-size: 18px;
+    padding: 12px;
+    background-color: #F4F6F4;
+    border: 1px solid #e7e7e7;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 16px;
+}
+.authorization__mobile {}
+
+.log-in__desctop-block {}
+
+
+
+/* 
+Окно авторизации END
+*/
 
 /* // Малые девайсы («ландшафтные телефоны», >= 576px) */
 @media (min-width: 576px) {
