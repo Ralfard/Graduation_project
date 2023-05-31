@@ -2,7 +2,7 @@ let navMenu = document.querySelectorAll('.nav');
 let body = document.querySelector('body');
 let main= document.querySelector('.main');
 
-const fixedScroll = {// отвечает за фиксацию скрола во время появления модального окна меню, после его закрытия скрол остается на том месте на котором остановился
+var fixedScroll = {// отвечает за фиксацию скрола во время появления модального окна меню, после его закрытия скрол остается на том месте на котором остановился
     disabledScroll() {
         document.body.style.cssText = `
         overflow:hidden;

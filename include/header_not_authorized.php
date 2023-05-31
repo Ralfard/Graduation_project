@@ -35,47 +35,18 @@
                 <img class="img_cover" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/notifications_black_24dp.svg" alt="">
             </div>
         </a>
-        <a class="header__link" href="">
-            <div class="header__login-block">
-                <span class="material-icons header__login-icon">
-                    perm_identity
-                </span>
-                <span class="header__login-text">Войти</span>
-            </div>
-        </a>
+        <div id="login" class="header__login-block">
+            <span class="material-icons header__login-icon">
+                perm_identity
+            </span>
+            <span class="header__login-text">Войти</span>
+        </div>
     </div>
 </header>
-
-<div class="log-in">
-    <div class="log-in__mobile-block">
-        <div class="registration__mobile">
-            <div class="logo-wrapper__mobile-block">
-                <img class="img__cover" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/mainLogo.svg" alt="">
-            </div>
-            <h2 class="log-in__title">Регистрация</h2>
-            <form class="log-in__form" action="">
-                <input class="log-in__input" type="text" placeholder="Имя">
-                <input class="log-in__input" type="email" placeholder="Почта">
-                <input class="log-in__input" type="password" placeholder="Пароль">
-            </form>
-            <button class=""></button>
-        </div>
-        <div class="authorization__mobile">
-
-        </div>
-    </div>
+<?php
+    include_once("autorization.php");
+?>
 
 
 
 
-    <div class="log-in__desctop-block">
-        <div class="">
-
-        </div>
-        <div class="">
-            <form action="" method="post">
-
-            </form>
-        </div>
-    </div>
-</div>

@@ -1,0 +1,100 @@
+/* 
+Окно авторизации START
+*/
+
+
+.log-in {
+    display: none;
+    padding: 24px 16px;
+    background-color: #fff;
+    z-index: 99;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+}
+
+.log-in__mobile-block {}
+
+.registration__mobile {
+    display: flex;
+    flex-direction: column
+}
+
+.logo-wrapper__mobile-block {
+    display: inline-block;
+    height: 50px;
+    margin: 72px auto 20px;
+    /* background-color: rgb(177, 225, 255);
+    border: #EDEDED solid 3px;
+    border-radius: 15px; */
+}
+
+.log-in__title {
+    margin-bottom: 32px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: roboto;
+}
+.log-in__form{
+    padding: 1px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.log-in__input{
+    box-sizing: border-box;
+    font-size: 18px;
+    padding: 12px;
+    background-color: #F4F6F4;
+    border: 1px solid #e7e7e7;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.log-in__submit{
+    height: 48px;
+    width: 100%;
+    max-width: 600px;
+    padding: 0 16px;
+    font-size: 18px;
+    color: #fff;
+    font-family: roboto;
+    border: none;
+    border-radius: 10px;
+    background-color: #A2C1EC;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 24px;
+}
+
+.log-in__text{
+    font-size: 16px;
+    text-align: center;
+    font-family: roboto;
+}
+
+.log-in__change-form{
+    color:  rgb(8, 158, 252);
+    background-color: unset;
+    border: none;
+    font-size: inherit;
+}
+.log-in__change-form:hover{
+    color: rgb(202, 0, 0);
+}
+
+
+.log-in__desctop-block {}
+
+
+
+/* 
+Окно авторизации END
+*/

@@ -16,6 +16,9 @@
     width: 50px;
 }
 
+.material-icons{
+    cursor: pointer;
+}
 
 .content {
     width: 100%;
