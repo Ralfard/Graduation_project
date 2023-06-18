@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    include_once('include/db_connect.php');
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- иконки-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/reset.css">
@@ -28,9 +37,12 @@
         ?>
     </main>
 
-
-    <script src="js/main_js.js"></script>
-
+<?php
+    // include_once("include/mobile_footer_authorized.php");
+    include_once("include/mobile_footer_not_authorized.php");
+?>
+    <script src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/js/main_js.js"></script>
+    <script src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/js/autorization.js"></script>
 
 
 </body>

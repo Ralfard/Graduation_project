@@ -1,6 +1,6 @@
 
 let btns_for_change_menu = document.getElementsByClassName('log-in__change-form');
-
+let btns_for_login=document.getElementsByClassName('loginBtn_forJS');
 
 
 var fixedScroll = {
@@ -22,7 +22,12 @@ var fixedScroll = {
 
 let booleanModalWindow = false;
 
-login.onclick = show_or_CloseModalWindow;
+for (i = 0; i < btns_for_login.length; ++i) {
+    btns_for_login[i].addEventListener("click", show_or_CloseModalWindow);
+    console.log(btns_for_login[i]);
+}
+
+
 closeModalWindow.onclick = show_or_CloseModalWindow;
 
 
@@ -45,8 +50,9 @@ function show_or_CloseModalWindow() {
         fixedScroll.enabledScroll();
     }
 }
-function changeMenu() {
 
+
+function changeMenu() {
     if (registrationFormMobile.style.display === 'none') {
         registrationFormMobile.style.display = 'block';
         authorizationFormMobile.style.display = 'none';

@@ -10,6 +10,28 @@
     width: 100%;
     object-fit: cover;
 }
+.text-block{
+    display: flex;
+    align-items: center;
+}
+.user-avatar_circle{
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.user-avatar_rectangle{
+    height: 30px;
+    width: 30px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.topic-avatar_rectangle{
+    height: 24px;
+    width: 24px;
+    border-radius: 3px;
+    overflow: hidden;
+}
 
 .img__wrapper {
     height: 50px;
@@ -26,6 +48,10 @@
     /* position: relative; */
     margin-top: 16px;
 
+}
+
+.content_bgc{
+    background-color: #fff;
 }
 
 .content_main-page {
@@ -112,9 +138,18 @@
     margin: 10px 0;
 }
 
-.article__content-title {
+.article__content-h2 {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 1.4em;
+    font-family: roboto;
+    color: black;
+    margin-bottom: 12px;
+    margin: 0 20px 12px;
+    line-height: 32px;
+}
+.article__content-h3{
+    font-weight: bold;
+    font-size: 1.17em;
     font-family: roboto;
     color: black;
     margin-bottom: 12px;
@@ -122,7 +157,7 @@
     line-height: 32px;
 }
 
-.article__content-text {
+.article__content-p {
     font-family: roboto;
     color: black;
     font-size: 17px;
@@ -195,6 +230,8 @@
 .preview__view-counter{
     color: #595959;
 }
+
+
 
 
 

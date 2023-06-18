@@ -16,7 +16,9 @@
     <div class="header__search-wrapper">
         <a class="header__link-search" href="">
             <div class="header__search-icon-wrapper header__icon">
-                <img class="img_cover" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/search_black_24dp.svg" alt="">
+                <span class="material-icons header__icon">
+                    search
+                </span>
             </div>
         </a>
         <input class="header__search-input" type="search" name="search" id="search" placeholder="Поиск">
@@ -27,16 +29,20 @@
     <div class="header__right">
         <a class="header__link" href="">
             <div class="header__link-icon-wrapper header__icon">
-                <img class="img_cover" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/textsms_black_24dp.svg" alt="">
+                <span class="material-icons-outlined header__icon">
+                    sms
+                </span>
             </div>
         </a>
         <a class="header__link" href="">
             <div class="header__link-icon-wrapper header__icon">
-                <img class="img_cover" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/notifications_black_24dp.svg" alt="">
+                <span class="material-icons-outlined header__icon">
+                    notifications
+                </span>
             </div>
         </a>
-        <div id="login" class="header__login-block">
-            <span class="material-icons header__login-icon">
+        <div  class="header__login-block loginBtn_forJS">
+            <span class="material-icons header__icon">
                 perm_identity
             </span>
             <span class="header__login-text">Войти</span>
@@ -44,9 +50,5 @@
     </div>
 </header>
 <?php
-    include_once("autorization.php");
+include_once("autorization.php");
 ?>
-
-
-
-

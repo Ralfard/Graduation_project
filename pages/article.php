@@ -26,87 +26,93 @@
 
         ?>
 
+        <div class="content_bgc">
 
-        <article class="content content_main-page">
-            <section class="article__preview">
-                <div class="preview__top-panel">
 
-                    <div class="preview__top-panel_left">
-                        <a href="">
-                            <div class="preview__tag">
-                                <div class="img__wrapper_tag">
-                                    <img class="img__cover" src="../images/2 2.png" alt="">
+            <article class="content content_main-page">
+                <section class="article__preview">
+                    <div class="preview__top-panel">
+
+                        <div class="preview__top-panel_left">
+                            <a href="">
+                                <div class="preview__tag">
+                                    <div class="img__wrapper_tag">
+                                        <img class="img__cover" src="../images/2 2.png" alt="">
+                                    </div>
+                                    <span class="preview__panel-text preview__top-panel-text preview__tag-name">Бизнес</span>
                                 </div>
-                                <span class="preview__panel-text preview__top-panel-text preview__tag-name">Бизнес</span>
-                            </div>
-                        </a>
-                        <a href=""><span class="preview__panel-text preview__top-panel-text author-name">Сидор Пятрович</span></a>
-                        <time class="preview__panel-text preview__top-panel-text preview__time" datetime='2000-01-30 00:00'>Завтра</time>
-                    </div>
+                            </a>
+                            <a href=""><span class="preview__panel-text preview__top-panel-text author-name">Сидор Пятрович</span></a>
+                            <time class="preview__panel-text preview__top-panel-text preview__time" datetime='2000-01-30 00:00'>Завтра</time>
+                        </div>
 
 
-                    <div class="preview__top-panel_right">
-                        <button class="subscribe-btn">
-                            <span class="material-icons">
-                                person_add_alt
-                            </span>
-                            <span class="preview__panel-text preview__top-panel-text subscribe-btn-text">
-                                Подписаться
-                            </span>
-                        </button>
-                    </div>
-
-                </div>
-
-                <div class="article__content">
-                    <h3 class="article__content-title">Канал в телеграме с нуля до 95k, или как послать к чертям все правила </h3>
-                    <p class="article__content-text">Как нарушить все правила ведения телеграм-канала и стать вторым по численности каналом в своей нише без платного продвижения и единой рекламы с ERR 86.8%. На своём примере хочу сказать, что если намотать на ус все правила ведения телеграм-канала и забить на них, то у вас все равно есть большая вероятность успеха.</p>
-                </div>
-
-
-                <div class="preview__bottom-panel">
-
-                    <div class="preview__bottom-panel_left">
-
-                        <button class="preview__bottom-panel-action">
-                            <span class="material-icons">
-                                chat_bubble_outline
-                            </span>
-                            <span class="article__counter preview__panel-text">
-                                500
-                            </span>
-                        </button>
-
-                        <button class="preview__bottom-panel-action">
-                            <span class="material-icons">
-                                turned_in_not
-                            </span>
-                        </button>
+                        <div class="preview__top-panel_right">
+                            <button class="subscribe-btn">
+                                <span class="material-icons">
+                                    person_add_alt
+                                </span>
+                                <span class="preview__panel-text preview__top-panel-text subscribe-btn-text">
+                                    Подписаться
+                                </span>
+                            </button>
+                        </div>
 
                     </div>
 
-
-                    <div class="preview__bottom-panel_right">
-                        <span class="preview__panel-text preview__view-counter ">
-                            просмотров
-                        </span>
+                    <div class="article__content">
+                        <h3 class="article__content-h2">Канал в телеграме с нуля до 95k, или как послать к чертям все правила </h3>
+                        <p class="article__content-p">Как нарушить все правила ведения телеграм-канала и стать вторым по численности каналом в своей нише без платного продвижения и единой рекламы с ERR 86.8%. На своём примере хочу сказать, что если намотать на ус все правила ведения телеграм-канала и забить на них, то у вас все равно есть большая вероятность успеха.</p>
                     </div>
 
-                </div>
-            </section>
 
-            <section class="article__main-content">
+                    <div class="preview__bottom-panel">
 
-            </section>
+                        <div class="preview__bottom-panel_left">
 
-            <section class="article__bottom-panel">
+                            <button class="preview__bottom-panel-action">
+                                <span class="material-icons">
+                                    chat_bubble_outline
+                                </span>
+                                <span class="article__counter preview__panel-text">
+                                    500
+                                </span>
+                            </button>
 
-            </section>
-            <section class="article__comments">
+                            <button class="preview__bottom-panel-action">
+                                <span class="material-icons">
+                                    turned_in_not
+                                </span>
+                            </button>
 
-            </section>
-        </article>
+                        </div>
 
+
+                        <div class="preview__bottom-panel_right">
+                            <span class="preview__panel-text preview__view-counter ">
+                                500 просмотров
+                            </span>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="article__main-content">
+                    <h2 class="article__content-h2">1. Составьте контент-план. </h2>
+                    <h3 class="article__content-h3">В жопу контент-план.</h3>
+                    <p class="article__content-p">
+                        Мой контент нельзя распланировать заранее. Я ищу адский шмот и, если нашла и придумала к нему шутку – контент есть. Если не нашла или не смогла придумать достойную шутку – контента нет. В идеале пост выходит раз в сутки, но, если ничего не попалось под мои критерии качества, поста может не быть несколько дней. Да, когда я не нашла ничего, меня ломает и могу валяться на полу стонать и стенать. Но никто, кроме мужа от этого не страдает. Разве что кот, но ему плевать.
+                    </p>
+                </section>
+
+                <section class="article__bottom-panel">
+
+                </section>
+                <section class="article__comments">
+
+                </section>
+            </article>
+        </div>
     </main>
 
 

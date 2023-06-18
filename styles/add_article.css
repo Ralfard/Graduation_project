@@ -1,0 +1,8 @@
+.add-article{
+    grid-column: 2;
+    margin: auto;
+    background-color: #fff;
+    width: 100%;
+    max-width: 640px;
+    height: 1000px;
+}

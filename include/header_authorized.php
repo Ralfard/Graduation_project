@@ -6,7 +6,7 @@
         <div id="headerBurgerBtn" class="header__img-burger-wrapper ">
             <img class="header__burger" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/burgerIcon.svg" alt="">
         </div>
-        
+
         <a href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>">
             <div class="header__img-logo-wrapper ">
                 <img class="header__logo" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/mainLogo.svg" alt="">
@@ -17,7 +17,9 @@
     <div class="header__search-wrapper">
         <a class="header__link-search" href="">
             <div class="header__search-icon-wrapper header__icon">
-                <img class="img_cover" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/search_black_24dp.svg" alt="">
+                <span class="material-icons header__icon">
+                    search
+                </span>
             </div>
         </a>
         <input class="header__search-input" type="search" name="search" id="search" placeholder="Поиск">
@@ -28,12 +30,16 @@
     <div class="header__right">
         <a class="header__link" href="">
             <div class="header__link-icon-wrapper header__icon">
-                <img class="img_cover" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/textsms_black_24dp.svg" alt="">
+                <span class="material-icons-outlined">
+                    sms
+                </span>
             </div>
         </a>
         <a class="header__link" href="">
             <div class="header__link-icon-wrapper header__icon">
-                <img class="img_cover" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/notifications_black_24dp.svg" alt="">
+                <span class="material-icons-outlined">
+                    notifications
+                </span>
             </div>
         </a>
         <a class="header__link" href="">

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/nav.css" >
+<link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/nav.css">
 
 <nav class="nav nav_mobile">
     <div class="nav__header">
@@ -13,55 +13,67 @@
 
         <li class="nav__item">
             <a class="nav__link" href="">
-                <span class="material-icons">
-                    local_fire_department
-                </span>
-                <span class="nav__item-text">Популярное</span>
+                <div class="nav__span-wrapper">
+                    <span class="material-icons">
+                        local_fire_department
+                    </span>
+                    <span class="nav__item-text">Популярное</span>
+                </div>
             </a>
         </li>
 
         <li class="nav__item">
             <a class="nav__link" href="">
-                <span class="material-icons">
-                    query_builder
-                </span>
-                <span class="nav__item-text">Свежее</span>
+                <div class="nav__span-wrapper">
+                    <span class="material-icons">
+                        query_builder
+                    </span>
+                    <span class="nav__item-text">Свежее</span>
+                </div>
             </a>
         </li>
 
         <li class="nav__item">
             <a class="nav__link" href="">
-                <span class="material-icons">
-                    turned_in_not
-                </span>
-                <span class="nav__item-text">Закладки</span>
+                <div class="nav__span-wrapper">
+                    <span class="material-icons">
+                        turned_in_not
+                    </span>
+                    <span class="nav__item-text">Закладки</span>
+                </div>
             </a>
         </li>
 
         <li class="nav__item">
             <a class="nav__link" href="">
-                <span class="material-icons">
-                    apartment
-                </span>
-                <span class="nav__item-text"> Компании</span>
+                <div class="nav__span-wrapper">
+                    <span class="material-icons">
+                        apartment
+                    </span>
+                    <span class="nav__item-text"> Компании</span>
+                </div>
             </a>
         </li>
 
         <li class="nav__item">
             <a class="nav__link" href="">
-                <span class="material-icons">
-                    laptop
-                </span>
-                <span class="nav__item-text">Вакансии</span>
+                <div class="nav__span-wrapper">
+                    <span class="material-icons">
+                        laptop
+                    </span>
+                    <span class="nav__item-text">Вакансии</span>
+                </div>
             </a>
         </li>
 
         <li class="nav__item">
             <a class="nav__link" href="">
-                <span class="material-icons">
-                    format_list_bulleted
-                </span>
-                <span class="nav__item-text">Подписки</span>
+                <div class="nav__span-wrapper">
+                    <span class="material-icons">
+                        format_list_bulleted
+                    </span>
+                    <span class="nav__item-text">Подписки</span>
+                </div>
             </a>
         </li>
     </ol>
@@ -76,55 +88,67 @@
 
         <li class="nav__item">
             <a class="nav__link" href="">
-                <span class="material-icons">
-                    local_fire_department
-                </span>
-                <span class="nav__item-text">Популярное</span>
+                <div class="nav__span-wrapper">
+                    <span class="material-icons">
+                        local_fire_department
+                    </span>
+                    <span class="nav__item-text">Популярное</span>
+                </div>
             </a>
         </li>
 
         <li class="nav__item">
             <a class="nav__link" href="">
-                <span class="material-icons">
-                    query_builder
-                </span>
-                <span class="nav__item-text">Свежее</span>
+                <div class="nav__span-wrapper">
+                    <span class="material-icons">
+                        query_builder
+                    </span>
+                    <span class="nav__item-text">Свежее</span>
+                </div>
             </a>
         </li>
 
         <li class="nav__item">
             <a class="nav__link" href="">
-                <span class="material-icons">
-                    turned_in_not
-                </span>
-                <span class="nav__item-text">Закладки</span>
+                <div class="nav__span-wrapper">
+                    <span class="material-icons">
+                        turned_in_not
+                    </span>
+                    <span class="nav__item-text">Закладки</span>
+                </div>
             </a>
         </li>
 
         <li class="nav__item">
             <a class="nav__link" href="">
-                <span class="material-icons">
-                    apartment
-                </span>
-                <span class="nav__item-text"> Компании</span>
+                <div class="nav__span-wrapper">
+                    <span class="material-icons">
+                        apartment
+                    </span>
+                    <span class="nav__item-text"> Компании</span>
+                </div>
             </a>
         </li>
 
         <li class="nav__item">
             <a class="nav__link" href="">
-                <span class="material-icons">
-                    laptop
-                </span>
-                <span class="nav__item-text">Вакансии</span>
+                <div class="nav__span-wrapper">
+                    <span class="material-icons">
+                        laptop
+                    </span>
+                    <span class="nav__item-text">Вакансии</span>
+                </div>
             </a>
         </li>
 
         <li class="nav__item">
             <a class="nav__link" href="">
-                <span class="material-icons">
-                    format_list_bulleted
-                </span>
-                <span class="nav__item-text">Подписки</span>
+                <div class="nav__span-wrapper">
+                    <span class="material-icons">
+                        format_list_bulleted
+                    </span>
+                    <span class="nav__item-text">Подписки</span>
+                </div>
             </a>
         </li>
     </ol>
