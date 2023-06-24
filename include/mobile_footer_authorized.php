@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="../styles/mobile-footer.css">
-
 <footer class="mobile-footer">
     <a class="mobile-footer__img-wrapper" href="">
         <span class="material-icons-outlined">home</span>
@@ -19,7 +17,7 @@
             notifications
         </span>
     </a>
-    <a class="mobile-footer__img-wrapper" href="">
-        <img class="user-avatar_circle" src="../images/2 2.png" alt="">
+    <a class="mobile-footer__img-wrapper" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/pages/profile.php">
+        <img class="user-avatar_circle" src="<?=$iconLink?>" alt="icon">
     </a>
 </footer>

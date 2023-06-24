@@ -1,0 +1,62 @@
+.profile__subscriptions-desktop {
+    display: none;
+    max-width: 960px;
+    grid-column: 1/3;
+    grid-template-columns: inherit;
+    gap: inherit;
+}
+
+.profile__subscriptions-mobile {
+ width: 100%;
+}
+
+.profile {
+    /* grid-column: 1/4; */
+    justify-self: center;
+}
+.content-block__p{
+    margin: 0;
+}
+.profile__nav-item{
+    height: 49px;
+    display: flex;
+    align-items: center;
+    gap: 0 8px;
+    margin: 0 -20px;
+    padding: 0 18px;
+    cursor: pointer;
+}
+.profile__nav-item:hover{
+    background-color: rgb(236, 236, 236);
+}
+
+
+
+
+
+
+
+
+
+
+/* Малые девайсы («ландшафтные телефоны», >= 576px) */
+@media (min-width: 576px) {}
+
+@media (min-width: 640px) {}
+
+/* Средние девайсы («таблетки», >= 768px) */
+@media (min-width: 768px) {}
+
+/* Большие девайсы (десктопы, >= 992px) */
+@media (min-width: 992px) {
+    .profile__subscriptions-mobile {
+        display: none;
+    }
+
+    .profile__subscriptions-desktop {
+        display: grid;
+    }
+}
+
+/* Экстрабольшие девайсы (большие десктопы, >= 1200px) */
+@media (min-width: 1200px) {}

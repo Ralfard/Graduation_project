@@ -1,3 +1,18 @@
+<?php
+session_start();
+include_once('../include/db_connect.php');
+
+
+
+//отвечает за иконку, если её не сделали подгрузится стандартная
+if (isset($_SESSION['user']['icon'])) {
+    $iconLink = "<?php echo" . $_SERVER['REQUEST_SCHEME'] . ";?>://<?php print(" . $_SERVER['HTTP_HOST'] . "); ?>/images/<?=" . $_SESSION['user']['icon'] . "?>";
+} else {
+    $iconLink = "https://placehold.co/40x40/34691E/dddddd?text=" . strtoupper($_SESSION['user']['name'][0]);
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -14,24 +29,38 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../styles/common_styles.css">
-    <link rel="stylesheet" href="../styles/reset.css">
-    <link rel="stylesheet" href="../styles/profile.css">
+    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/reset.css">
+    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/common_styles.css">
+    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/autorization.css">
+    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/header.css">
+    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/nav.css">
+    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/mobile-footer.css">
+    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/profile.css">
 </head>
 
 <body style="background-color: #F2F0F2;">
+    <?php
+    if (isset($_SESSION['user'])) {
+        include_once('../include/header_authorized.php');
+    } else {
+        include_once('../include/header_not_authorized.php');
+    }
+    ?>
     <main class="main">
+        <?php
+                    include_once("../include/nav.php");
+        ?>
         <div class="profile">
             <section class="profile__description">
                 <div class="profile__wallpaper">
                     <img class="img__cover" src="../images/wallpaper.jpg" alt="">
                     <div class="profile__avatar">
-                        <img class="img__cover" src="../images/2 2.png" alt="">
+                        <img class="img__cover" src="<?= $iconLink ?>" alt="">
                     </div>
                 </div>
                 <div class="profile__info">
                     <h1 class="profile__user-name">
-                        Роман Ефимов
+                        <?= $_SESSION['user']['name'] ?>
                     </h1>
                     <div class="row">
                         <a class="profile__edit-profile-link" href="">
@@ -41,8 +70,7 @@
                         </a>
                     </div>
                     <div class="profile__btns-wrapper">
-                        <button class="profile__btns profile__messages-btn material-icons-outlined">sms <span
-                                class="profile__messages-text">Написать</span></button>
+                        <button class="profile__btns material-icons-outlined profile__messages-btn">sms <span class="profile__messages-text">Написать</span></button>
                         <button class="profile__btns profile__settings-btn material-icons-outlined">settings</button>
                     </div>
                     <p class="profile__followers">500 подписчиков</p>
@@ -52,7 +80,7 @@
             <div class="profile__desctop-left-block">
                 <section class="profile__add-article">
                     <div class="user-avatar_circle">
-                        <img class="img__cover" src="../images/2 2.png" alt="">
+                        <img class="img__cover" src="<?= $iconLink ?>" alt="">
                     </div>
                     <h3 class="add-article-btn">Новая запись</h3>
                 </section>
@@ -139,7 +167,19 @@
 
         </div>
     </main>
-    <script src="../js/profile.js"></script>
+
+
+    <?php
+    if (isset($_SESSION['user'])) {
+        include_once("../include/mobile_footer_authorized.php");
+    } else {
+        include_once("../include/mobile_footer_not_authorized.php");
+    }
+    ?>
+
+
+
+    <script src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/js/profile.js"></script>
 </body>
 
 </html>

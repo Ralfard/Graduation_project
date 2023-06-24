@@ -124,6 +124,9 @@
 
 /* // Большие девайсы (десктопы, >= 992px) */
 @media (min-width: 992px) {
+    .nav {
+        max-width: 220px;
+    }
     .nav_mobile{
         display: none;
     }

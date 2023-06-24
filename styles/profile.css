@@ -1,6 +1,11 @@
 .profile {
     font-family: Roboto;
-    /* max-width: 640px; */
+    justify-self: center;
+
+}
+
+.nav {
+    display: none;
 }
 
 .text-block {
@@ -8,7 +13,7 @@
 }
 
 .profile__description {
-    padding: 12px;
+    padding: 0 12px 12px;
     background-color: #fff;
     margin-bottom: 15px;
 }
@@ -21,6 +26,11 @@
     position: absolute;
     left: 15px;
     bottom: -20px;
+}
+
+.profile__avatar img {
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .profile__wallpaper {
@@ -38,6 +48,11 @@
     margin-top: 28px;
     font-size: 1.5rem;
     font-weight: bolder;
+}
+
+.profile__user-description {
+    margin-top: 8px;
+    line-height: 24px;
 }
 
 .profile__followers {
@@ -83,7 +98,7 @@
 
 
 .profile__messages-btn {
-    color: #fff;
+    color: #ffffff;
     background-color: #4682D8;
 
 }
@@ -214,12 +229,12 @@
 
 /* Большие девайсы (десктопы, >= 992px) */
 @media (min-width: 992px) {
-    .main section {
-        padding: 16px 20px;
+    .main {
+        grid-template-columns: 1fr;
     }
 
-    .main {
-        grid-template-columns: minmax(0, 960px);
+    .main section {
+        padding: 16px 20px;
     }
 
     .profile__avatar {
@@ -237,7 +252,11 @@
         grid-column: 1/3;
     }
 
-    .profile__wallpaper {}
+    .profile__wallpaper {
+        position: relative;
+        width: calc(100%+40px);
+        margin: -16px -20px 0;
+    }
 
     .img__cover {}
 
@@ -254,10 +273,22 @@
         right: -5px;
         top: -10px;
     }
+
     .profile__desctop-right-block {
         display: block;
     }
 }
 
 /* Экстрабольшие девайсы (большие десктопы, >= 1200px) */
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+    .nav_desctop {
+        display: block;
+    }
+
+    .main {
+        grid-template-columns: 220px 1fr;
+    }
+    .profile{
+        grid-column: 2;
+    }
+}

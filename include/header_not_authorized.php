@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/header.css">
 <header class="header">
 
 
@@ -42,7 +41,7 @@
             </div>
         </a>
         <div  class="header__login-block loginBtn_forJS">
-            <span class="material-icons header__icon">
+            <span class="material-icons header__login-icon">
                 perm_identity
             </span>
             <span class="header__login-text">Войти</span>

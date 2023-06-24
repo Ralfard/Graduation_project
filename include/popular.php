@@ -12,7 +12,7 @@
                         <span class="preview__panel-text preview__top-panel-text preview__tag-name">Бизнес</span>
                     </div>
                 </a>
-                <a href=""><span class="preview__panel-text preview__top-panel-text author-name">Сидор Пятрович</span></a>
+                <a href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/pages/userProfile.php?id="><span class="preview__panel-text preview__top-panel-text author-name">Сидор Пятрович</span></a>
                 <time class="preview__panel-text preview__top-panel-text preview__time" datetime='2000-01-30 00:00'>Завтра</time>
             </div>
 

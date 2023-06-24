@@ -28,7 +28,7 @@ for (i = 0; i < btns_for_login.length; ++i) {
 }
 
 
-closeModalWindow.onclick = show_or_CloseModalWindow;
+document.getElementById('closeModalWindow').onclick = show_or_CloseModalWindow;
 
 
 

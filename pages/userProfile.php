@@ -33,36 +33,28 @@
                     <h1 class="profile__user-name">
                         Роман Ефимов
                     </h1>
-                    <div class="row">
-                        <a class="profile__edit-profile-link" href="">
-                            <span class="profile__blue-text">
-                                Изменить описание
-                            </span>
-                        </a>
-                    </div>
+                    <p class="profile__user-description">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus eligendi quidem, quibusdam
+                        repudiandae, dolor fugiat cum vero at nesciunt sequi dolorem rerum non? Ducimus sunt dolores
+                        laborum. Cumque, libero magnam?
+                    </p>
                     <div class="profile__btns-wrapper">
-                        <button class="profile__btns profile__messages-btn material-icons-outlined">sms <span
-                                class="profile__messages-text">Написать</span></button>
-                        <button class="profile__btns profile__settings-btn material-icons-outlined">settings</button>
+                        <button class="profile__btns profile__messages-btn material-icons-outlined">
+                            person_add_alt
+                            <span class="profile__messages-text">Подписаться</span>
+                        </button>
+                        <button class="profile__btns profile__settings-btn material-icons-outlined">sms</button>
                     </div>
                     <p class="profile__followers">500 подписчиков</p>
                     <p class="profile__registration-date">На проекте с 15.03.2023</p>
                 </div>
             </section>
             <div class="profile__desctop-left-block">
-                <section class="profile__add-article">
-                    <div class="user-avatar_circle">
-                        <img class="img__cover" src="../images/2 2.png" alt="">
-                    </div>
-                    <h3 class="add-article-btn">Новая запись</h3>
-                </section>
                 <section class="profile__articles">
                     <div class="profile__alternative">
                         <p class="profile__alternative-text">
-                            Напишите первую статью, чтобы привлечь читателей в ваш блог
+                            Этот пользователь еще не написал ни одной статьи.
                         </p>
-                        <button class="profile__alternative-btn">Создать запись</button>
-
                     </div>
                 </section>
             </div>

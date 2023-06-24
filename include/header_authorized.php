@@ -1,6 +1,4 @@
-<link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/header.css">
 <header class="header">
-
 
     <div class="header__left">
         <div id="headerBurgerBtn" class="header__img-burger-wrapper ">
@@ -42,9 +40,9 @@
                 </span>
             </div>
         </a>
-        <a class="header__link" href="">
+        <a class="header__link" href="../pages/profile.php">
             <div class="header__user-icon-wrapper header__icon">
-                <img class="img_cover" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/2 2.png" alt="">
+                <img class="img_cover" src="<?=$iconLink?>" alt="">
             </div>
         </a>
     </div>
