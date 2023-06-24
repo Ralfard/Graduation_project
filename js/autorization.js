@@ -31,11 +31,7 @@ for (i = 0; i < btns_for_login.length; ++i) {
 document.getElementById('closeModalWindow').onclick = show_or_CloseModalWindow;
 
 
-
-
-
-
-
+// вешает на кнопки события
 for (i = 0; i < btns_for_change_menu.length; ++i) {
     btns_for_change_menu[i].addEventListener("click", changeMenu);
 }

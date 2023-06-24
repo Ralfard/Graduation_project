@@ -28,21 +28,28 @@
     <div class="header__right">
         <a class="header__link" href="">
             <div class="header__link-icon-wrapper header__icon">
-                <span class="material-icons-outlined">
+                <span class="material-icons-outlined header__icon">
                     sms
                 </span>
             </div>
         </a>
         <a class="header__link" href="">
             <div class="header__link-icon-wrapper header__icon">
-                <span class="material-icons-outlined">
+                <span class="material-icons-outlined header__icon">
                     notifications
+                </span>
+            </div>
+        </a>
+        <a class="header__link" href="?logout">
+            <div class="header__link-icon-wrapper header__icon">
+                <span class="material-icons header__icon">
+                    logout
                 </span>
             </div>
         </a>
         <a class="header__link" href="../pages/profile.php">
             <div class="header__user-icon-wrapper header__icon">
-                <img class="img_cover" src="<?=$iconLink?>" alt="">
+                <img class="img_cover" src="<?= $_SESSION['user']['icon'] ?>" alt="">
             </div>
         </a>
     </div>

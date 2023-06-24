@@ -67,11 +67,15 @@
     color: #fff;
     font-family: roboto;
     border: none;
+    background-color: #508bdd;
     border-radius: 10px;
-    background-color: #A2C1EC;
     margin: 0 auto;
     display: block;
     margin-bottom: 24px;
+}
+.log-in__submit:hover{
+    background-color: #7ea9e6;
+    transition-duration: 0.3s;
 }
 
 .log-in__text{
@@ -85,6 +89,7 @@
     background-color: unset;
     border: none;
     font-size: inherit;
+    cursor: pointer;
 }
 .log-in__change-form:hover{
     color: rgb(202, 0, 0);
