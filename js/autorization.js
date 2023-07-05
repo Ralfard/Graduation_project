@@ -1,6 +1,6 @@
 
 let btns_for_change_menu = document.getElementsByClassName('log-in__change-form');
-let btns_for_login=document.getElementsByClassName('loginBtn_forJS');
+let btns_for_login = document.getElementsByClassName('loginBtn_forJS');
 
 
 var fixedScroll = {
@@ -24,7 +24,6 @@ let booleanModalWindow = false;
 
 for (i = 0; i < btns_for_login.length; ++i) {
     btns_for_login[i].addEventListener("click", show_or_CloseModalWindow);
-    console.log(btns_for_login[i]);
 }
 
 
@@ -58,3 +57,20 @@ function changeMenu() {
         authorizationFormMobile.style.display = 'block';
     }
 }
+
+
+// асинхронная авторизация
+
+let XHR = new XMLHttpRequest;
+
+XHR.open("POST", "/include/autorization.php")
+XHR.onreadystatechange = function () {
+    console.log(XHR.readyState);
+    console.log(XHR.status);
+    if (this.readyState === 4 && this.status === 200) {
+        console.log(XHR.response);
+        
+    }
+}
+XHR.send();
+

@@ -127,6 +127,11 @@
     margin-bottom: 20px;
 }
 
+.add-article__wrapper {
+    display: flex;
+    align-items: center;
+}
+
 .profile__articles {
     background-color: #fff;
     padding: 16px;
@@ -288,7 +293,8 @@
     .main {
         grid-template-columns: 220px 1fr;
     }
-    .profile{
+
+    .profile {
         grid-column: 2;
     }
 }

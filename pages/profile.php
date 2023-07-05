@@ -4,12 +4,7 @@ include_once('../include/db_connect.php');
 
 
 
-//отвечает за иконку, если её не сделали подгрузится стандартная
-if (isset($_SESSION['user']['icon'])) {
-    $iconLink = "<?php echo" . $_SERVER['REQUEST_SCHEME'] . ";?>://<?php print(" . $_SERVER['HTTP_HOST'] . "); ?>/images/<?=" . $_SESSION['user']['icon'] . "?>";
-} else {
-    $iconLink = "https://placehold.co/40x40/34691E/dddddd?text=" . strtoupper($_SESSION['user']['name'][0]);
-}
+
 ?>
 
 
@@ -48,14 +43,14 @@ if (isset($_SESSION['user']['icon'])) {
     ?>
     <main class="main">
         <?php
-                    include_once("../include/nav.php");
+        include_once("../include/nav.php");
         ?>
         <div class="profile">
             <section class="profile__description">
                 <div class="profile__wallpaper">
                     <img class="img__cover" src="../images/wallpaper.jpg" alt="">
                     <div class="profile__avatar">
-                        <img class="img__cover" src="<?= $iconLink ?>" alt="">
+                        <img class="img__cover" src="<?= $_SESSION['user']['icon'] ?>" alt="">
                     </div>
                 </div>
                 <div class="profile__info">
@@ -77,13 +72,22 @@ if (isset($_SESSION['user']['icon'])) {
                     <p class="profile__registration-date">На проекте с 15.03.2023</p>
                 </div>
             </section>
+
             <div class="profile__desctop-left-block">
+
+
                 <section class="profile__add-article">
-                    <div class="user-avatar_circle">
-                        <img class="img__cover" src="<?= $iconLink ?>" alt="">
-                    </div>
-                    <h3 class="add-article-btn">Новая запись</h3>
+                    <a class="link" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/pages/add_article.php">
+                        <div class="add-article__wrapper">
+                            <div class="user-avatar_circle">
+                                <img class="img__cover" src="<?= $_SESSION['user']['icon'] ?>" alt="">
+                            </div>
+                            <h3 class="add-article-btn">Новая запись</h3>
+                        </div>
+                    </a>
                 </section>
+
+
                 <section class="profile__articles">
                     <div class="profile__alternative">
                         <p class="profile__alternative-text">
@@ -93,8 +97,12 @@ if (isset($_SESSION['user']['icon'])) {
 
                     </div>
                 </section>
+
             </div>
+
+
             <div class="profile__desctop-right-block">
+
                 <section class="profile__subscribers">
                     <div class="text-block">
                         <h3 class="profile__h3">Подписчики</h3><span class="profile__gray-text">500</span>
@@ -127,6 +135,7 @@ if (isset($_SESSION['user']['icon'])) {
                     </div>
                     <span class="profile__blue-text">Показать всех</span>
                 </section>
+
                 <section class="profile__subscriptions">
                     <div class="text-block">
                         <h3 class="profile__h3">Подписки</h3><span class="profile__gray-text">500</span>
