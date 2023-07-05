@@ -17,7 +17,7 @@
             notifications
         </span>
     </a>
-    <a class="mobile-footer__img-wrapper loginBtn_forJS" >
+    <a class="mobile-footer__img-wrapper loginBtn_forJS">
         <span class="material-icons">
             perm_identity
         </span>

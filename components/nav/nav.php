@@ -1,4 +1,4 @@
-<nav class="nav nav_mobile">
+<nav id="nav" class="nav nav_mobile">
     <div class="nav__header">
         <div id="navBurgerBtn" class="nav__img-wrapper nav__img-wrapper_burger">
             <img class="img__burger-menu" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/burgerIcon.svg" alt="menu">
@@ -152,5 +152,5 @@
     </ol>
 </nav>
 
-<script src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/js/nav.js"></script>
+<script src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/nav/nav.js"></script>
 

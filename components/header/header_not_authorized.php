@@ -1,5 +1,5 @@
-<header class="header">
 
+<header class="header">
 
     <div class="header__left">
         <div id="headerBurgerBtn" class="header__img-burger-wrapper ">
@@ -49,5 +49,5 @@
     </div>
 </header>
 <?php
-include_once("autorization.php");
+include_once("autorizationModalWindow/autorizationModalWindow.php");
 ?>

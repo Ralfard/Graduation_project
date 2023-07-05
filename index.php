@@ -1,17 +1,10 @@
 <?php
 session_start();
-include_once('include/db_connect.php');
+include_once('components/dataBase/db_connect.php');
 if (isset($_GET['logout'])) {
     unset($_SESSION['user']);
-    header("Location: {$_SERVER['HTTP_REFERER']}");
 }
 
-if(isset($_SESSION['user']['icon'])){
-    echo $_SESSION['user']['icon'];
-}
-else{
-    echo 2;
-}
 ?>
 
 
@@ -33,15 +26,15 @@ else{
 
     <!-- Стили общая часть начало -->
     <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/reset.css">
-    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/grid.css">
 
-    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/header.css">
-    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/autorization.css">
+    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/header/header.css">
+    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/header/autorizationModalWindow/autorizationModalWindow.css">
 
-    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/nav.css">
+    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/nav/nav.css">
 
-    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/mobile-footer.css">
-    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/common_styles.css">
+    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/footer/mobile-footer.css">
+
+    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/style.css">
     <!-- Стили общая часть конец -->
 
     <title>Document</title>
@@ -49,30 +42,64 @@ else{
 </head>
 
 <body id="body">
+
+
+    <!--                                                                                                            nav
+    |                    header                              |                                               |=         header     |
+    |_________________________________|                                               |_ _____________|
+    |          |                               |                |                                               |                          |
+    |          |                               |                |                                               |                          |
+    |          |                               |                |                                               |                          |
+    |          |                               |                |                                               |       main            |           asaid нету
+    |  nav   |     main                   |   asaide    |                                               |                          |
+    |          |                               |                |                                               |                          |
+    |          |                               |                |                                               |                          |
+    |          |                               |                |                                               |                          |
+    |          |                               |                |                                               |_______________|
+    |          |                               |                |                                               | footer-mobile      |
+-->
+
+
+
     <?php
+    //HEADER
     if (isset($_SESSION['user'])) {
-        include_once('include/header_authorized.php');
+        include_once('components/header/header_authorized.php');
     } else {
-        include_once('include/header_not_authorized.php');
+        include_once('components/header/header_not_authorized.php');
     }
     ?>
-    <main class="main">
+
+
+    <div class="middle-content">
+
+
         <?php
-        include_once("include/nav.php");
-        include_once("include/popular.php");
+        //NAV
+        include_once("components/nav/nav.php");
+
+        //MAIN 
+        include_once('components/main/main.php');
+
+        //ASAID
+        include_once('components/asaid/asaide.php');
+
         ?>
-    </main>
+
+    </div>
+
 
     <?php
+    //FOOTER
     if (isset($_SESSION['user'])) {
-        include_once("include/mobile_footer_authorized.php");
+        include_once("components/footer/mobile_footer_authorized.php");
     } else {
-        include_once("include/mobile_footer_not_authorized.php");
+        include_once("components/footer/mobile_footer_not_authorized.php");
     }
     ?>
 
 
-    <script src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/js/main_js.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

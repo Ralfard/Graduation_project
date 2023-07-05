@@ -1,67 +1,7 @@
 <?php
-if ($_POST['submit_reg']) { //Регистационный блок
-    $error = array();
-
-    if (count($error)) {
-        $_SESSION['message'] =  implode('<br/>', $error);
-    } else {
-        $name = $_POST['name_reg'];
-        $mail = $_POST['email_reg'];
-        $pass = $_POST['password_reg'];
-
-        $query = "INSERT INTO `users` (`name`, `mail`, `pass`) VALUES
-        (
-            '" . mysqli_real_escape_string($mysqli, $name) /*экранируем символы для безопасности*/ . "',
-            '" . mysqli_real_escape_string($mysqli, $mail) . "',
-            '" . mysqli_real_escape_string($mysqli, $pass) . /*у последнего значения не должно быть запятой в конце*/ "'
-        )";
-
-        $result = mysqli_query($mysqli, $query) or die("Ошибка " . mysqli_error($mysqli));
-
-        header('Location: index.php'); // перемещает пользователя на другую страницу после регистрации
-
-    }
-} else {
-    $error_msg = 'Не правильный логин или пароль';
-}
-
-
-if ($_POST['submit_aut']) { //Авторизационный блок
-    $error = array();
-
-    if (count($error)) {
-        $_SESSION['message'] = implode('<br/>', $error);
-    } else {
-
-        $mail = $_POST['email_aut'];
-        $pass = $_POST['password_aut'];
-
-        $request = mysqli_query($mysqli, "SELECT * FROM `users` WHERE `mail`='$mail' AND `pass`='$pass'");
-        if (mysqli_num_rows($request) > 0) {
-            $user = mysqli_fetch_assoc($request);
-            // if(!isset($user['icon'])){
-            //     $user['icon']="https://placehold.co/40x40/34691E/dddddd?text=" . strtoupper($user['name'][0]);
-            // }
-            $_SESSION['user'] = [
-                'id' => $user['id'],
-                'name' => $user['name'],
-                'mail' => $user['mail'],
-                'pass' => $user['pass'],
-                'icon' => $user['icon'] ? $user['icon'] : "https://placehold.co/40x40/34691E/dddddd?text=" . strtoupper($user['name'][0])
-            ];
-            header("Location: {$_SERVER['HTTP_REFERER']}");
-        } else {
-            $_SESSION['message'] = 'Не правильный логин или пароль';
-        }
-    }
-} else {
-    $error_msg = 'Не правильный логин или пароль';
-}
-
-
-
+include_once("autorization/autorization.php");
+include_once("registration/registration.php");
 ?>
-
 <div id="modalWindow" class="log-in">
     <div class="log-in__mobile-block">
         <span id="closeModalWindow" class="material-icons">
@@ -71,7 +11,7 @@ if ($_POST['submit_aut']) { //Авторизационный блок
             <div class="logo-wrapper__mobile-block">
                 <img class="img__cover" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/mainLogo.svg" alt="">
             </div>
-            
+
             <!-- появляется в поле регистрации -->
             <form id="registrationFormMobile" style="display: block;" method="POST" class="registration__form-mobile" action="">
                 <h2 class="log-in__title">Регистрация</h2>
@@ -104,10 +44,7 @@ if ($_POST['submit_aut']) { //Авторизационный блок
 
     </div>
 </div>
-
-
-<script src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/js/autorization.js"></script>
-
+<script src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/header/autorizationModalWindow/autorizationModalWindow.js"></script>
 
 
 <!--<div class="log-in__desctop-block">
