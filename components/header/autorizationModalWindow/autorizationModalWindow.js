@@ -63,7 +63,7 @@ function changeMenu() {
 
 let XHR = new XMLHttpRequest;
 
-XHR.open("POST", "/include/autorization.php")
+XHR.open("POST", "<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/PHP_logic/autorization/autorization.php")
 XHR.onreadystatechange = function () {
     console.log(XHR.readyState);
     console.log(XHR.status);

@@ -1,10 +1,12 @@
 <?php
 session_start();
-include_once('components/dataBase/db_connect.php');
+include_once('components/dataBase/db_connect.php');//база данных
+include_once("PHP_logic/autorization/autorization.php");//файл с php скриптами
+
 if (isset($_GET['logout'])) {
     unset($_SESSION['user']);
+    header("Location: {$_SERVER['HTTP_REFERER']}");
 }
-
 ?>
 
 
@@ -31,6 +33,7 @@ if (isset($_GET['logout'])) {
     <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/header/autorizationModalWindow/autorizationModalWindow.css">
 
     <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/nav/nav.css">
+    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/main/main.css">
 
     <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/footer/mobile-footer.css">
 
@@ -71,7 +74,7 @@ if (isset($_GET['logout'])) {
     ?>
 
 
-    <div class="middle-content">
+    <div id="middleContent" class="middle-content">
 
 
         <?php
@@ -82,7 +85,7 @@ if (isset($_GET['logout'])) {
         include_once('components/main/main.php');
 
         //ASAID
-        include_once('components/asaid/asaide.php');
+        include_once('components/aside/aside.php');
 
         ?>
 

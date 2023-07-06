@@ -1,6 +1,6 @@
-<article class="content content_main-page">
+<section class="content content_main-page">
 
-    <section class="article__preview">
+    <article class="article__preview">
         <div class="preview__top-panel">
 
             <div class="preview__top-panel_left">
@@ -81,6 +81,6 @@
 
         </div>
 
-    </section>
+    </article>
 
-</article>
+</section>

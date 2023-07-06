@@ -41,8 +41,8 @@
         <div class="content_bgc">
 
 
-            <article class="content content_main-page">
-                <section class="article__preview">
+            <section class="content content_main-page">
+                <article class="article__preview">
                     <div class="preview__top-panel">
 
                         <div class="preview__top-panel_left">
@@ -107,7 +107,7 @@
                         </div>
 
                     </div>
-                </section>
+                </article>
 
                 <section class="article__main-content">
                     <h2 class="article__content-h2">1. Составьте контент-план. </h2>
@@ -123,7 +123,7 @@
                 <section class="article__comments">
 
                 </section>
-            </article>
+            </section>
         </div>
     </main>
 

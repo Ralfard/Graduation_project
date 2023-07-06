@@ -20,7 +20,8 @@ if ($_POST['submit_aut']) { //Авторизационный блок
                 'pass' => $user['pass'],
                 'icon' => $user['icon'] ? $user['icon'] : "https://placehold.co/40x40/34691E/dddddd?text=" . strtoupper($user['name'][0])
             ];
-            header("Location: {$_SERVER['HTTP_REFERER']}");
+            header("Location: index.php");
+            
         } else {
             $_SESSION['message'] = 'Не правильный логин или пароль';
         }

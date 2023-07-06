@@ -1,49 +1,6 @@
-.main {
-    /* display: grid; */
-    grid-template-columns: minmax(0, 640px);
-    justify-content: center;
-    padding-top: 60px;
 
-    font-family: Roboto;
 
-}
 
-.link{
-    display: unset;
-    color: unset;
-}
-
-.user-avatar_circle {
-    height: 30px;
-    width: 30px;
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.user-avatar_rectangle {
-    height: 30px;
-    width: 30px;
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-.topic-avatar_rectangle {
-    height: 24px;
-    width: 24px;
-    border-radius: 3px;
-    overflow: hidden;
-}
-
-.img__wrapper {
-    height: 50px;
-    width: 50px;
-}
-
-.img__cover {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
 
 .content-block {
     /* основной блок в который помещают контент */
@@ -161,178 +118,6 @@
 
 
 
-.article__preview {
-    padding: 16px 0;
-    background-color: #fff;
-    margin: auto;
-    max-width: 640px;
-    margin-bottom: 24px;
-}
-
-.preview__top-panel {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 20px 16px;
-}
-
-.preview__top-panel_left {
-    display: flex;
-    align-items: center;
-    width: calc(100% - 137px);
-
-}
-
-.preview__tag {
-    display: flex;
-    align-items: center;
-}
-
-.img__wrapper_tag {
-    height: 20px;
-    width: 20px;
-    margin-right: 8px;
-}
-
-.author-name {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    word-wrap: normal;
-    display: none;
-}
-
-.preview__top-panel-text {
-    margin-right: 20px;
-}
-
-.preview__panel-text {
-    font-size: 15px;
-    font-family: roboto;
-    color: black;
-}
-
-.preview__time {
-    color: #595959;
-    display: none;
-}
-
-.preview__top-panel_right {
-    display: flex;
-    align-items: inherit;
-    justify-self: end;
-}
-
-.subscribe-btn {
-    display: flex;
-    align-items: center;
-    border: none;
-    background-color: rgba(0, 0, 0, 0);
-    cursor: pointer;
-}
-
-.subscribe-btn-text {
-    margin-right: 0;
-}
-
-.article__content {
-    margin: 10px 0;
-}
-
-.article__content-h2 {
-    font-weight: bold;
-    font-size: 1.4em;
-    font-family: roboto;
-    color: black;
-    margin-bottom: 12px;
-    margin: 0 20px 12px;
-    line-height: 32px;
-}
-
-.article__content-h3 {
-    font-weight: bold;
-    font-size: 1.17em;
-    font-family: roboto;
-    color: black;
-    margin-bottom: 12px;
-    margin: 0 20px 12px;
-    line-height: 32px;
-}
-
-.article__content-p {
-    font-family: roboto;
-    color: black;
-    font-size: 17px;
-    line-height: 25px;
-    margin: 0 20px;
-}
-
-.article__content-img {
-    margin: 12px 0;
-    width: 100%;
-}
-
-.preview__bottom-panel {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 20px;
-}
-
-.preview__bottom-panel_left {
-    display: flex;
-    align-items: center;
-}
-
-.preview__bottom-panel-action {
-    padding: 0;
-    margin-right: 20px;
-    border-radius: 50%;
-    border: none;
-    background-color: unset;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.preview__bottom-panel-action:hover .material-icons {
-    color: #06f;
-    background-color: rgba(0, 174, 255, 0.25);
-}
-
-.preview__bottom-panel-action:hover .preview__panel-text {
-    color: #06f;
-}
-
-.preview__bottom-panel-action_red:hover .material-icons {
-    color: rgb(228, 85, 114);
-    background-color: rgba(229, 92, 120, 0.25);
-}
-
-.preview__bottom-panel-action_red:hover .preview__panel-text {
-    color: rgb(228, 85, 114);
-}
-
-.preview__bottom-panel-action_orenge {
-    margin: 0;
-}
-
-.preview__bottom-panel-action_orenge:hover .material-icons {
-    color: rgb(211, 144, 0);
-    background-color: rgba(211, 144, 0, 0.25)
-}
-
-.preview__bottom-panel-action .material-icons {
-    padding: 4px;
-    border-radius: 50%;
-    margin-right: 1px;
-    font-size: 20px;
-}
-
-.preview__bottom-panel_right {}
-
-.preview__view-counter {
-    color: #595959;
-}
 
 
 
@@ -340,7 +125,9 @@
 
 
 
-/* Малые девайсы («ландшафтные телефоны», >= 576px) */
+
+/* 
+/* Малые девайсы («ландшафтные телефоны», >= 576px) 
 @media (min-width: 576px) {
     .preview__time {
         display: block;
@@ -362,14 +149,14 @@
     }
 }
 
-/* Средние девайсы («таблетки», >= 768px) */
+/* Средние девайсы («таблетки», >= 768px) 
 @media (min-width: 768px) {
     .author-name {
         display: block;
     }
 }
 
-/* Большие девайсы (десктопы, >= 992px) */
+/* Большие девайсы (десктопы, >= 992px) 
 @media (min-width: 992px) {
     .main {
         display: grid;
@@ -385,5 +172,5 @@
     }
 }
 
-/* Экстрабольшие девайсы (большие десктопы, >= 1200px) */
-@media (min-width: 1200px) {}
+/* Экстрабольшие девайсы (большие десктопы, >= 1200px) 
+@media (min-width: 1200px) {} */

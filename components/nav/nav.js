@@ -1,6 +1,6 @@
 let navMenu = document.querySelectorAll('.nav');
 let body = document.querySelector('body');
-let main= document.querySelector('.main');
+// let main= document.querySelector('.main');
 
 let path=document.location.pathname.split('/');
 path=path[path.length-1];
@@ -21,7 +21,7 @@ var fixedScroll = {// отвечает за фиксацию скрола во �
     }
 }
 
-
+let middleContent = document.getElementById('middleContent');
 
 navBurgerBtn.onclick = showOrHide_nav;
 bottomLayer.onclick = showOrHide_nav;
@@ -33,23 +33,23 @@ headerBurgerBtn.onclick = showOrHide_nav;
 window.onresize = function(){
     if(window.screen.width < 992){
         navMenu[1].style.display = 'none';
-        main.style.gridTemplateColumns='1fr';
+        middleContent.style.gridTemplateColumns='1fr';
     }
     else if (window.screen.width > 992){
         navMenu[1].style.display = 'block';
-        main.style.gridTemplateColumns='220px 1fr 320px';
+        middleContent.style.gridTemplateColumns='220px 1fr 320px';
     }
 };
 
 function showOrHide_nav() {
     if ((window.screen.width > 1200) && (navMenu[1].style.display===''|| navMenu[1].style.display==='block')&&(path==='profile.php')) {
         navMenu[1].style.display = 'none';
-        main.style.gridTemplateColumns='1fr';
+        middleContent.style.gridTemplateColumns='1fr';
         return
     }
     else if ((window.screen.width > 1200) && ( navMenu[1].style.display==='none')&&(path==='profile.php')) {
         navMenu[1].style.display = 'block';
-        main.style.gridTemplateColumns='220px 1fr ';
+        middleContent.style.gridTemplateColumns='220px 1fr ';
         return
     }
     if (navBolleanMobile && window.screen.width < 992) {
@@ -68,12 +68,12 @@ function showOrHide_nav() {
     }
     if ((window.screen.width > 992) && (navMenu[1].style.display===''|| navMenu[1].style.display==='block')) {
         navMenu[1].style.display = 'none';
-        main.style.gridTemplateColumns='1fr 320px';
+        middleContent.style.gridTemplateColumns='1fr 320px';
         return
     }
     else if ((window.screen.width > 992) && ( navMenu[1].style.display==='none')) {
         navMenu[1].style.display = 'block';
-        main.style.gridTemplateColumns='220px 1fr 320px';
+        middleContent.style.gridTemplateColumns='220px 1fr 320px';
         return
     }
     

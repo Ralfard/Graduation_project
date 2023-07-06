@@ -1,4 +1,41 @@
-.middle-content{
+.middle-content {
     display: grid;
     grid-template-columns: 220px 1fr 320px;
+}
+
+.link {
+    display: unset;
+    color: unset;
+}
+
+.user-avatar_circle {
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.user-avatar_rectangle {
+    height: 30px;
+    width: 30px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.topic-avatar_rectangle {
+    height: 24px;
+    width: 24px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.img__wrapper {
+    height: 50px;
+    width: 50px;
+}
+
+.img__cover {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
