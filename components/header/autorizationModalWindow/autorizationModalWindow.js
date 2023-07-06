@@ -61,16 +61,18 @@ function changeMenu() {
 
 // асинхронная авторизация
 
-let XHR = new XMLHttpRequest;
-
-XHR.open("POST", "<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/PHP_logic/autorization/autorization.php")
-XHR.onreadystatechange = function () {
-    console.log(XHR.readyState);
-    console.log(XHR.status);
-    if (this.readyState === 4 && this.status === 200) {
-        console.log(XHR.response);
-        
+function XHRAutorization(e) {
+    e.preventDefault();
+    console.log(1);
+    let XHR = new XMLHttpRequest;
+    XHR.open("POST", "<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/PHP_logic/autorization/autorization.php")
+    XHR.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            console.log(XHR.response);
+        }
     }
+    XHR.send();
 }
-XHR.send();
+
+
 

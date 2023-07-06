@@ -33,7 +33,7 @@
 
                 <input class="log-in__input" name="email_aut" type="email" placeholder="Почта" required>
                 <input class="log-in__input" name="password_aut" type="password" placeholder="Пароль" required>
-                <input id="autorizationSubmit" class="log-in__submit" name="submit_aut" type="submit" value="Войти">
+                <input id="autorizationSubmit" class="log-in__submit" name="submit_aut" type="submit" value="Войти" onsubmit="XHRAutorization()">
                 <p class="log-in__text">Нет аккаунта? <span class="log-in__change-form">Регистрация</span></p>
             </form>
 
