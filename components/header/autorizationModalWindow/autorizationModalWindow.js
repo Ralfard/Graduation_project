@@ -61,18 +61,66 @@ function changeMenu() {
 
 // асинхронная авторизация
 
-function XHRAutorization(e) {
-    e.preventDefault();
-    console.log(1);
-    let XHR = new XMLHttpRequest;
-    XHR.open("POST", "<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/PHP_logic/autorization/autorization.php")
+// let autorizationForm=document.getElementById('authorizationFormMobile');
+let autorizationErrorText = document.getElementById('autorizationErrorText');
+
+function checkForm(event) {
+    event.preventDefault();
+    let userMail = autorizationForm.elements.email_aut.value;
+    let userPass = autorizationForm.elements.password_aut.value;
+    
+    if (userMail.length < 3 || userPass.length < 3) {
+        autorizationErrorText.innerText = "Не коректная длинна пароля или адреса";
+        return false;
+    }
+
+    let XHR = createAJAXObject();
+
+
+    XHR.open("POST", "PHP_logic/autorization/autorization.php");
+    XHR.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    XHR.send('email_aut=' + userMail + '&password_aut=' + userPass);
+
     XHR.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            console.log(XHR.response);
+            if (XHR.responseText == 1) {
+                document.location.reload();
+            } else {
+                autorizationErrorText.innerText = XHR.responseText;
+            }
+            return true
+        }
+
+    }
+
+
+}
+
+
+
+// создает кросбраузерный AJAX объект
+function createAJAXObject() {
+    let ajax = null;
+    try {
+        ajax = new XMLHttpRequest();
+    } catch (e) {
+        try {//for new IE
+            ajax = new ActiveXObject("Msxml2.XMLHTTP");
+        }
+        catch (e) {
+            try {
+                ajax = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            catch (e) {
+                alert("AJAX не поддерживается вашим браузером!")
+                return false;
+            }
         }
     }
-    XHR.send();
+    return ajax;
 }
+
+
 
 
 

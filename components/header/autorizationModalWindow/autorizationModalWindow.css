@@ -81,6 +81,14 @@
     transition-duration: 0.3s;
 }
 
+.log-in__text-error{
+    font-size: 16px;
+    text-align: center;
+    font-family: roboto;
+    margin-bottom: 24px;
+    color: rgb(202, 0, 0);
+}
+
 .log-in__text{
     font-size: 16px;
     text-align: center;

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once('components/dataBase/db_connect.php');//база данных
+include_once('PHP_logic/dataBase/db_connect.php');//база данных
 include_once("PHP_logic/autorization/autorization.php");//файл с php скриптами
 
 if (isset($_GET['logout'])) {
