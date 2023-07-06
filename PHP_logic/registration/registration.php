@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (!$mysqli) {
-    include_once('../../components/dataBase/db_connect.php');
+if(!$mysqli){
+    include_once('../dataBase/db_connect.php');
 }
 
 if ($_POST['submit_reg']) { //Регистационный блок

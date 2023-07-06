@@ -48,34 +48,27 @@ function show_or_CloseModalWindow() {
 
 
 function changeMenu() {
-    if (registrationFormMobile.style.display === 'none') {
-        registrationFormMobile.style.display = 'block';
-        authorizationFormMobile.style.display = 'none';
+    if (registrationForm.style.display === 'none') {
+        registrationForm.style.display = 'block';
+        authorizationForm.style.display = 'none';
     }
-    else if (authorizationFormMobile.style.display === 'none') {
-        registrationFormMobile.style.display = 'none';
-        authorizationFormMobile.style.display = 'block';
+    else if (authorizationForm.style.display === 'none') {
+        registrationForm.style.display = 'none';
+        authorizationForm.style.display = 'block';
     }
 }
 
-
-// асинхронная авторизация
-
-// let autorizationForm=document.getElementById('authorizationFormMobile');
 let autorizationErrorText = document.getElementById('autorizationErrorText');
 
-function checkForm(event) {
+
+// асинхронная авторизация
+function asincAutorization(event) {
     event.preventDefault();
     let userMail = autorizationForm.elements.email_aut.value;
     let userPass = autorizationForm.elements.password_aut.value;
-    
-    if (userMail.length < 3 || userPass.length < 3) {
-        autorizationErrorText.innerText = "Не коректная длинна пароля или адреса";
-        return false;
-    }
+    checkFormLength(userMail, userPass);
 
     let XHR = createAJAXObject();
-
 
     XHR.open("POST", "PHP_logic/autorization/autorization.php");
     XHR.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -90,13 +83,58 @@ function checkForm(event) {
             }
             return true
         }
+    }
+}
 
+// асинхронная регистрация
+function asincRegistration(event) {
+    event.preventDefault();
+
+    let registrationForm = document.getElementById('registrationForm');
+    let regName = registrationForm.elements.name_reg.value;
+    let regMail = registrationForm.elements.email_reg.value;
+    let regPass = registrationForm.elements.password_reg.value;
+
+    if (!checkForm(regName, regMail, regPass)) {
+        return false;
     }
 
+    return false
+}
+
+function checkForm(name, mail, pass) {
+    let ErrorText = document.getElementById('registrationErrorText');
+
+    let nameRegExp = /[A-Za-z_0-9]{3,16}/;
+    if (!nameRegExp.test(name)) {
+        ErrorText.innerText = 'Введен не корректное имя пользователя';
+        return false;
+    } else {
+        ErrorText.innerText = ""
+    }
+    let mailRegExp = /(\@[a-zA-Z_]+?\.[a-zA-Z]{2,6})/;
+    if (!mailRegExp.test(mail)) {
+        ErrorText.innerText = 'Введен не корректный адрес электронной почты';
+        return false;
+    } else {
+        ErrorText.innerText = ""
+    }
+    let passRegExp =/z/;
+    if(!passRegExp.test(pass)) {
+        ErrorText.innerText = 'Введен не корректный пароль';
+        return false;
+    } else {
+        ErrorText.innerText = ""
+    }
 
 }
 
-
+function checkFormLength(mail, pass) {
+    if (mail.length < 3 || pass.length < 3) {
+        autorizationErrorText.innerText = "Не коректная длинна пароля или адреса";
+        return false;
+    }
+}
 
 // создает кросбраузерный AJAX объект
 function createAJAXObject() {

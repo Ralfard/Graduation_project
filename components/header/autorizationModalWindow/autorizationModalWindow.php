@@ -10,30 +10,21 @@
             </div>
 
             <!-- появляется в поле регистрации -->
-            <form id="registrationFormMobile" style="display: block;" method="POST" class="registration__form-mobile" action="">
+            <form id="registrationForm" style="display: block;" method="POST" class="registration__form-mobile" action="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/PHP_logic/registration/registration.php" onsubmit="asincRegistration(event)">
                 <h2 class="log-in__title">Регистрация</h2>
+                <p id="registrationErrorText" class="log-in__text-error"></p>
+
                 <input class="log-in__input" name="name_reg" type="text" placeholder="Имя">
-                <input class="log-in__input" name="email_reg" type="email" placeholder="Почта">
+                <input class="log-in__input" name="email_reg" type="text" placeholder="Почта">
                 <input class="log-in__input" name="password_reg" type="password" placeholder="Пароль">
                 <input id="registrationSubmit" class="log-in__submit" name="submit_reg" type="submit" value="Зарегистрировать">
                 <p class="log-in__text">Есть аккаунт? <span class="log-in__change-form">Войти</span></p>
             </form>
 
             <!-- появляется в поле авторизации -->
-            <form id="authorizationFormMobile" style="display: none;" name="autorizationForm" method="POST" class="authorization__form-mobile" action="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/PHP_logic/autorization/autorization.php" onsubmit="checkForm(event)">
+            <form id="authorizationForm" style="display: none;" name="autorizationForm" method="POST" class="authorization__form-mobile" action="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/PHP_logic/autorization/autorization.php" onsubmit="asincAutorization(event)">
                 <h2 class="log-in__title">Вход в аккаунт</h2>
-                <?php
-                if (isset($_SESSION['message'])) {
-                ?>
-                    <p id="autorizationErrorText" class="log-in__text-error"><?= $_SESSION['message'] ?></p>
-                <?php
-                } else {
-                ?>
-                    <p id="autorizationErrorText" class="log-in__text-error"></p>
-                <?php
-                }
-                unset($_SESSION['message']);
-                ?>
+                <p id="autorizationErrorText" class="log-in__text-error"></p>
 
                 <input class="log-in__input" name="email_aut" type="email" placeholder="Почта" required="false">
                 <input class="log-in__input" name="password_aut" type="password" placeholder="Пароль" required="false">
