@@ -1,19 +1,24 @@
 <?php
 session_start();
-if(!$mysqli){
+if (!$mysqli) {
     include_once('../dataBase/db_connect.php');
 }
 
-if ($_POST['submit_reg']) { //Регистационный блок
+if ($_POST['name_reg'] && $_POST['email_reg'] && $_POST['password_reg']) { //Регистационный блок
     $error = array();
 
     if (count($error)) {
         $_SESSION['message'] =  implode('<br/>', $error);
     } else {
-        $name = $_POST['name_reg'];
-        $mail = $_POST['email_reg'];
-        $pass = $_POST['password_reg'];
+        $name = sanitizeData($_POST['name_reg']);
+        $mail = sanitizeData($_POST['email_reg']);
+        $pass = sanitizeData($_POST['password_reg']);
 
+        if(checkUserMail($mail, $mysqli)===false){//проверка почты на совпадения
+            echo "Пользователь с такой почтой уже зарегистрирован";
+            exit;
+        }
+        
         $query = "INSERT INTO `users` (`name`, `mail`, `pass`) VALUES
         (
             '" . mysqli_real_escape_string($mysqli, $name) /*экранируем символы для безопасности*/ . "',
@@ -28,4 +33,16 @@ if ($_POST['submit_reg']) { //Регистационный блок
     }
 } else {
     $error_msg = 'Не правильный логин или пароль';
+}
+
+function checkUserMail($mail, $mysqli){
+    $request=mysqli_query($mysqli, "SELECT * FROM `users` WHERE `mail`='$mail'");
+    if(mysqli_num_rows($request)>0) return false;
+}
+
+function sanitizeData($data) {
+    $data=strip_tags($data);
+    $data=htmlentities($data);
+    $data=stripslashes($data);
+    return $data;
 }

@@ -1,16 +1,14 @@
 <?php
 session_start();
-include_once('PHP_logic/dataBase/db_connect.php');//база данных
-include_once("PHP_logic/autorization/autorization.php");//файл с php скриптами
+include_once('PHP_logic/dataBase/db_connect.php'); //база данных
+// include_once("PHP_logic/autorization/autorization.php"); //файл с php скриптами
 
 if (isset($_GET['logout'])) {
     unset($_SESSION['user']);
     header("Location: {$_SERVER['HTTP_REFERER']}");
 }
 ?>
-
-
-<!DOCTYPE html>
+<!DOCTYPE html><!-- стоит тут потому что иначе включится режим совместимости -->
 <html lang="ru">
 
 <head>
@@ -40,7 +38,8 @@ if (isset($_GET['logout'])) {
     <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/style.css">
     <!-- Стили общая часть конец -->
 
-    <title>Document</title>
+    <title>ТуТ был Я</title>
+
 
 </head>
 
@@ -103,6 +102,15 @@ if (isset($_GET['logout'])) {
 
 
     <script src="js/script.js"></script>
+    <div style="display: none;">
+        <!-- Favicon  -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+    </div>
 </body>
 
 </html>

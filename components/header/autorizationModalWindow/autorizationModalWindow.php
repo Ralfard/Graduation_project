@@ -21,8 +21,9 @@
                 <p class="log-in__text">Есть аккаунт? <span class="log-in__change-form">Войти</span></p>
             </form>
 
+            
             <!-- появляется в поле авторизации -->
-            <form id="authorizationForm" style="display: none;" name="autorizationForm" method="POST" class="authorization__form-mobile" action="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/PHP_logic/autorization/autorization.php" onsubmit="asincAutorization(event)">
+            <form id="autorizationForm" style="display: none;" name="autorizationForm" method="POST" class="authorization__form-mobile" action="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/PHP_logic/autorization/autorization.php" onsubmit="asincAutorization(event)">
                 <h2 class="log-in__title">Вход в аккаунт</h2>
                 <p id="autorizationErrorText" class="log-in__text-error"></p>
 

@@ -7,14 +7,13 @@ if(!$mysqli){
 if ($_POST['email_aut'] && $_POST['password_aut']) { //Авторизационный блок
     $error = array();
 
-    // echo "<script>console.log(".$_POST['email_aut'].")</script>";
 
     if (count($error)) {
         $_SESSION['message'] = implode('<br/>', $error);
     } else {
 
-        $mail = $_POST['email_aut'];
-        $pass = $_POST['password_aut'];
+        $mail = sanitizeData($_POST['email_aut']);
+        $pass = sanitizeData($_POST['password_aut']);
 
         $request = mysqli_query($mysqli, "SELECT * FROM `users` WHERE `mail`='$mail' AND `pass`='$pass'");
         if (mysqli_num_rows($request) > 0) {
@@ -29,8 +28,16 @@ if ($_POST['email_aut'] && $_POST['password_aut']) { //Авторизацион�
             ];
             echo true;
         } else {
-            $_SESSION['message'] = 'Не правильный логин или пароль';
-            echo $_SESSION['message'];
+            echo 'Не правильный логин или пароль';
         }
     }
+}else{
+    echo 'Заполнены не все поля';
+}
+
+function sanitizeData($data) {
+    $data=strip_tags($data);
+    $data=htmlentities($data);
+    $data=stripslashes($data);
+    return $data;
 }

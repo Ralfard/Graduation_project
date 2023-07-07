@@ -2,6 +2,9 @@
 let btns_for_change_menu = document.getElementsByClassName('log-in__change-form');
 let btns_for_login = document.getElementsByClassName('loginBtn_forJS');
 
+const registrationForm = document.getElementById('registrationForm');
+const autForm=document.getElementById('autorizationForm');
+
 
 var fixedScroll = {
     disabledScroll() {
@@ -50,36 +53,39 @@ function show_or_CloseModalWindow() {
 function changeMenu() {
     if (registrationForm.style.display === 'none') {
         registrationForm.style.display = 'block';
-        authorizationForm.style.display = 'none';
+        autorizationForm.style.display = 'none';
     }
-    else if (authorizationForm.style.display === 'none') {
+    else if (autorizationForm.style.display === 'none') {
         registrationForm.style.display = 'none';
-        authorizationForm.style.display = 'block';
+        autorizationForm.style.display = 'block';
     }
 }
 
-let autorizationErrorText = document.getElementById('autorizationErrorText');
 
 
 // асинхронная авторизация
-function asincAutorization(event) {
+autForm.onsubmit=function asincAutorization(event) {
     event.preventDefault();
-    let userMail = autorizationForm.elements.email_aut.value;
-    let userPass = autorizationForm.elements.password_aut.value;
-    checkFormLength(userMail, userPass);
+
+    let autData = {
+        userMail : autForm.elements.email_aut.value,
+        userPass : autForm.elements.password_aut.value,
+        errorText:document.getElementById('autorizationErrorText'),
+    }
+    checkFormLength(autData.userMail, autData.userPass);
 
     let XHR = createAJAXObject();
 
     XHR.open("POST", "PHP_logic/autorization/autorization.php");
     XHR.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    XHR.send('email_aut=' + userMail + '&password_aut=' + userPass);
+    XHR.send('email_aut=' + autData.userMail + '&password_aut=' + autData.userPass);
 
     XHR.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             if (XHR.responseText == 1) {
                 document.location.reload();
             } else {
-                autorizationErrorText.innerText = XHR.responseText;
+                autData.errorText.innerText = XHR.responseText;
             }
             return true
         }
@@ -87,44 +93,58 @@ function asincAutorization(event) {
 }
 
 // асинхронная регистрация
-function asincRegistration(event) {
+registrationForm.onsubmit=function asincRegistration(event) {
     event.preventDefault();
 
-    let registrationForm = document.getElementById('registrationForm');
-    let regName = registrationForm.elements.name_reg.value;
-    let regMail = registrationForm.elements.email_reg.value;
-    let regPass = registrationForm.elements.password_reg.value;
-
-    if (!checkForm(regName, regMail, regPass)) {
-        return false;
+    let regData={
+        regName : registrationForm.elements.name_reg.value,
+        regMail : registrationForm.elements.email_reg.value,
+        regPass : registrationForm.elements.password_reg.value,
+        errorText:document.getElementById('registrationErrorText'),
     }
 
-    return false
+    if (!checkForm(regData.regName, regData.regMail, regData.regPass)) return false;
+
+    let XHR = createAJAXObject();
+
+    XHR.open('POST', "PHP_logic/registration/registration.php")
+    XHR.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    XHR.send('name_reg='+regData.regName+'&email_reg='+regData.regMail+'&password_reg='+regData.regPass);
+
+    XHR.onreadystatechange=function(){
+        if (this.readyState === 4 && this.status === 200) {
+            if (XHR.responseText == 1) {
+                document.location.reload();
+            } else {
+                regData.errorText.innerText = XHR.responseText;
+            }
+            return true
+        }
+    }
+    return true;
 }
 
 function checkForm(name, mail, pass) {
     let ErrorText = document.getElementById('registrationErrorText');
 
-    let nameRegExp = /[A-Za-z_0-9]{3,16}/;
+    let nameRegExp = /^[A-Za-zА-Яа-я_0-9]{3,20}$/;
+    let mailRegExp = /(\@[a-zA-Z_]+?\.[a-zA-Z]{2,6})/;
+    let passRegExp = /^(?=.*\d)\w{6,20}$/m;
+
     if (!nameRegExp.test(name)) {
         ErrorText.innerText = 'Введен не корректное имя пользователя';
         return false;
-    } else {
-        ErrorText.innerText = ""
     }
-    let mailRegExp = /(\@[a-zA-Z_]+?\.[a-zA-Z]{2,6})/;
-    if (!mailRegExp.test(mail)) {
+    else if (!mailRegExp.test(mail)) {
         ErrorText.innerText = 'Введен не корректный адрес электронной почты';
         return false;
-    } else {
-        ErrorText.innerText = ""
     }
-    let passRegExp =/z/;
-    if(!passRegExp.test(pass)) {
+    else if (!passRegExp.test(pass)) {
         ErrorText.innerText = 'Введен не корректный пароль';
         return false;
     } else {
         ErrorText.innerText = ""
+        return true;
     }
 
 }
