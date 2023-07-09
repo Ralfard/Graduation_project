@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once('PHP_logic/dataBase/db_connect.php'); //база данных
+include_once('../../PHP_logic/dataBase/db_connect.php'); //база данных
 // include_once("PHP_logic/autorization/autorization.php"); //файл с php скриптами
 
 if (isset($_GET['logout'])) {
@@ -47,16 +47,16 @@ if (isset($_GET['logout'])) {
     <!--                                                                                                      nav
     |                    header                              |                                               |=         header     |
     |_________________________________|                                               |_ _____________|
-    |          |                               |                |                                               |                          |
-    |          |                               |                |                                               |                          |
-    |          |                               |                |                                               |                          |
-    |          |                               |                |                                               |       main            |           asaid нету
-    |  nav   |     main                   |   asaide    |                                               |                          |
-    |          |                               |                |                                               |                          |
-    |          |                               |                |                                               |                          |
-    |          |                               |                |                                               |                          |
-    |          |                               |                |                                               |_______________|
-    |          |                               |                |                                               | footer-mobile      |
+    |          |                                                |                                               |                          |
+    |          |                                                |                                               |                          |
+    |          |                                                |                                               |                          |
+    |          |                                                |                                               |       main            |           asaid нету
+    |  nav   |     main                                    |                                               |                          |
+    |          |                                                |                                               |                          |
+    |          |                                                |                                               |                          |
+    |          |                                                |                                               |                          |
+    |          |                                                |                                               |_______________|
+    |          |                                                |                                               | footer-mobile      |
 -->
 
 
@@ -64,25 +64,22 @@ if (isset($_GET['logout'])) {
     <?php
     //HEADER
     if (isset($_SESSION['user'])) {
-        include_once('components/header/header_authorized.php');
+        include_once($_SERVER['DOCUMENT_ROOT'].'/components/header/header_authorized.php');
     } else {
-        include_once('components/header/header_not_authorized.php');
+        header('Location: '.$_SERVER['DOCUMENT_ROOT'].'index.php');
     }
     ?>
 
-
     <div id="middleContent" class="middle-content">
-
-
         <?php
         //NAV
-        include_once("components/nav/nav.php");
+        include_once($_SERVER['DOCUMENT_ROOT']."/components/nav/nav.php");
 
         //MAIN 
-        // include_once('components/main/main.php');
+        include_once($_SERVER['DOCUMENT_ROOT'].'/components/main/profile/myProfile.php');
 
         //ASAID
-        include_once('components/aside/aside.php');
+        include_once($_SERVER['DOCUMENT_ROOT'].'/components/aside/aside.php');
 
         ?>
 
@@ -92,20 +89,20 @@ if (isset($_GET['logout'])) {
     <?php
     //FOOTER
     if (isset($_SESSION['user'])) {
-        include_once("components/footer/mobile_footer_authorized.php");
+        include_once($_SERVER['DOCUMENT_ROOT'].'/components/footer/mobile_footer_authorized.php');
     } else {
-        include_once("components/footer/mobile_footer_not_authorized.php");
+        include_once($_SERVER['DOCUMENT_ROOT'].'/components/footer/mobile_footer_not_authorized.php');
     }
     ?>
 
 
-    <script src="js/script.js"></script>
+    <script src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/js/script.js"></script>
     <div class="display_none">
         <!-- Favicon  -->
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
-        <link rel="manifest" href="/site.webmanifest">
+        <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/favicons/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/favicons/favicon-32x32.png">
+        <link rel="manifest" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/site.webmanifest">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
     </div>

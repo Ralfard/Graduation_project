@@ -1,6 +1,15 @@
+body {
+    font-family: roboto;
+}
+
 .middle-content {
     display: grid;
     grid-template-columns: 220px 1fr 320px;
+}
+
+.content-wrapper {
+    border-radius: 10px;
+    background-color: #fff;
 }
 
 .link {
@@ -38,4 +47,124 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+
+
+
+
+.content-block {
+    /* основной блок в который помещают контент */
+    background-color: #fff;
+    padding: 16px;
+    margin-bottom: 15px;
+}
+
+
+
+.content-block__h2 {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin: 8px 0 12px;
+}
+
+.content-block__p {
+    margin-top: 8px;
+    line-height: 24px;
+}
+
+.content-block__p_blue {
+    color: #3B65AB;
+}
+
+.content-block__p_blue:hover {
+    color: #06f;
+}
+
+
+
+
+.content-block__block-title {
+    font-weight: bold;
+    display: block;
+    margin: 12px 0;
+}
+
+.content-block__p {}
+
+.display_none {
+    display: none;
+}
+
+.item {
+    /* элемент списка */
+    height: 36px;
+    padding: 17px 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.item__block {
+    display: flex;
+    align-items: center;
+}
+
+.item__block:hover {
+    color: #06f;
+}
+
+.item__avatar {
+    height: 100%;
+    width: 36px;
+    margin-right: 12px;
+}
+
+.item__name {
+    font-weight: 600;
+}
+
+.item__btn {
+    border: #cccccc 1px solid;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px 1px rgba(34, 60, 80, 0.1);
+    height: 34px;
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.item__btn-text {
+    font-size: 16px;
+    font-family: Roboto;
+}
+
+
+
+.text-block {
+    display: flex;
+    align-items: center;
+}
+
+
+
+.material-icons {
+    cursor: pointer;
+}
+
+.content {
+    width: 100%;
+    margin: auto;
+    /* position: relative; */
+    margin-top: 16px;
+
+}
+
+.content_bgc {
+    background-color: #fff;
+}
+
+.content_main-page {
+    width: 100%;
 }

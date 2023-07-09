@@ -47,7 +47,7 @@
                 </span>
             </div>
         </a>
-        <a class="header__link" href="../pages/profile.php">
+        <a class="header__link" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/pages/account/myProfile.php">
             <div class="header__user-icon-wrapper header__icon">
                 <img class="img_cover" src="<?= $_SESSION['user']['icon'] ?>" alt="">
             </div>

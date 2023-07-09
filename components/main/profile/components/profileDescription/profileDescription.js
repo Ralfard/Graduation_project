@@ -1,3 +1,4 @@
+//уменьшает обои профиля что бы они не были слишком большими
 let profile__wallpaper = document.querySelector('.profile__wallpaper');
 
 if (screen.width < 640) {

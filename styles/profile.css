@@ -1,7 +1,6 @@
 .profile {
-    font-family: Roboto;
     justify-self: center;
-
+    width: 960px;
 }
 
 .nav {
@@ -12,42 +11,9 @@
     margin-bottom: 16px;
 }
 
-.profile__description {
-    padding: 0 12px 12px;
-    background-color: #fff;
-    margin-bottom: 15px;
-}
-
-.profile__avatar {
-    width: 72px;
-    height: 72px;
-    border: 2px white solid;
-    border-radius: 5px;
-    position: absolute;
-    left: 15px;
-    bottom: -20px;
-}
-
 .profile__avatar img {
     border-radius: 5px;
     overflow: hidden;
-}
-
-.profile__wallpaper {
-    position: relative;
-    width: calc(100%+24px);
-    margin: 0 -12px;
-}
-
-
-.profile__info {
-    position: relative;
-}
-
-.profile__user-name {
-    margin-top: 28px;
-    font-size: 1.5rem;
-    font-weight: bolder;
 }
 
 .profile__user-description {
@@ -55,26 +21,6 @@
     line-height: 24px;
 }
 
-.profile__followers {
-    margin-top: 17px;
-    margin-bottom: 8px;
-}
-
-
-
-.profile__registration-date {
-    margin-bottom: 8px;
-}
-
-.profile__edit-profile-link {
-    display: block;
-    margin-top: 8px;
-
-}
-
-.profile__blue-text {
-    color: #3B65AB;
-}
 
 .profile__gray-text {
     color: #595959;
@@ -84,53 +30,9 @@
     display: flex;
 }
 
-.profile__btns {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 10px;
-    height: 40px;
-    margin-right: 8px;
-    margin-top: 12px;
-    border: none;
-    border-radius: 8px;
-}
 
 
-.profile__messages-btn {
-    color: #ffffff;
-    background-color: #4682D8;
 
-}
-
-.profile__messages-text {
-    font-family: Roboto;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin-left: 12px;
-    display: none;
-}
-
-.profile__settings-btn {
-    background-color: #fff;
-    box-shadow: 0px 5px 10px 1px rgba(34, 60, 80, 0.5);
-}
-
-.profile__add-article {
-    color: rgb(72, 72, 72);
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    padding: 12px 16px;
-    background-color: #fff;
-    margin-bottom: 20px;
-}
-
-.add-article__wrapper {
-    display: flex;
-    align-items: center;
-}
 
 .profile__articles {
     background-color: #fff;
