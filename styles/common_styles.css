@@ -40,7 +40,9 @@
 .content-block__p {
 }
 
-
+.display_none{
+    display: none;
+}
 
 .item {
     /* элемент списка */

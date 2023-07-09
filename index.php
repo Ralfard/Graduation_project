@@ -19,23 +19,25 @@ if (isset($_GET['logout'])) {
 
 
     <!-- Иконки -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="font"><!-- Используют предзагрузку что бы шрифты и иконки не показывались пользователю -->
+    <link rel="stylesheet preload" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"as="font"><!-- Используют предзагрузку что бы шрифты и иконки не показывались пользователю -->
     <!-- Шрифт -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet preload" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" as="font"><!-- Используют предзагрузку что бы шрифты и иконки не показывались пользователю -->
 
     <!-- Стили общая часть начало -->
-    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/reset.css">
+    <div id="links" class="display_none">
+        <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/reset.css">
+    
+        <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/header/header.css">
+        <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/header/autorizationModalWindow/autorizationModalWindow.css">
 
-    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/header/header.css">
-    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/header/autorizationModalWindow/autorizationModalWindow.css">
+        <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/nav/nav.css">
+        <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/main/main.css">
 
-    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/nav/nav.css">
-    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/main/main.css">
+        <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/footer/mobile-footer.css">
 
-    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/footer/mobile-footer.css">
-
-    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/style.css">
+        <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/style.css">
+    </div>
     <!-- Стили общая часть конец -->
 
     <title>ТуТ был Я</title>
@@ -46,7 +48,7 @@ if (isset($_GET['logout'])) {
 <body id="body">
 
 
-    <!--                                                                                                            nav
+    <!--                                                                                                      nav
     |                    header                              |                                               |=         header     |
     |_________________________________|                                               |_ _____________|
     |          |                               |                |                                               |                          |
@@ -102,7 +104,7 @@ if (isset($_GET['logout'])) {
 
 
     <script src="js/script.js"></script>
-    <div style="display: none;">
+    <div class="display_none">
         <!-- Favicon  -->
         <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
