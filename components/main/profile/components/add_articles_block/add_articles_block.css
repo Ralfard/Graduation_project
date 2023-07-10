@@ -12,3 +12,6 @@
     display: flex;
     align-items: center;
 }
+.add-article-btn{
+    margin-left: 8px;
+}

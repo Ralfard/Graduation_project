@@ -2,7 +2,6 @@
 .main {
     display: flex;
     justify-content: center;
-    padding-top: 60px;
 }
 
 .article__preview {
@@ -221,6 +220,7 @@
 @media (min-width: 992px) {
     .main {
         grid-template-columns: 220px 1fr 320px;
+        margin-top: 10px;
     }
 
     .content-block {

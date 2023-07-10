@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/main/profile/components/profileDescription/profileDescription.css">
 <section class="profile__description">
+    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/main/profile/components/profileDescription/profileDescription.css">
     <div class="profile__wallpaper">
         <img class="img__cover" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/wallpaper.jpg" alt="">
         <div class="profile__avatar">
@@ -24,5 +24,5 @@
         <p class="profile__followers">500 подписчиков</p>
         <p class="profile__registration-date">На проекте с 15.03.2023</p>
     </div>
+    <script src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/main/profile/components/profileDescription//profileDescription.js"></script>
 </section>
-<script src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/main/profile/components/profileDescription//profileDescription.js"></script>

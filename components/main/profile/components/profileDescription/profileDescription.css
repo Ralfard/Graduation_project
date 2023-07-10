@@ -2,12 +2,13 @@
     padding: 0 12px 12px;
     background-color: #fff;
     margin-bottom: 15px;
+    border-radius: 0 0 10px 10px;
 }
 
 .profile__wallpaper {
     position: relative;
     width: calc(100%+24px);
-    margin: 0 -12px;
+    margin: -26px -20px 0;
 }
 
 .profile__avatar {

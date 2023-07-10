@@ -29,24 +29,37 @@ var fixedScroll = {// отвечает за фиксацию скрола во �
 }
 
 let middleContent = document.getElementById('middleContent');
-bottomLayer.onclick = show_Or_Hide_nav;
 
-// let winWidth=
+
+
+window.addEventListener('load', checkWidth);
+window.addEventListener('resize', checkWidth);
+
 //меняет положение колонок при изменении ширины окна
-// document.onload = checkWidth();
-window.onresize = function checkWidth() {
+function checkWidth() {
     console.log(arguments.callee.name);
     if (path === 'myProfile.php') {
-        if (window.screen.width < 1220) {
+        if (window.screen.width <= 1220) {
             // navMenu[1].style.display = 'none';
             // aside.style.display = 'none';
             // middleContent.style.gridTemplateColumns = '1fr';
             grid_1fr();
         }
-        if (window.screen.width > 1220) {
-            aside.style.display = 'none';
+        else if (window.screen.width > 1220 && window.screen.width <= 1540) {
+            if (navBolleanDesctop === false) {
+                // navMenu[1].style.display = 'block';
+                // aside.style.display = 'block';
+                // middleContent.style.gridTemplateColumns = '220px 1fr 320px';
+                grid_220_1fr();
+            }
+            else if (navBolleanDesctop !== false) {
+                // aside.style.display = 'block';
+                // middleContent.style.gridTemplateColumns = '1fr 320px';
+                grid_1fr();
+            }
+            return navBolleanMobile = false;
         }
-        if (window.screen.width > 1540) {
+        else if (window.screen.width > 1540) {
             if (navBolleanDesctop === false) {
                 // navMenu[1].style.display = 'block';
                 // aside.style.display = 'block';
@@ -56,9 +69,8 @@ window.onresize = function checkWidth() {
             else if (navBolleanDesctop !== false) {
                 // aside.style.display = 'block';
                 // middleContent.style.gridTemplateColumns = '1fr 320px';
-                grid_1fr_320
+                grid_1fr_320();
             }
-            return navBolleanMobile = false;
         }
     }
     else {
@@ -68,23 +80,21 @@ window.onresize = function checkWidth() {
             grid_1fr();
         }
         if (window.screen.width > 992 && window.screen.width <= 1200) {
-
             if (navBolleanDesctop === false) {
                 // navMenu[1].style.display = 'block';
                 // aside.style.display = 'block';
                 // middleContent.style.gridTemplateColumns = '220px 1fr 320px';
                 grid_220_1fr();
-                return navBolleanMobile = false;
             }
             else if (navBolleanDesctop !== false) {
                 // aside.style.display = 'block';
                 // middleContent.style.gridTemplateColumns = '1fr 320px';
                 grid_1fr();
             }
+            return navBolleanMobile = false;
         }
         if (window.screen.width > 1200) {
             if (navBolleanDesctop === false) {
-                console.log(3);
                 grid_220_1fr_320();
             }
             else if (navBolleanDesctop !== false) {
@@ -94,11 +104,11 @@ window.onresize = function checkWidth() {
     }
 };
 
-// открывает\закрыват nav
+bottomLayer.onclick = show_Or_Hide_nav;
 navBurgerBtn.onclick = show_Or_Hide_nav;
 headerBurgerBtn.onclick = show_Or_Hide_nav;
 
-
+// открывает\закрыват nav
 function show_Or_Hide_nav() {
     console.log(arguments.callee.name);
     //для сайтов с широким блоком main
@@ -115,20 +125,20 @@ function show_Or_Hide_nav() {
         }
         else if (window.screen.width > 1220 && window.screen.width <= 1540) {
             if (navBolleanDesctop === false) {
-                grid_220_1fr();
-                return navBolleanDesctop = !navBolleanDesctop;
-            }
-            else if (navBolleanDesctop !== false) {
                 grid_1fr();
                 return navBolleanDesctop = !navBolleanDesctop;
             }
+            else if (navBolleanDesctop !== false) {
+                grid_220_1fr();
+                return navBolleanDesctop = !navBolleanDesctop;
+            }
         }
-        else if (window.screen.width <= 992) {
+        else if (window.screen.width <= 1220) {
             if (navBolleanMobile === false) {
-                hide_mobile_menu();
+                show_mobile_menu();
             }
             else if (navBolleanMobile != false) {
-                show_mobile_menu();
+                hide_mobile_menu();
             }
         }
     }
