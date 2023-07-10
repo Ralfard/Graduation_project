@@ -76,7 +76,7 @@ if (isset($_GET['logout'])) {
         include_once($_SERVER['DOCUMENT_ROOT']."/components/nav/nav.php");
 
         //MAIN 
-        include_once($_SERVER['DOCUMENT_ROOT'].'/components/main/profile/myProfile.php');
+        include_once($_SERVER['DOCUMENT_ROOT'].'/components/myProfile/myProfile.php');
 
         //ASAID
         include_once($_SERVER['DOCUMENT_ROOT'].'/components/aside/aside.php');
