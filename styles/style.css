@@ -1,7 +1,9 @@
 body {
     font-family: roboto;
 }
-
+.flex-row{
+    display: flex;
+}
 .middle-content {
     display: grid;
     grid-template-columns: 220px 1fr 320px;
@@ -11,6 +13,7 @@ body {
 .content-wrapper {
     border-radius: 10px;
     background-color: #fff;
+    padding: 16px;
 }
 
 .link {
@@ -168,4 +171,24 @@ body {
 
 .content_main-page {
     width: 100%;
+}
+
+/* Малые девайсы («ландшафтные телефоны», >= 576px) */
+@media (min-width: 576px) {
+    
+}
+
+/* Средние девайсы («таблетки», >= 768px) */
+@media (min-width: 768px) {
+    
+}
+
+/* Большие девайсы (десктопы, >= 992px) */
+@media (min-width: 992px) {
+
+}
+
+/* Экстрабольшие девайсы (большие десктопы, >= 1200px) */
+@media (min-width: 1200px) {
+    
 }

@@ -1,5 +1,4 @@
-
-let aside = document.getElementById('aside');
+let aside = document.getElementById('aside')?document.getElementById('aside'):false;
 let navMenu = document.querySelectorAll('.nav');
 let body = document.querySelector('body');
 
@@ -179,13 +178,15 @@ function show_Or_Hide_nav() {
 function grid_1fr() {
     console.log(arguments.callee.name);
     navMenu[1].style.display = 'none';
-    aside.style.display = 'none';
+    aside?aside.style.display = 'none':false;
+    // aside.style.display = 'none';
     middleContent.style.gridTemplateColumns = '1fr';
 }
 function grid_220_1fr() {
     console.log(arguments.callee.name);
     navMenu[1].style.display = 'block';
-    aside.style.display = 'none';
+    aside?aside.style.display = 'none':false;
+    // aside.style.display = 'none';
     middleContent.style.gridTemplateColumns = '220px 1fr ';
 }
 function hide_mobile_menu() {
@@ -227,7 +228,6 @@ function useAJAX(url, sendData = '', method = "POST") {
 
 // создает кросбраузерный AJAX объект
 function createAJAXObject() {
-    console.log(1);
     let ajax = null;
     try {
         ajax = new XMLHttpRequest();

@@ -79,10 +79,18 @@
 .article__content {
     margin: 10px 0;
 }
-
+.article__content-h1{
+    font-weight: bold;
+    font-size: 24px;
+    font-family: roboto;
+    color: black;
+    margin-bottom: 12px;
+    margin: 0 20px 12px;
+    line-height: 32px;
+}
 .article__content-h2 {
     font-weight: bold;
-    font-size: 1.4em;
+    font-size: 20px;
     font-family: roboto;
     color: black;
     margin-bottom: 12px;
@@ -92,7 +100,7 @@
 
 .article__content-h3 {
     font-weight: bold;
-    font-size: 1.17em;
+    font-size: 18px;
     font-family: roboto;
     color: black;
     margin-bottom: 12px;

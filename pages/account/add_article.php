@@ -1,30 +1,121 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+session_start();
+include_once('../../PHP_logic/dataBase/db_connect.php'); //база данных
+// include_once("PHP_logic/autorization/autorization.php"); //файл с php скриптами
+
+if (isset($_GET['logout'])) {
+    unset($_SESSION['user']);
+    header("Location: /index.php");
+    exit;
+}
+?>
+<!DOCTYPE html><!-- стоит тут потому что иначе включится режим совместимости -->
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <div id="links" class="display_none">
+        <!-- Иконки -->
+        <link rel="stylesheet preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="font"><!-- Используют предзагрузку что бы шрифты и иконки не показывались пользователю -->
+        <link rel="stylesheet preload" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" as="font"><!-- Используют предзагрузку что бы шрифты и иконки не показывались пользователю -->
+        <!-- Шрифт -->
+        <link rel="stylesheet preload" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" as="font"><!-- Используют предзагрузку что бы шрифты и иконки не показывались пользователю -->
+
+        <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/reset.css">
+
+        <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/header/header.css">
+        <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/header/autorizationModalWindow/autorizationModalWindow.css">
+
+        <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/nav/nav.css">
+        <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/main/main.css">
+
+        <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/footer/mobile-footer.css">
+
+        <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/style.css">
+    </div>
 
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- иконки-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../styles/common_styles.css">
-    <link rel="stylesheet" href="../styles/reset.css">
-    <link rel="stylesheet" href="../styles/add_article.css">
-
-    <link rel="stylesheet" href="../plugins/build/content-tools.min.css">
-
-    <style>
-        .author {
-            font-style: italic;
-            font-weight: bold;
-        }
-    </style>
+    <title>ТуТ был Я</title>
 </head>
+
+<body id="body">
+
+
+    <!--                                                                                                      nav
+    |                    header                              |                                               |=         header     |
+    |_________________________________|                                               |_ _____________|
+    |          |                                                |                                               |                          |
+    |          |                                                |                                               |                          |
+    |          |                                                |                                               |                          |
+    |          |                                                |                                               |       main            |           asaid нету
+    |  nav   |     main                                    |                                               |                          |
+    |          |                                                |                                               |                          |
+    |          |                                                |                                               |                          |
+    |          |                                                |                                               |                          |
+    |          |                                                |                                               |_______________|
+    |          |                                                |                                               | footer-mobile      |
+-->
+
+
+
+    <?php
+    //HEADER
+    if (isset($_SESSION['user'])) {
+        include_once($_SERVER['DOCUMENT_ROOT'] . '/components/header/header_authorized.php');
+    } else {
+        header('Location: ' . $_SERVER['DOCUMENT_ROOT'] . 'index.php');
+    }
+    ?>
+
+    <div id="middleContent" class="middle-content">
+
+
+        <?php
+        include_once($_SERVER['DOCUMENT_ROOT'] . '/components\nav/nav.php');
+
+        include_once($_SERVER['DOCUMENT_ROOT'] . '/components\add__article_create\add__article_create.php');
+
+        include_once($_SERVER['DOCUMENT_ROOT'] . '/components/aside/aside.php');
+
+        ?>
+
+
+    </div>
+
+
+    <?php
+    //FOOTER
+    if (isset($_SESSION['user'])) {
+        include_once($_SERVER['DOCUMENT_ROOT'] . '/components/footer/mobile_footer_authorized.php');
+    } else {
+        include_once($_SERVER['DOCUMENT_ROOT'] . '/components/footer/mobile_footer_not_authorized.php');
+    }
+    ?>
+
+
+    <script src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/js/script.js"></script>
+
+    <div class="display_none">
+        <!-- Favicon  -->
+        <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/favicons/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/favicons/favicon-32x32.png">
+        <link rel="manifest" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/site.webmanifest">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+    </div>
+</body>
+
+</html>
+
+
+
+
+<!--
 
 <body style="background-color: #F2F0F2;">
     <main class="main">
@@ -43,4 +134,4 @@
     <script src="../plugins/build/editor.js"></script>
 </body>
 
-</html>
+</html> -->

@@ -5,7 +5,8 @@ include_once('../../PHP_logic/dataBase/db_connect.php'); //база данных
 
 if (isset($_GET['logout'])) {
     unset($_SESSION['user']);
-    header("Location: {$_SERVER['HTTP_REFERER']}");
+    header("Location: /index.php");
+    exit;
 }
 ?>
 <!DOCTYPE html><!-- стоит тут потому что иначе включится режим совместимости -->
