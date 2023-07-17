@@ -76,7 +76,7 @@ autForm.onsubmit=function asincAutorization(event) {
 
     let XHR = createAJAXObject();
 
-    XHR.open("POST", "PHP_logic/autorization/autorization.php");
+    XHR.open("POST", "/PHP_logic/autorization/autorization.php");
     XHR.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     XHR.send('email_aut=' + autData.userMail + '&password_aut=' + autData.userPass);
 
@@ -107,7 +107,7 @@ registrationForm.onsubmit=function asincRegistration(event) {
 
     let XHR = createAJAXObject();
 
-    XHR.open('POST', "PHP_logic/registration/registration.php")
+    XHR.open('POST', "/PHP_logic/registration/registration.php")
     XHR.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     XHR.send('name_reg='+regData.regName+'&email_reg='+regData.regMail+'&password_reg='+regData.regPass);
 
@@ -156,27 +156,7 @@ function checkFormLength(mail, pass) {
     }
 }
 
-// создает кросбраузерный AJAX объект
-function createAJAXObject() {
-    let ajax = null;
-    try {
-        ajax = new XMLHttpRequest();
-    } catch (e) {
-        try {//for new IE
-            ajax = new ActiveXObject("Msxml2.XMLHTTP");
-        }
-        catch (e) {
-            try {
-                ajax = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            catch (e) {
-                alert("AJAX не поддерживается вашим браузером!")
-                return false;
-            }
-        }
-    }
-    return ajax;
-}
+
 
 
 

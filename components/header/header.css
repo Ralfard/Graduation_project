@@ -57,6 +57,7 @@
     align-items: center;
     justify-content: center;
     transition: 0.5s;
+    cursor: pointer;
 }
 
 .header__add-article:hover {

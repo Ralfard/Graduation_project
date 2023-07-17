@@ -1,5 +1,6 @@
 body {
     font-family: roboto;
+    background-color: #f0f0f0;
 }
 .flex-row{
     display: flex;
@@ -8,12 +9,15 @@ body {
     display: grid;
     grid-template-columns: 220px 1fr 320px;
     margin-top: 60px;
+
 }
 
 .content-wrapper {
     border-radius: 10px;
     background-color: #fff;
     padding: 16px;
+    box-shadow: 0px 1px 5px 0px rgba(34, 60, 80, 0.5);
+    
 }
 
 .link {
@@ -94,7 +98,7 @@ body {
     margin: 12px 0;
 }
 
-.content-block__p {}
+
 
 .display_none {
     display: none;

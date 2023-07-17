@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!$mysqli){
+if (!$mysqli) {
     include_once('../dataBase/db_connect.php');
 }
 
@@ -31,13 +31,14 @@ if ($_POST['email_aut'] && $_POST['password_aut']) { //Авторизацион�
             echo 'Не правильный логин или пароль';
         }
     }
-}else{
+} else {
     echo 'Заполнены не все поля';
 }
 
-function sanitizeData($data) {
-    $data=strip_tags($data);
-    $data=htmlentities($data);
-    $data=stripslashes($data);
+function sanitizeData($data)
+{
+    $data = strip_tags($data);
+    $data = htmlentities($data);
+    $data = stripslashes($data);
     return $data;
 }

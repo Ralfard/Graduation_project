@@ -1,11 +1,10 @@
-
 <header class="header">
 
     <div class="header__left">
         <div id="headerBurgerBtn" class="header__img-burger-wrapper ">
             <img class="header__burger" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/burgerIcon.svg" alt="">
         </div>
-        <a href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>">
+        <a href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/pages\popular.php">
             <div class="header__img-logo-wrapper ">
                 <img class="header__logo" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/mainLogo.svg" alt="">
             </div>
@@ -22,7 +21,6 @@
         </a>
         <input class="header__search-input" type="search" name="search" id="search" placeholder="Поиск">
     </div>
-    <button class="header__add-article"><span class="header__add-icon">+</span><span class="header__add-text">Создать</span></button>
 
 
     <div class="header__right">
@@ -40,7 +38,7 @@
                 </span>
             </div>
         </a>
-        <div  class="header__login-block loginBtn_forJS">
+        <div class="header__login-block loginBtn_forJS">
             <span class="material-icons header__login-icon">
                 perm_identity
             </span>

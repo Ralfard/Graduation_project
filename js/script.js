@@ -1,4 +1,4 @@
-let aside = document.getElementById('aside')?document.getElementById('aside'):false;
+let aside = document.getElementById('aside') ? document.getElementById('aside') : false;
 let navMenu = document.querySelectorAll('.nav');
 let body = document.querySelector('body');
 
@@ -178,14 +178,14 @@ function show_Or_Hide_nav() {
 function grid_1fr() {
     console.log(arguments.callee.name);
     navMenu[1].style.display = 'none';
-    aside?aside.style.display = 'none':false;
+    aside ? aside.style.display = 'none' : false;
     // aside.style.display = 'none';
     middleContent.style.gridTemplateColumns = '1fr';
 }
 function grid_220_1fr() {
     console.log(arguments.callee.name);
     navMenu[1].style.display = 'block';
-    aside?aside.style.display = 'none':false;
+    aside ? aside.style.display = 'none' : false;
     // aside.style.display = 'none';
     middleContent.style.gridTemplateColumns = '220px 1fr ';
 }
@@ -206,18 +206,17 @@ function show_mobile_menu() {
 function grid_220_1fr_320() {
     console.log(arguments.callee.name);
     navMenu[1].style.display = 'block';
-    aside.style.display = 'block';
+    aside ? aside.style.display = 'block' : false;
     middleContent.style.gridTemplateColumns = '220px 1fr 320px';
 }
 function grid_1fr_320() {
     console.log(arguments.callee.name);
     navMenu[1].style.display = 'none';
-    aside.style.display = 'block';
+    aside ? aside.style.display = 'block' : false;
     middleContent.style.gridTemplateColumns = '1fr 320px';
 }
 
 function useAJAX(url, sendData = '', method = "POST") {
-    console.log(2);
     let XHR = createAJAXObject();
     XHR.open(method, url)
     XHR.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

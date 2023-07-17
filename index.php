@@ -99,7 +99,7 @@ if (isset($_GET['logout'])) {
     ?>
 
 
-    <script src="js/script.js"></script>
+    <script src="/js/script.js"></script>
     <div class="display_none">
         <!-- Favicon  -->
         <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">

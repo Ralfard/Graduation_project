@@ -8,6 +8,8 @@ if (isset($_GET['logout'])) {
     header("Location: /index.php");
     exit;
 }
+
+
 ?>
 <!DOCTYPE html><!-- стоит тут потому что иначе включится режим совместимости -->
 <html lang="ru">
@@ -67,7 +69,7 @@ if (isset($_GET['logout'])) {
     if (isset($_SESSION['user'])) {
         include_once($_SERVER['DOCUMENT_ROOT'].'/components/header/header_authorized.php');
     } else {
-        header('Location: '.$_SERVER['DOCUMENT_ROOT'].'index.php');
+        header('Location: '.$_SERVER['DOCUMENT_ROOT'].'/index.php');
     }
     ?>
 
@@ -107,6 +109,6 @@ if (isset($_GET['logout'])) {
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
     </div>
-</body>
 
+</body>
 </html>

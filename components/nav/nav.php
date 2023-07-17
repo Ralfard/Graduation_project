@@ -10,7 +10,7 @@
     <ol class="nav__list">
 
         <li class="nav__item">
-            <a class="nav__link" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/main/popularArticles/popularArticles.php">
+            <a class="nav__link" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>\pages\popular.php">
                 <div class="nav__span-wrapper">
                     <span class="material-icons">
                         local_fire_department
@@ -85,7 +85,7 @@
     <ol class="nav__list">
 
         <li class="nav__item">
-            <a class="nav__link" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/main/popularArticles/popularArticles.php" >
+            <a class="nav__link" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/pages\popular.php" >
                 <div class="nav__span-wrapper">
                     <span class="material-icons">
                         local_fire_department

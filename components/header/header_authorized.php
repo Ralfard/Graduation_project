@@ -5,7 +5,7 @@
             <img class="header__burger" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/burgerIcon.svg" alt="">
         </div>
 
-        <a href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>">
+        <a href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/pages\popular.php">
             <div class="header__img-logo-wrapper ">
                 <img class="header__logo" src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/mainLogo.svg" alt="">
             </div>
@@ -22,7 +22,9 @@
         </a>
         <input class="header__search-input" type="search" name="search" id="search" placeholder="Поиск">
     </div>
-    <button class="header__add-article"><span class="header__add-icon">+</span><span class="header__add-text">Создать</span></button>
+    <a class="header__add-article" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/pages\account\add_article.php">
+        <button class="header__add-article"><span class="header__add-icon">+</span><span class="header__add-text">Создать</span></button>
+    </a>
 
 
     <div class="header__right">
@@ -48,7 +50,7 @@
             </div>
         </a>
         <a class="header__link" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/pages/account/myProfile.php">
-            <div class="header__user-icon-wrapper header__icon">
+            <div class="header__user-icon-wrapper header__icon" title="<?= $_SESSION['user']['id'] ?>">
                 <img class="img_cover" src="<?= $_SESSION['user']['icon'] ?>" alt="">
             </div>
         </a>
