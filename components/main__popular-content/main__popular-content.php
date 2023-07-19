@@ -58,15 +58,15 @@
 
                         <div class="preview__bottom-panel_left">
                             <button class="preview__bottom-panel-action preview__bottom-panel-action_red">
-                                <span class="material-icons">
+                                <span class="material-icons likesBtn" data-id="<?php echo $Article['id'] ?>">
                                     thumb_up_off_alt
                                 </span>
-                                <span class="article__counter preview__panel-text">
+                                <span class="article__counter preview__panel-text ">
                                     <?php echo $Article['likes'] ?>
                                 </span>
                             </button>
-                            <button class="preview__bottom-panel-action">
-                                <span class="material-icons">
+                            <button class="preview__bottom-panel-action ">
+                                <span class="material-icons comentsBtn" data-id="<?php echo $Article['id'] ?>">
                                     chat_bubble_outline
                                 </span>
                                 <span class="article__counter preview__panel-text">
@@ -74,8 +74,8 @@
                                 </span>
                             </button>
 
-                            <button class="preview__bottom-panel-action">
-                                <span class="material-icons">
+                            <button class="preview__bottom-panel-action ">
+                                <span class="material-icons bookmarksBtn" data-id="<?php echo $Article['id'] ?>">
                                     turned_in_not
                                 </span>
                             </button>

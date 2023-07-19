@@ -248,6 +248,34 @@ function createAJAXObject() {
 }
 
 
+let bottomPanels_of_articles=document.getElementsByClassName('preview__bottom-panel');
+
+let arr=[...bottomPanels_of_articles];
+
+arr.forEach(elem=>elem.onclick=function connect_buttons(e){
+    if(e.target.className.includes('likesBtn')){
+        console.log(e.target.dataset.id);
+        let XHR=useAJAX('/PHP_logic/articles__likes/articles__likes.php', `articleID=${e.target.dataset.id}`);
+        XHR.onreadystatechange=function(){
+            if(this.readyState=== 4 && this.status===200){
+                try {
+                    
+                } catch (error) {
+                    alert(`Возникла непредвиденная ошибка\n${error}`)
+                }
+            }
+        }
+    }
+    else if(e.target.className.includes('comentsBtn')){
+        console.log(e.target.dataset.id);
+    }
+    else if(e.target.className.includes('bookmarksBtn')){
+        console.log(e.target.dataset.id);
+        }
+});
+
+
+
 
 
 

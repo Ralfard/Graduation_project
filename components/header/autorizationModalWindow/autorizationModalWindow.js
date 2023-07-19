@@ -107,7 +107,7 @@ registrationForm.onsubmit=function asincRegistration(event) {
 
     let XHR = createAJAXObject();
 
-    XHR.open('POST', "/PHP_logic/registration/registration.php")
+    XHR.open('POST', "/PHP_logic/registration/registration.php");
     XHR.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     XHR.send('name_reg='+regData.regName+'&email_reg='+regData.regMail+'&password_reg='+regData.regPass);
 

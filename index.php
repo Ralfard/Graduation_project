@@ -2,7 +2,7 @@
 session_start();
 include_once('PHP_logic/dataBase/db_connect.php'); //база данных
 // include_once("PHP_logic/autorization/autorization.php"); //файл с php скриптами
-
+header('Location: pages/popular.php');
 if (isset($_GET['logout'])) {
     unset($_SESSION['user']);
     header("Location: {$_SERVER['HTTP_REFERER']}");
