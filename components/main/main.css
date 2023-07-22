@@ -2,10 +2,14 @@
     display: flex;
     justify-content: center;
 }
-
-.article-feed {
+.main__wrapper{
+    max-width: 640px;
     flex-direction: column;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 12px;
 }
+
 
 .article__preview {
     padding: 16px 0;
@@ -186,7 +190,12 @@
 .preview__view-counter {
     color: #595959;
 }
-
+.like_active{
+    color: rgb(228, 85, 114);
+}
+.bookmark_active{
+    color: #06f;
+}
 
 
 
@@ -204,9 +213,7 @@
         display: block;
     }
 
-    .article__content-img {
-        height: 150px;
-    }
+
 }
 
 @media (min-width: 640px) {
@@ -215,7 +222,7 @@
     }
 
     .article__content-img {
-        height: 230px;
+        height: 448px;
     }
 
     .content-block {
@@ -244,9 +251,7 @@
     .content-block {
         padding: 16px 20px;
     }
-    .article__content-img {
-        height: 360px;
-    }
+
     .content_main-page {
         max-width: 640px;
         box-sizing: border-box;
@@ -255,7 +260,5 @@
 
 /* Экстрабольшие девайсы (большие десктопы, >= 1200px) */
 @media (min-width: 1200px) {
-    .article__content-img {
-        height: 500px;
-    }
+
 }

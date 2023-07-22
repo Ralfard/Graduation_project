@@ -3,13 +3,15 @@
 
     $sqlArticle = "SELECT * FROM `articles` WHERE `id`=$articleID";
     $requestArticle = $mysqli->query($sqlArticle);
+   
 
     if (($requestArticle->num_rows) > 0) {
         $Article = $requestArticle->fetch_assoc();
         $Article['date'] = date_format(date_create($Article['date']), "d.m.Y");
         $Author = getAuthor($Article['author_id'], $mysqli);
-
+ 
         // $Article['content'] = setSrc($Article['content'], $Article['img_name']);
+        increment_views($mysqli, $Article['id']);// * ++просмотры
     ?>
         <article id="article" class="content content_main-page content-wrapper">
             <section class="">
@@ -89,8 +91,9 @@
 
         return $arr;
     }
+ 
     ?>
-
+ 
 </main>
 
 </body>

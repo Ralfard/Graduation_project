@@ -50,7 +50,7 @@ if (isset($_GET['logout'])) {
     |          |                               |                |                                               |                          |
     |          |                               |                |                                               |                          |
     |          |                               |                |                                               |                          |
-    |          |                               |                |                                               |       main            |           asaid нету
+    |          |                               |                |                                               |                                                                                                                                    main            |           asaid нету
     |  nav   |     main                   |   asaide    |                                               |                          |
     |          |                               |                |                                               |                          |
     |          |                               |                |                                               |                          |

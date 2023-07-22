@@ -254,14 +254,31 @@ let arr=[...bottomPanels_of_articles];
 
 arr.forEach(elem=>elem.onclick=function connect_buttons(e){
     if(e.target.className.includes('likesBtn')){
-        console.log(e.target.dataset.id);
-        let XHR=useAJAX('/PHP_logic/articles__likes/articles__likes.php', `articleID=${e.target.dataset.id}`);
+        let btnState=e.target.className.includes('like_active')?true:false;
+        console.log(btnState);
+        let request={
+            id:e.target.dataset.id,
+            btnState:btnState
+        }
+        console.log(JSON.stringify(request));
+        let XHR=useAJAX('/PHP_logic/articles__likes/articles__likes.php', `data=${JSON.stringify(request)}`);
         XHR.onreadystatechange=function(){
             if(this.readyState=== 4 && this.status===200){
                 try {
-                    
+                    let response=JSON.parse(XHR.responseText);//превращаем ответ json в объект 
+                    console.log(response);
+                    if(response.toggle===1){
+                        e.target.classList.add('like_active');
+                        e.target.nextElementSibling.innerText=response.count;
+                    }
+                    else if(response.toggle=== -1){
+                        e.target.classList.remove('like_active');
+                        e.target.nextElementSibling.innerText=response.count;
+                    }
                 } catch (error) {
-                    alert(`Возникла непредвиденная ошибка\n${error}`)
+
+                    alert(`Возникла непредвиденная ошибка\n${error}`);
+
                 }
             }
         }

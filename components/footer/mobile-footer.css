@@ -17,12 +17,8 @@
     width: 28px;
 }
 
-.material-icons-outlined {
-    color: black;
-    font-size: 28px;
-}
 
-.material-icons {
+.material-icons_black {
     color: black;
     font-size: 28px;
 }

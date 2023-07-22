@@ -1,7 +1,8 @@
 <?php
 session_start();
-include_once($_SERVER['DOCUMENT_ROOT'] . '/PHP_logic/dataBase/db_connect.php'); //база данных
-// include_once("PHP_logic/autorization/autorization.php"); //файл с php скриптами
+include_once($_SERVER['DOCUMENT_ROOT'] . '/PHP_logic/dataBase/db_connect.php'); //*база данных
+include_once($_SERVER['DOCUMENT_ROOT'].'/PHP_logic/functions.php');  //*мои функции
+
 
 if (isset($_GET['logout'])) {
     unset($_SESSION['user']);
@@ -74,7 +75,7 @@ $articleID = $_GET['id'];
 
     <div id="middleContent" class="middle-content">
 
-
+ 
         <?php
         //NAV
         include_once($_SERVER['DOCUMENT_ROOT'] . "/components/nav/nav.php");

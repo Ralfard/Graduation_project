@@ -11,7 +11,7 @@ if ($_POST['email_aut'] && $_POST['password_aut']) { //Авторизацион�
     if (count($error)) {
         $_SESSION['message'] = implode('<br/>', $error);
     } else {
-
+ 
         $mail = sanitizeData($_POST['email_aut']);
         $pass = sanitizeData($_POST['password_aut']);
 

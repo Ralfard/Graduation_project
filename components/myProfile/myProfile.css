@@ -100,10 +100,7 @@
 }
 
 @media (min-width: 640px) {
-    .main section {
-        border-radius: 10px;
-        background-color: #fff;
-    }
+
 }
 
 /* Средние девайсы («таблетки», >= 768px) */
