@@ -1,7 +1,7 @@
 <?php
 session_start();
-include_once($_SERVER['DOCUMENT_ROOT'] . '/PHP_logic/dataBase/db_connect.php'); //*база данных
-include_once($_SERVER['DOCUMENT_ROOT'].'/PHP_logic/functions.php');  //*мои функции
+require_once($_SERVER['DOCUMENT_ROOT'] . '/PHP_logic/dataBase/db_connect.php'); //*база данных
+require_once($_SERVER['DOCUMENT_ROOT'].'/PHP_logic/functions.php');  //*мои функции
 
 
 if (isset($_GET['logout'])) {
@@ -9,6 +9,7 @@ if (isset($_GET['logout'])) {
     header("Location: {$_SERVER['HTTP_REFERER']}");
 }
 $articleID = $_GET['id'];
+$_SESSION['articleID']=$_GET['id'];
 ?>
 <!DOCTYPE html><!-- стоит тут потому что иначе включится режим совместимости -->
 <html lang="ru">
@@ -71,7 +72,7 @@ $articleID = $_GET['id'];
         include_once($_SERVER['DOCUMENT_ROOT'] . '/components/header/header_not_authorized.php');
     }
     ?>
-
+ 
 
     <div id="middleContent" class="middle-content">
 

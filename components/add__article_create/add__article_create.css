@@ -8,29 +8,21 @@
     position: relative;
     padding-bottom: 92px;
 }
-.editor__select{
+
+.editor__select {
     border: none;
     background-color: unset;
 }
-.editor__select:hover{
+
+.editor__select:hover {
     color: rgba(50, 50, 50, 0.7);
 }
-.selector__option{
+
+.selector__option {
     background-color: #fff;
 }
-.btn {
-    cursor: pointer;
-    font-size: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 10px;
-    height: 40px;
-    border: none;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0px 1px 5px 0px rgba(34, 60, 80, 0.5);
-}
+
+
 
 .editor__toolbar {
     display: flex;
@@ -115,11 +107,12 @@
     display: none;
 }
 
-.margin_top-16px{
+.margin_top-16px {
     margin-top: 16px;
     margin-bottom: 16px;
 }
-.for-close{
+
+.for-close {
     top: 14px;
     right: 10px;
 }

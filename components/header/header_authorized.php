@@ -28,13 +28,13 @@
 
 
     <div class="header__right">
-        <a class="header__link" href="">
+        <button id="openChat">
             <div class="header__link-icon-wrapper header__icon">
                 <span class="material-icons-outlined header__icon">
                     sms
                 </span>
             </div>
-        </a>
+        </button>
         <a class="header__link" href="">
             <div class="header__link-icon-wrapper header__icon">
                 <span class="material-icons-outlined header__icon">

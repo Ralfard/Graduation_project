@@ -260,7 +260,6 @@ arr.forEach(elem=>elem.onclick=function connect_buttons(e){
             id:e.target.dataset.id,
             btnState:btnState
         }
-        console.log(JSON.stringify(request));
         let XHR=useAJAX('/PHP_logic/articles__likes/articles__likes.php', `data=${JSON.stringify(request)}`);
         XHR.onreadystatechange=function(){
             if(this.readyState=== 4 && this.status===200){

@@ -13,7 +13,7 @@ if ($_POST['name_reg'] && $_POST['email_reg'] && $_POST['password_reg']) { //Р�
         $name = sanitizeData($_POST['name_reg']);
         $mail = sanitizeData($_POST['email_reg']);
         $pass = sanitizeData($_POST['password_reg']);
-
+ 
         if(checkUserMail($mail, $mysqli)===false){//проверка почты на совпадения
             echo "Пользователь с такой почтой уже зарегистрирован";
             exit;

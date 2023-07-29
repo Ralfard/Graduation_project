@@ -5,7 +5,7 @@ include_once($_SERVER['DOCUMENT_ROOT'] . '/PHP_logic\dataBase\db_connect.php');
 if (isset($_SESSION['user'])) {
     if ($_POST['data']) {
         $data = json_decode($_POST['data'], true);
-
+        
         $toggle = $data['btnState'] === true ? -1 : 1;
         user_likes($data['id'], $_SESSION['user']['id'], $toggle, $mysqli);
         $count = increment_or_decrement($data['id'], $toggle, $mysqli);
@@ -25,7 +25,7 @@ function increment_or_decrement($id, $num, $DB)
     $count = mysqli_fetch_assoc($request);
 
     return $count['likes'];
-}
+} 
 
 
 function user_likes($articleID,  $userID,   $num, $DB) // в зависимости от $num удаляет или добавляет статью в лайкнутые статьи пользователя

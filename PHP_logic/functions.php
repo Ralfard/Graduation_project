@@ -17,3 +17,19 @@ function increment_views($DB, $articleID)
 { //* обновляет счетчик просмотров статьи
     mysqli_query($DB, "UPDATE articles SET views=views+1 WHERE id=$articleID");
 }
+function sanitizeString($str)
+{
+    $str = stripslashes($str);
+    $str = strip_tags($str);
+    $str = htmlentities($str);
+    return $str;
+}
+function sanitizeMySQL($pdo, $str)
+{
+    $str = $pdo->quote($str);
+    $str = sanitizeString($str);
+    return $str;
+}
+
+
+
