@@ -1,0 +1,34 @@
+body{
+    font-family: sans-serif;
+    height: 150vh;
+}
+a{
+    color: #fff;
+}
+.header {
+    box-sizing: border-box;
+    height: 60px;
+    background-color: #111111;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 21px;
+}
+.header__title {
+    font-size: 19px;
+    font-weight: bolder;
+    color: #fff;
+    text-transform: uppercase;
+}
+.header__list {
+    list-style-type: none;
+    
+    color: #fff;
+}
+.header__list li{
+    display: inline;
+}

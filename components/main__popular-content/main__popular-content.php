@@ -17,7 +17,7 @@
                     <div class="preview__top-panel">
 
                         <div class="preview__top-panel_left">
-                            <a href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/pages/userProfile.php?id=<?php $Article['id'] ?>">
+                            <a href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/pages/userProfile.php?id=<?php echo $Author['id'] ?>">
                                 <div class="preview__tag">
                                     <div class="img__wrapper_tag user-avatar_rectangle">
                                         <img class="img__cover" src="<?php echo $Author['icon'] ?>" alt="">

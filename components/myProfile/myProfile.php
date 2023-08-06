@@ -16,7 +16,7 @@
 
         include_once($_SERVER['DOCUMENT_ROOT'] . '/components/profile__desctop-left-block/profile__desctop-left-block.php');
 
-        include_once($_SERVER['DOCUMENT_ROOT'] . '/components/profile__desctop-right-block/profile__desctop-right-block.php');
+        // include_once($_SERVER['DOCUMENT_ROOT'] . '/components/profile__desctop-right-block/profile__desctop-right-block.php');
         ?>
 
     </div>

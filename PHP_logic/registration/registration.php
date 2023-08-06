@@ -13,17 +13,19 @@ if ($_POST['name_reg'] && $_POST['email_reg'] && $_POST['password_reg']) { //Р�
         $name = sanitizeData($_POST['name_reg']);
         $mail = sanitizeData($_POST['email_reg']);
         $pass = sanitizeData($_POST['password_reg']);
+        $date = date("Y-m-d");
  
         if(checkUserMail($mail, $mysqli)===false){//проверка почты на совпадения
             echo "Пользователь с такой почтой уже зарегистрирован";
             exit;
         }
         
-        $query = "INSERT INTO `users` (`name`, `mail`, `pass`) VALUES
+        $query = "INSERT INTO `users` (`name`, `mail`, `pass`, `date_registration`) VALUES
         (
             '" . mysqli_real_escape_string($mysqli, $name) /*экранируем символы для безопасности*/ . "',
             '" . mysqli_real_escape_string($mysqli, $mail) . "',
-            '" . mysqli_real_escape_string($mysqli, $pass) . /*у последнего значения не должно быть запятой в конце*/ "'
+            '" . mysqli_real_escape_string($mysqli, $pass) . "',
+            '" . mysqli_real_escape_string($mysqli, $date) . /*у последнего значения не должно быть запятой в конце*/ "'
         )";
 
         $result = mysqli_query($mysqli, $query) or die("Ошибка " . mysqli_error($mysqli));
@@ -32,7 +34,7 @@ if ($_POST['name_reg'] && $_POST['email_reg'] && $_POST['password_reg']) { //Р�
 
     }
 } else {
-    $error_msg = 'Не правильный логин или пароль';
+    $error_msg = 'Введен не корректный логин или пароль';
 }
 
 function checkUserMail($mail, $mysqli){

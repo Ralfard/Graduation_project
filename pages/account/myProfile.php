@@ -1,7 +1,8 @@
 <?php
 session_start();
 include_once('../../PHP_logic/dataBase/db_connect.php'); //база данных
-// include_once("PHP_logic/autorization/autorization.php"); //файл с php скриптами
+require_once($_SERVER['DOCUMENT_ROOT'].'/PHP_logic/functions.php');  //*мои функции
+
 
 if (isset($_GET['logout'])) {
     unset($_SESSION['user']);
@@ -11,7 +12,7 @@ if (isset($_GET['logout'])) {
 
 
 ?>
-<!DOCTYPE html><!-- стоит тут потому что иначе включится режим совместимости -->
+<!DOCTYPE html>
 <html lang="ru">
 
 <head>

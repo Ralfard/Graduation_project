@@ -1,14 +1,16 @@
 .profile__articles {
     background-color: #fff;
-    padding: 16px;
     margin-bottom: 38px;
+    grid-column: 1/3;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .profile__alternative {
     padding: 18px 0;
     margin: auto;
     text-align: center;
-
 }
 
 .profile__alternative-text {
@@ -28,3 +30,31 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+.content-wrapper {
+    box-sizing: border-box;
+    max-width: 640px;
+}
+
+/* Малые девайсы («ландшафтные телефоны», >= 576px) */
+@media (min-width: 576px) {}
+
+@media (min-width: 640px) {
+    .profile__articles {
+        padding: 16px;
+    }
+}
+
+/* Средние девайсы («таблетки», >= 768px) */
+@media (min-width: 768px) {}
+
+/* Большие девайсы (десктопы, >= 992px) */
+@media (min-width: 992px) {
+    .profile__articles {
+        padding: 16px;
+        border-radius: 10px;
+    }
+}
+
+/* Экстрабольшие девайсы (большие десктопы, >= 1200px) */
+@media (min-width: 1200px) {}

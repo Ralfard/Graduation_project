@@ -1,8 +1,5 @@
-body{
-    font-family: sans-serif;
-}
+
 .table__name {
-    margin: 12px 0;
     text-transform: uppercase;
     font-size: 26px;
     font-weight: bolder;

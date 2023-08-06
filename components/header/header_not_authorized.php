@@ -24,20 +24,20 @@
 
 
     <div class="header__right">
-        <a class="header__link" href="">
+        <!-- <a class="header__link" href="">
             <div class="header__link-icon-wrapper header__icon">
                 <span class="material-icons-outlined header__icon">
                     sms
                 </span>
             </div>
-        </a>
-        <a class="header__link" href="">
+        </a> -->
+        <!-- <a class="header__link" href="">
             <div class="header__link-icon-wrapper header__icon">
                 <span class="material-icons-outlined header__icon">
                     notifications
                 </span>
             </div>
-        </a>
+        </a> -->
         <div class="header__login-block loginBtn_forJS">
             <span class="material-icons header__login-icon">
                 perm_identity
@@ -45,6 +45,7 @@
             <span class="header__login-text">Войти</span>
         </div>
     </div>
+    <script src="/components/header/header.js"></script>
 </header>
 <?php
 include_once("autorizationModalWindow/autorizationModalWindow.php");

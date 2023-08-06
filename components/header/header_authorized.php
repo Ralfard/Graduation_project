@@ -28,13 +28,11 @@
 
 
     <div class="header__right">
-        <button id="openChat">
-            <div class="header__link-icon-wrapper header__icon">
-                <span class="material-icons-outlined header__icon">
-                    sms
-                </span>
-            </div>
-        </button>
+        <div id="openChat" class="header__link-icon-wrapper header__icon">
+            <span class="material-icons-outlined header__icon">
+                sms
+            </span>
+        </div>
         <a class="header__link" href="">
             <div class="header__link-icon-wrapper header__icon">
                 <span class="material-icons-outlined header__icon">
@@ -55,4 +53,7 @@
             </div>
         </a>
     </div>
+    <script id="scriptMeseges"></script>
+    <script src="/components/header/header.js"></script>
+    
 </header>

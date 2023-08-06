@@ -37,7 +37,7 @@ window.addEventListener('resize', checkWidth);
 //меняет положение колонок при изменении ширины окна
 function checkWidth() {
     console.log(arguments.callee.name);
-    if (path === 'myProfile.php') {
+    if (path === 'myProfile.php' || path === 'userProfile.php') {
         if (window.screen.width <= 1220) {
             // navMenu[1].style.display = 'none';
             // aside.style.display = 'none';
@@ -111,7 +111,7 @@ headerBurgerBtn.onclick = show_Or_Hide_nav;
 function show_Or_Hide_nav() {
     console.log(arguments.callee.name);
     //для сайтов с широким блоком main
-    if (path === 'myProfile.php') {
+    if (path === 'myProfile.php' || path === 'userProfile.php') {
         if (window.screen.width > 1540) {
             if (navBolleanDesctop === false) {
                 grid_1fr_320();
@@ -289,6 +289,10 @@ arr.forEach(elem=>elem.onclick=function connect_buttons(e){
         console.log(e.target.dataset.id);
         }
 });
+
+
+
+
 
 
 

@@ -1,0 +1,34 @@
+.profile__articles {
+    background-color: #fff;
+    padding: 16px;
+    margin-bottom: 38px;
+    grid-column: 1/3;
+}
+
+.profile__alternative {
+    padding: 18px 0;
+    margin: auto;
+    text-align: center;
+
+}
+
+.profile__alternative-text {
+    font-size: 16px;
+    line-height: 1.5rem;
+}
+
+.profile__alternative-btn {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .08), inset 0 0 0 1px rgba(0, 0, 0, .06), inset 0 -1px 0 rgba(0, 0, 0, .12), inset 1px 0 0 rgba(0, 0, 0, .06), inset -1px 0 0 rgba(0, 0, 0, .06);
+    height: 40px;
+    padding: 0 32px;
+    margin-top: 20px;
+    background-color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.content {
+    justify-self: center;
+}

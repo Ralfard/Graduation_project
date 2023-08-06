@@ -28,3 +28,21 @@ resizeBtn.onmousedown = (e) => {//отвечает за изменени раз�
         msgsWindow.style.height = (height + (e.clientY - startY)) + 'px';
     }
 }
+
+let contacts=document.querySelector('.messages__list');
+
+contacts.onclick=(e)=>{
+    let userID
+    if(e.target.className==='messages__item'){
+        userID=e.target.dataset.id;
+    }
+    else{
+        userID=e.target.parentElement.parentElement.dataset.id;
+    }
+    let request={
+        id:userID
+    }
+    request=JSON.stringify(request);
+    let XHR = useAJAX('/PHP_logic/select_contact/select_contact.php', `id=${request}`);
+
+}

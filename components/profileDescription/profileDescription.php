@@ -1,3 +1,12 @@
+<?php
+$userID = $_SESSION['user']['id'];
+$sqlUser = "SELECT date_registration, subscribers  FROM `users` WHERE `id`=$userID";
+$requestUser = $mysqli->query($sqlUser);
+$responseUser = $requestUser->fetch_assoc();
+$subscribers=$responseUser['subscribers'];
+
+$date_registration=date_format(date_create($responseUser['date_registration']), "d.m.Y");
+?>
 <section class="profile__description">
     <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/profileDescription/profileDescription.css">
     <div class="profile__wallpaper">
@@ -17,12 +26,12 @@
                 </span>
             </a>
         </div>
-        <div class="profile__btns-wrapper">
-            <button class="profile__btns material-icons-outlined profile__messages-btn">sms <span class="profile__messages-text">Написать</span></button>
-            <button class="profile__btns profile__settings-btn material-icons-outlined">settings</button>
-        </div>
-        <p class="profile__followers">500 подписчиков</p>
-        <p class="profile__registration-date">На проекте с 15.03.2023</p>
+        
+        <p class="profile__followers"><?php echo $subscribers ?> подписчиков</p>
+        <p class="profile__registration-date">На проекте с <?php echo $date_registration ?></p>
     </div>
     <script src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/profileDescription//profileDescription.js"></script>
 </section>
+<?php
+
+?>
