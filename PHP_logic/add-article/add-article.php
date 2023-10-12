@@ -1,15 +1,22 @@
 <?php
 session_start();
 include($_SERVER['DOCUMENT_ROOT'] . "/PHP_logic\dataBase\db_connect.php");
+include($_SERVER['DOCUMENT_ROOT'] . "/PHP_logic/functions.php");
 
 
 $imagesArr = [];
 if ($_POST["article_HTML"] && $_POST['topic']) {
+
+    foreach ($_POST as $key => $val) sanitizeString($val);
+
     $error = array();
     if (count($error)) { //                    объединяем массив ошибок в одну строку
         $_SESSION["message"] = "<p id='form-error>" . implode('<br>', $error) . "</p>";
     } else {
- 
+
+
+
+        $length = strlen($_POST['article_HTML']);
         $authorID = $_SESSION['user']['id'];
         $title = getTitle($_POST['article_HTML']);
         $content = $_POST['article_HTML'];
@@ -34,7 +41,7 @@ if ($_POST["article_HTML"] && $_POST['topic']) {
         $id = mysqli_insert_id($mysqli);
         if (empty($_POST['input_img[]'])) {
             include($_SERVER['DOCUMENT_ROOT'] . '/PHP_logic\add-article\article-image.php');
-            unset($_POST['input_img[]']); //unset — Удаляет переменную
+            unset($_POST['input_img[]']); //unset;Удаляет переменную
         }
     }
 
@@ -49,5 +56,5 @@ function getTitle($html)
 }
 function getDescription($html)
 { //получает весь текст без html разметки после тега h1
-    return substr(strip_tags(substr($html, strpos($html, '</div>'))), 0, 300) . '...';
+    return substr(strip_tags(substr($html, strpos($html, '</div>'))), 0, 240 . '...');
 }

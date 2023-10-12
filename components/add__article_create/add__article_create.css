@@ -69,16 +69,22 @@
     border: none;
     display: block;
     padding: 7px;
-    margin: 0 auto;
+    margin: 20px auto 0;
     width: 90%;
+    outline: unset;
+    resize: none;
+    background-color: #fff;
 }
 
 .editorjs__inputs {
     width: 90%;
     margin: 0 auto;
-    height: 80px;
-    border: 1px solid rgba(50, 50, 50, 0.5);
-    border-radius: 10px;
+    height: auto;
+    display: block;
+    border: unset;
+    outline: unset;
+    resize: none;
+    background-color: #fff;
 }
 
 .input__content-img {

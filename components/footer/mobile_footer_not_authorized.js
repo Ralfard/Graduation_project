@@ -1,0 +1,1 @@
+document.getElementById('mobile_footer_autorization').onclick = show_or_CloseModalWindow;

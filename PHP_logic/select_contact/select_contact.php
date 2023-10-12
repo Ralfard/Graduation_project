@@ -1,10 +1,12 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT']."/PHP_logic\dataBase\db_connect.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/PHP_logic\dataBase\db_connect.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/PHP_logic/functions.php");
+$myID = $_SESSION['id'];
 if ($_POST['id']) {
-    $id = $_POST['id'];
+    $interlocutorID = $_POST['id'];
 
-    $sql = "SELECT * FROM `users` WHERE `id`=$id";
-    $request = mysqli_query($mysqli, $sql);
+    $request = $mysqli->query($sql);
     
+
     echo $request;
 }

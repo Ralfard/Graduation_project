@@ -36,8 +36,7 @@ window.addEventListener('resize', checkWidth);
 
 //меняет положение колонок при изменении ширины окна
 function checkWidth() {
-    console.log(arguments.callee.name);
-    if (path === 'myProfile.php' || path === 'userProfile.php') {
+    if (path === 'myProfile.php' || path === 'userProfile.php' || path === 'my__edit-profile.php') {
         if (window.screen.width <= 1220) {
             // navMenu[1].style.display = 'none';
             // aside.style.display = 'none';
@@ -109,9 +108,8 @@ headerBurgerBtn.onclick = show_Or_Hide_nav;
 
 // открывает\закрыват nav
 function show_Or_Hide_nav() {
-    console.log(arguments.callee.name);
     //для сайтов с широким блоком main
-    if (path === 'myProfile.php' || path === 'userProfile.php') {
+    if (path === 'myProfile.php' || path === 'userProfile.php' || path === 'my__edit-profile.php') {
         if (window.screen.width > 1540) {
             if (navBolleanDesctop === false) {
                 grid_1fr_320();
@@ -176,41 +174,41 @@ function show_Or_Hide_nav() {
 
 //функции управления стилями 3-ёх основных столбцов
 function grid_1fr() {
-    console.log(arguments.callee.name);
+
     navMenu[1].style.display = 'none';
     aside ? aside.style.display = 'none' : false;
     // aside.style.display = 'none';
     middleContent.style.gridTemplateColumns = '1fr';
 }
 function grid_220_1fr() {
-    console.log(arguments.callee.name);
+
     navMenu[1].style.display = 'block';
     aside ? aside.style.display = 'none' : false;
     // aside.style.display = 'none';
     middleContent.style.gridTemplateColumns = '220px 1fr ';
 }
 function hide_mobile_menu() {
-    console.log(arguments.callee.name);
+
     navMenu[0].style.display = 'none';
     bottomLayer.style.display = 'none';
     fixedScroll.enabledScroll();
     return navBolleanMobile = !navBolleanMobile;
 }
 function show_mobile_menu() {
-    console.log(arguments.callee.name);
+
     navMenu[0].style.display = "block";
     bottomLayer.style.display = 'block';
     fixedScroll.disabledScroll();
     return navBolleanMobile = !navBolleanMobile;
 }
 function grid_220_1fr_320() {
-    console.log(arguments.callee.name);
+
     navMenu[1].style.display = 'block';
     aside ? aside.style.display = 'block' : false;
     middleContent.style.gridTemplateColumns = '220px 1fr 320px';
 }
 function grid_1fr_320() {
-    console.log(arguments.callee.name);
+
     navMenu[1].style.display = 'none';
     aside ? aside.style.display = 'block' : false;
     middleContent.style.gridTemplateColumns = '1fr 320px';
@@ -248,31 +246,30 @@ function createAJAXObject() {
 }
 
 
-let bottomPanels_of_articles=document.getElementsByClassName('preview__bottom-panel');
+let bottomPanels_of_articles = document.getElementsByClassName('preview__bottom-panel');
 
-let arr=[...bottomPanels_of_articles];
+let arr = [...bottomPanels_of_articles];
 
-arr.forEach(elem=>elem.onclick=function connect_buttons(e){
-    if(e.target.className.includes('likesBtn')){
-        let btnState=e.target.className.includes('like_active')?true:false;
-        console.log(btnState);
-        let request={
-            id:e.target.dataset.id,
-            btnState:btnState
+arr.forEach(elem => elem.onclick = function connect_buttons(e) {
+    if (e.target.className.includes('likesBtn')) {
+        let btnState = e.target.className.includes('like_active') ? true : false;
+        let request = {
+            id: e.target.dataset.id,
+            btnState: btnState
         }
-        let XHR=useAJAX('/PHP_logic/articles__likes/articles__likes.php', `data=${JSON.stringify(request)}`);
-        XHR.onreadystatechange=function(){
-            if(this.readyState=== 4 && this.status===200){
+        let XHR = useAJAX('/PHP_logic/articles__likes/articles__likes.php', `data=${JSON.stringify(request)}`);
+        XHR.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
                 try {
-                    let response=JSON.parse(XHR.responseText);//превращаем ответ json в объект 
-                    console.log(response);
-                    if(response.toggle===1){
+                    let response = JSON.parse(XHR.responseText);//превращаем ответ json в объект 
+
+                    if (response.toggle === 1) {
                         e.target.classList.add('like_active');
-                        e.target.nextElementSibling.innerText=response.count;
+                        e.target.nextElementSibling.innerText = response.count;
                     }
-                    else if(response.toggle=== -1){
+                    else if (response.toggle === -1) {
                         e.target.classList.remove('like_active');
-                        e.target.nextElementSibling.innerText=response.count;
+                        e.target.nextElementSibling.innerText = response.count;
                     }
                 } catch (error) {
 
@@ -282,13 +279,40 @@ arr.forEach(elem=>elem.onclick=function connect_buttons(e){
             }
         }
     }
-    else if(e.target.className.includes('comentsBtn')){
-        console.log(e.target.dataset.id);
-    }
-    else if(e.target.className.includes('bookmarksBtn')){
-        console.log(e.target.dataset.id);
+
+
+    else if (e.target.className.includes('bookmarksBtn')) {
+        let btnState = e.target.className.includes('bookmark_active') ? true : false;
+        let request = {
+            id: e.target.dataset.id,
+            btnState: btnState
         }
+        let XHR = useAJAX('/PHP_logic/articles__bookmarks.php', `data=${JSON.stringify(request)}`);
+        XHR.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                try {
+                    let response = JSON.parse(XHR.responseText);//превращаем ответ json в объект 
+                    if (response.toggle === 1) {
+                        e.target.classList.add('bookmark_active');
+                    }
+                    else if (response.toggle === -1) {
+                        e.target.classList.remove('bookmark_active');
+                    }
+                } catch (error) {
+                    alert(`Возникла непредвиденная ошибка\n${error}`);
+                }
+            }
+        }
+    }
 });
+
+
+//автоматическое увеличение высоты textarea блоков
+function resizeTextarea(e) {
+    let elem = e.target || e.srcElement;
+    elem.style.height = 'auto';
+    elem.style.height = Math.max(elem.scrollHeight, elem.offsetHeight) + "px";
+}
 
 
 

@@ -32,7 +32,7 @@ function getAuthor($id, $DB)
     $requestAuthor = $DB->query($sqlAuthor);
 
     $Author = $requestAuthor->fetch_assoc();
-    $Author['icon'] = $Author['icon'] ? $Author['icon'] : "https://placehold.co/40x40/34691E/dddddd?text=" . strtoupper($Author['name'][0]);
+    $Author['icon'] = $Author['icon']!=='0' ? $Author['icon'] : "https://placehold.co/40x40/34691E/dddddd?text=" . strtoupper($Author['name'][0]);
     return $Author;
 }
 ?>

@@ -1,23 +1,125 @@
-body{
-    font-family: sans-serif;
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    font-family: roboto;
 }
+
+#body {
+    font-family: roboto;
+}
+
+.link_whithout-color {
+    color: unset;
+}
+
+.admin-panel {
+    display: grid;
+    grid-template-columns: 310px 1fr;
+}
+
+.admin-panel__main {
+    margin-top: 60px;
+    padding: 36px;
+    grid-column: 2;
+}
+
+
 .table__name {
-    margin: 12px 0;
     text-transform: uppercase;
     font-size: 26px;
     font-weight: bolder;
+    margin: 12px 0;
 }
+
 .table {
     width: 100%;
     border: 1px black solid;
     border-collapse: collapse;
 }
-.table td{
+
+.table td {
     border: 1px black solid;
-    padding: 5px;
+    padding: 10px;
+    vertical-align: middle;
 }
+
+.table_red-hover:hover {
+    color: red;
+}
+
+.table_orange-hover:hover {
+    color: orange;
+}
+
+.table_blue-hover:hover {
+    color: dodgerblue;
+}
+.table_green-hover:hover{
+    color: rgb(0, 175, 0);
+}
+
+.table__icons-column {
+    width: 50px;
+    text-align: center;
+}
+
 .table__head {
     font-weight: bolder;
+    background-color: #111;
+    color: #fafafa;
+    
 }
-.table__body {
+.table__head td{
+    border: #fafafa solid 1px;
+
+}
+
+
+.justify__content__center {
+    display: flex;
+    justify-content: center;
+}
+
+.grid {
+    display: grid;
+}
+
+.form {
+    width: 250px;
+    margin-top: 150px;
+}
+
+.form__title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 26px;
+}
+
+.form__block {
+    margin-bottom: 12px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.form__label {
+    margin-bottom: 4px;
+    display: inline-block;
+}
+
+.form__input {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.btn {
+    padding: 6px 16px;
+    background-color: #111;
+    border: unset;
+    border-radius: 5px;
+    color: #fff;
+    justify-self: end;
 }

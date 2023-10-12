@@ -2,7 +2,7 @@
     <div class="main__wrapper">
         <?php
 
-        $sqlArticle = "SELECT * FROM `articles`ORDER BY `id` LIMIT 10";
+        $sqlArticle = "SELECT * FROM `articles`WHERE `moderated`= 1 ORDER BY `views` DESC LIMIT 10";
         $requestArticle = $mysqli->query($sqlArticle);
 
         for ($i = 0; $i < $requestArticle->num_rows; ++$i) {
@@ -20,7 +20,7 @@
                             <a href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/pages/userProfile.php?id=<?php echo $Author['id'] ?>">
                                 <div class="preview__tag">
                                     <div class="img__wrapper_tag user-avatar_rectangle">
-                                        <img class="img__cover" src="<?php echo $Author['icon'] ?>" alt="">
+                                        <img class="avatar" src="<?php echo $Author['icon'] ?>" alt="">
                                     </div>
                                     <span class="preview__panel-text preview__top-panel-text author-name"><?php echo $Author['name'] ?></span>
                                 </div>
@@ -68,7 +68,7 @@
             $requestAuthor = $DB->query($sqlAuthor);
 
             $Author = $requestAuthor->fetch_assoc();
-            $Author['icon'] = $Author['icon'] ? $Author['icon'] : "https://placehold.co/40x40/34691E/dddddd?text=" . strtoupper($Author['name'][0]);
+            $Author['icon'] = $Author['icon'] !== '0' ? $Author['icon'] : "https://placehold.co/40x40/34691E/dddddd?text=" . strtoupper($Author['name'][0]);
             return $Author;
         }
         function getImages($id, $DB)

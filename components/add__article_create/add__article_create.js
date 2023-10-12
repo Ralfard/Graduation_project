@@ -5,22 +5,25 @@ let preview = document.getElementById('preview');
 
 
 function addHeader2() {
-    editor.insertAdjacentHTML('beforeend', "<div class='flex-row'><textarea class='editorjs__inputs article__content-h2' form='addArticle' name='input_h2'></textarea><div class='close-icon__wrapper'><img class='img__cover' src='/images/close.svg' alt=''></div></div>");
+    editor.insertAdjacentHTML('beforeend', "<div class='flex-row'><textarea class='editorjs__inputs article__content-h2' oninput='resizeTextarea(event)'  placeholder='Заголовок 2-го уровня' form='addArticle' name='input_h2' rows='1'></textarea><div class='close-icon__wrapper'><img class='img__cover' src='/images/close.svg' alt=''></div></div>");
 }
 function addHeader3() {
-    editor.insertAdjacentHTML('beforeend', "<div class='flex-row'><textarea class='editorjs__inputs article__content-h3' form='addArticle' name='input_h3'></textarea><div class='close-icon__wrapper'><img class='img__cover' src='/images/close.svg' alt=''></div></div>");
+    editor.insertAdjacentHTML('beforeend',
+        `<div class='flex-row'><textarea class='editorjs__inputs article__content-h3' oninput='resizeTextarea(event)'  placeholder='Заголовок 3-его уровня'form='addArticle' name='input_h3' rows='1'></textarea><div class='close-icon__wrapper'><img class='img__cover' src='/images/close.svg' alt=''></div></div>`);
 }
 function addParagrath() {
-    editor.insertAdjacentHTML('beforeend', "<div class='flex-row'><textarea class='editorjs__inputs article__content-p' form='addArticle' name='input_text'></textarea><div class='close-icon__wrapper'><img class='img__cover' src='/images/close.svg' alt=''></div></div>");
+    editor.insertAdjacentHTML('beforeend',
+        `<div class='flex-row'><textarea class='editorjs__inputs article__content-p' oninput='resizeTextarea(event)'  placeholder='Текст' form='addArticle' name='input_text' rows='1'></textarea><div class='close-icon__wrapper'><img class='img__cover' src='/images/close.svg' alt=''></div></div>`);
 }
 function addImg() {
-    editor.insertAdjacentHTML('beforeend', "<div class='flex-column'><input type='hidden' name='MAX_FILE_SIZE' value='5000000'><input class='input__content-img' form='addArticle' type='file' name='input_img[]' onchange='handleFiles(event)'><div class='close-icon__wrapper'><img class='img__cover' src='/images/close.svg' alt=''></div><img src='' class='img__cover'></div>");
+    editor.insertAdjacentHTML('beforeend',
+        `<div class='flex-column article__content-img'><input type='hidden' name='MAX_FILE_SIZE' value='5000000'><input class='input__content-img' form='addArticle' type='file' name='input_img[]' onchange='handleFiles(event)'><div class='close-icon__wrapper'><img class='img__cover' src='/images/close.svg' alt=''></div><img src='' class='img__cover'></div>`);
 }
 
-
+ 
 
 let toolbar = document.getElementById('toolbar');
-toolbar.onclick =  (e) =>{
+toolbar.onclick = (e) => {
     if (e.target === toolbar.children[0].children[0]) {
         addHeader2();
     }
@@ -50,19 +53,9 @@ let article_HTML = document.querySelector("[name='article_HTML']");
 
 form.onsubmit = (e) => {
     previewList();
-
-
+    let previewImages = document.getElementById('preview').querySelectorAll("[data-img]");
+    previewImages.forEach((img)=>img.src='');
     article_HTML.value = preview__field.innerHTML;
-    // let AJAXsend = 'article_HTML=' + article_HTML.value + '&topic=' + select.value +'&input_img[]=';
-    // let XHR= useAJAX('/PHP_logic/add-article/add-article.php', AJAXsend);
-
-    // XHR.onreadystatechange=function(){
-    //     if (this.readyState === 4 && this.status === 200) {
-    //             alert(XHR.responseText);
-    //         return true
-    //     }
-    // }
-
 
     alert("Ваша статья была направлена на модерацию.\nОна будет опубликована, как только модератор одобрит её.");
     return true;
@@ -75,12 +68,14 @@ let previewOOF = document.getElementById('previewOOF');
 previewON.onclick = function () {
     previewList();
     editor.style.display = 'none';
+
     preview.style.display = 'block';
 }
 previewOOF.onclick = function () {
     preview.style.display = 'none';
     editor.style.display = 'block';
 }
+
 
 function previewList() {
     preview__field.innerHTML = '';
@@ -103,10 +98,19 @@ function previewList() {
             preview__field.insertAdjacentHTML('beforeend', `<div class='article__content-img'><img class='img__cover' data-img src='' ></div>`);
         }
     }
+    setImagesInPreviewList();
 }
 
+function setImagesInPreviewList() {
+    let editorImages = document.getElementById('editor').querySelectorAll("[data-img]");
 
+    let previewImages = document.getElementById('preview').querySelectorAll("[data-img]");
 
+    for (let i = 0; i < editorImages.length; i++) {
+        previewImages[i].src = editorImages[i].src;
+    }
+}
+setImagesInPreviewList();
 
 
 function handleFiles(event) {
@@ -114,25 +118,6 @@ function handleFiles(event) {
     const file = event.target;
     const countFiles = file.files.length;
 
-
-// if (file.files.length) {
-//     var formData = new FormData();
-//     formData.append('input_img[]', file.files[0]);
-
-// }
-//         let AJAXsend = formData;
-//         let XHR= useAJAX('/PHP_logic/add-article/add-article.php', AJAXsend);
-
-
-//         XHR.onreadystatechange=function(){
-//             console.log(2);
-//             if (this.readyState === 4 && this.status === 200) {
-//                 console.log(XHR.responseText);
-//                 console.log(3);
-//             }
-//         }
-
-    
     if (!countFiles) {
         alert('Не выбран файл!');
         return;
@@ -148,8 +133,12 @@ function handleFiles(event) {
     reader.addEventListener('load', (event) => {
         img.src = event.target.result;
         img.alt = selectedFile.name;
-        img.setAttribute('data-img');
+        img.setAttribute('data-img', "");
         img.className = 'img__cover';
     });
     event.target.parentElement.appendChild(img);
 }
+
+
+
+

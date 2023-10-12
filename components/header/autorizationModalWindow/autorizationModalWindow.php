@@ -14,8 +14,8 @@
                 <h2 class="log-in__title">Регистрация</h2>
                 <p id="registrationErrorText" class="log-in__text-error"></p>
 
-                <input class="log-in__input" name="name_reg" type="text" placeholder="Имя">
-                <input class="log-in__input" name="email_reg" type="text" placeholder="Почта">
+                <input class="log-in__input" name="name_reg" type="text" placeholder="Имя" autocomplete="off">
+                <input class="log-in__input" name="email_reg" type="text" placeholder="Почта" >
                 <input class="log-in__input" name="password_reg" type="password" placeholder="Пароль">
                 <input id="registrationSubmit" class="log-in__submit" name="submit_reg" type="submit" value="Зарегистрировать">
                 <p class="log-in__text">Есть аккаунт? <span class="log-in__change-form">Войти</span></p>

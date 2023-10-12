@@ -1,8 +1,7 @@
-
 <section class="profile__articles">
     <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/profile__articles/profile__articles.css">
     <?php
-    $userID=$_SESSION['user']['id'];
+    $userID = $_SESSION['user']['id'];
     $sqlArticles = "SELECT * FROM `articles` WHERE `author_id`=$userID";
     $requestArticles = $mysqli->query($sqlArticles) or die($mysqli->error);
     if ($requestArticles->num_rows === 0) {
@@ -31,7 +30,7 @@
                         <a href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/pages/userProfile.php?id=<?php echo $Author['id'] ?>">
                             <div class="preview__tag">
                                 <div class="img__wrapper_tag user-avatar_rectangle">
-                                    <img class="img__cover" src="<?php echo $Author['icon'] ?>" alt="">
+                                    <img class="avatar" src="<?php echo $Author['icon'] ?>" alt="">
                                 </div>
                                 <span class="preview__panel-text preview__top-panel-text author-name"><?php echo $Author['name'] ?></span>
                             </div>
@@ -79,7 +78,7 @@
         $requestAuthor = $DB->query($sqlAuthor);
 
         $Author = $requestAuthor->fetch_assoc();
-        $Author['icon'] = $Author['icon'] ? $Author['icon'] : "https://placehold.co/40x40/34691E/dddddd?text=" . strtoupper($Author['name'][0]);
+        $Author['icon'] = $Author['icon'] !== '0' ? $Author['icon'] : "https://placehold.co/40x40/34691E/dddddd?text=" . strtoupper($Author['name'][0]);
         return $Author;
     }
     function getImages($id, $DB)

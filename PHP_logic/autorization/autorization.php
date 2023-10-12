@@ -11,7 +11,7 @@ if ($_POST['email_aut'] && $_POST['password_aut']) { //Авторизацион�
     if (count($error)) {
         $_SESSION['message'] = implode('<br/>', $error);
     } else {
- 
+
         $mail = sanitizeData($_POST['email_aut']);
         $pass = sanitizeData($_POST['password_aut']);
 
@@ -23,8 +23,10 @@ if ($_POST['email_aut'] && $_POST['password_aut']) { //Авторизацион�
                 'id' => $user['id'],
                 'name' => $user['name'],
                 'mail' => $user['mail'],
-                'icon' => $user['icon'] ? $user['icon'] : "https://placehold.co/40x40/34691E/dddddd?text=" . strtoupper($user['name'][0])
+                'icon' => $user['icon'] !== '0' ? $user['icon'] : "https://placehold.co/40x40/34691E/dddddd?text=" . strtoupper($user['name'][0]),
+                'description' => $user['description']
             ];
+            // 
             echo true;
         } else {
             echo 'Не правильный логин или пароль';

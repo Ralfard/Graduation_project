@@ -2,7 +2,7 @@
 
 if ($_FILES['input_img']['name'][0]) {
     for ($i = 0; $i < count($_FILES['input_img']['name']); $i++) {
-
+ 
         $error_gallery = "";
 
         if ($_FILES['upload_image']['error'] > 0) {

@@ -14,14 +14,14 @@
                 <div class="nav__span-wrapper">
                     <span class="material-icons">
                         local_fire_department
-                    </span>
+                    </span> 
                     <span class="nav__item-text">Популярное</span>
                 </div>
             </a>
         </li>
 
         <li class="nav__item">
-            <a class="nav__link" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/main/popularArticles/popularArticles.php">
+            <a class="nav__link" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/pages\new.php">
                 <div class="nav__span-wrapper">
                     <span class="material-icons">
                         query_builder
@@ -32,7 +32,7 @@
         </li>
 
         <li class="nav__item">
-            <a class="nav__link" href="">
+            <a class="nav__link" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/pages\bookmarks.php">
                 <div class="nav__span-wrapper">
                     <span class="material-icons">
                         turned_in_not
@@ -42,7 +42,7 @@
             </a>
         </li>
 
-        <li class="nav__item">
+        <!-- <li class="nav__item">
             <a class="nav__link" href="">
                 <div class="nav__span-wrapper">
                     <span class="material-icons">
@@ -51,9 +51,9 @@
                     <span class="nav__item-text"> Компании</span>
                 </div>
             </a>
-        </li>
+        </li> -->
 
-        <li class="nav__item">
+        <!-- <li class="nav__item">
             <a class="nav__link" href="">
                 <div class="nav__span-wrapper">
                     <span class="material-icons">
@@ -62,7 +62,7 @@
                     <span class="nav__item-text">Вакансии</span>
                 </div>
             </a>
-        </li>
+        </li> -->
 
         <li class="nav__item">
             <a class="nav__link" href="">
@@ -96,7 +96,7 @@
         </li>
 
         <li class="nav__item">
-            <a class="nav__link" href="">
+            <a class="nav__link" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/pages\new.php">
                 <div class="nav__span-wrapper">
                     <span class="material-icons">
                         query_builder
@@ -107,7 +107,7 @@
         </li>
 
         <li class="nav__item">
-            <a class="nav__link" href="">
+            <a class="nav__link" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/pages\bookmarks.php">
                 <div class="nav__span-wrapper">
                     <span class="material-icons">
                         turned_in_not
@@ -117,8 +117,8 @@
             </a>
         </li>
 
-        <li class="nav__item">
-            <a class="nav__link" href="">
+        <!-- <li class="nav__item">
+            <a class="nav__link" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/pages\popular.php">
                 <div class="nav__span-wrapper">
                     <span class="material-icons">
                         apartment
@@ -126,10 +126,10 @@
                     <span class="nav__item-text"> Компании</span>
                 </div>
             </a>
-        </li>
+        </li> -->
 
-        <li class="nav__item">
-            <a class="nav__link" href="">
+        <!-- <li class="nav__item">
+            <a class="nav__link" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/pages\popular.php">
                 <div class="nav__span-wrapper">
                     <span class="material-icons">
                         laptop
@@ -137,10 +137,10 @@
                     <span class="nav__item-text">Вакансии</span>
                 </div>
             </a>
-        </li>
+        </li> -->
 
         <li class="nav__item">
-            <a class="nav__link" href="">
+            <a class="nav__link" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/pages\popular.php">
                 <div class="nav__span-wrapper">
                     <span class="material-icons">
                         format_list_bulleted

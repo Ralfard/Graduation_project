@@ -1,11 +1,12 @@
 body {
-    font-family: roboto,  sans-serif;
-        background-color: #f0f0f0;
+    font-family: roboto, sans-serif;
+    background-color: #f0f0f0;
 }
 
-.flex-row{
+.flex-row {
     display: flex;
 }
+
 .middle-content {
     display: grid;
     grid-template-columns: 220px 1fr 320px;
@@ -43,6 +44,7 @@ body {
     width: 30px;
     border-radius: 50%;
     overflow: hidden;
+    
 }
 
 .user-avatar_rectangle {
@@ -65,6 +67,11 @@ body {
 }
 
 .img__cover {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.avatar{
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -95,6 +102,7 @@ body {
 .content-block__p {
     margin-top: 8px;
     line-height: 24px;
+    word-wrap: break-word;
 }
 
 .content-block__p_blue {
@@ -193,10 +201,10 @@ body {
     width: 100%;
 }
 
-/* Малые девайсы («ландшафтные телефоны», >= 576px) */
-@media (min-width: 576px) {
 
-}
+
+/* Малые девайсы («ландшафтные телефоны», >= 576px) */
+@media (min-width: 576px) {}
 
 @media (min-width: 641px) {
     .content-wrapper {
@@ -206,16 +214,10 @@ body {
 }
 
 /* Средние девайсы («таблетки», >= 768px) */
-@media (min-width: 768px) {
-   
-}
+@media (min-width: 768px) {}
 
 /* Большие девайсы (десктопы, >= 992px) */
-@media (min-width: 992px) {
-
-}
+@media (min-width: 992px) {}
 
 /* Экстрабольшие девайсы (большие десктопы, >= 1200px) */
-@media (min-width: 1200px) {
-    
-}
+@media (min-width: 1200px) {}

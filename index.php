@@ -8,7 +8,7 @@ if (isset($_GET['logout'])) {
     header("Location: {$_SERVER['HTTP_REFERER']}");
 }
 ?>
-<!DOCTYPE html><!-- стоит тут потому что иначе включится режим совместимости -->
+<!DOCTYPE html>
 <html lang="ru">
 
 <head>
@@ -18,11 +18,12 @@ if (isset($_GET['logout'])) {
 
     <div id="links" class="display_none">
         <!-- Иконки -->
-        <link rel="stylesheet preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="font"><!-- Используют предзагрузку что бы шрифты и иконки не показывались пользователю -->
-        <link rel="stylesheet preload" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" as="font"><!-- Используют предзагрузку что бы шрифты и иконки не показывались пользователю -->
-        <!-- Шрифт -->
-        <link rel="stylesheet preload" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" as="font"><!-- Используют предзагрузку что бы шрифты и иконки не показывались пользователю -->
-
+        <link rel="stylesheet" href="/plugins/node_modules/material-icons/iconfont/material-icons.css">
+        <link rel="stylesheet preload" href="/plugins/node_modules/roboto-fontface/css/roboto/roboto-fontface.css" as="font">
+        <link rel="stylesheet preload" href="/plugins/node_modules/roboto-fontface/css/roboto-slab/roboto-slab-fontface.css" as="font">
+        <link rel="stylesheet preload" href="/plugins/node_modules/roboto-fontface/css/roboto-condensed/roboto-condensed-fontface.css" as="font">
+        <!-- Используют предзагрузку что бы шрифты и иконки не показывались пользователю -->
+        
         <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/reset.css">
 
         <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/header/header.css">

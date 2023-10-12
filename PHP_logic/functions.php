@@ -13,6 +13,13 @@ function check_likes_of_authorizedUser($DB, $user, $articleID)
     return in_array($articleID, $likes) ? ' like_active' : "";
 }
 
+function check_likes_of_bookmarks($DB, $user, $articleID)
+{ //* проверяет поставил ли авторизованный пользователь лайк этой статье
+    $response = request_a_line($DB, "SELECT  bookmarks FROM users__bookmarks WHERE user_id=" . $user['id'] . "");
+    $bookmarks = unserialize($response['bookmarks']);
+    return in_array($articleID, $bookmarks) ? ' bookmark_active' : "";
+}
+
 function increment_views($DB, $articleID)
 { //* обновляет счетчик просмотров статьи
     mysqli_query($DB, "UPDATE articles SET views=views+1 WHERE id=$articleID");

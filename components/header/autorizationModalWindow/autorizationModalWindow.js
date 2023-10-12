@@ -3,7 +3,7 @@ let btns_for_change_menu = document.getElementsByClassName('log-in__change-form'
 let btns_for_login = document.getElementsByClassName('loginBtn_forJS');
 
 const registrationForm = document.getElementById('registrationForm');
-const autForm=document.getElementById('autorizationForm');
+const autForm = document.getElementById('autorizationForm');
 
 
 var fixedScroll = {
@@ -31,6 +31,9 @@ for (i = 0; i < btns_for_login.length; ++i) {
 
 
 document.getElementById('closeModalWindow').onclick = show_or_CloseModalWindow;
+
+
+
 
 
 // вешает на кнопки события
@@ -64,13 +67,13 @@ function changeMenu() {
 
 
 // асинхронная авторизация
-autForm.onsubmit=function asincAutorization(event) {
+autForm.onsubmit = function asincAutorization(event) {
     event.preventDefault();
 
     let autData = {
-        userMail : autForm.elements.email_aut.value,
-        userPass : autForm.elements.password_aut.value,
-        errorText:document.getElementById('autorizationErrorText'),
+        userMail: autForm.elements.email_aut.value,
+        userPass: autForm.elements.password_aut.value,
+        errorText: document.getElementById('autorizationErrorText'),
     }
     checkFormLength(autData.userMail, autData.userPass);
 
@@ -93,14 +96,14 @@ autForm.onsubmit=function asincAutorization(event) {
 }
 
 // асинхронная регистрация
-registrationForm.onsubmit=function asincRegistration(event) {
+registrationForm.onsubmit = function asincRegistration(event) {
     event.preventDefault();
 
-    let regData={
-        regName : registrationForm.elements.name_reg.value,
-        regMail : registrationForm.elements.email_reg.value,
-        regPass : registrationForm.elements.password_reg.value,
-        errorText:document.getElementById('registrationErrorText'),
+    let regData = {
+        regName: registrationForm.elements.name_reg.value,
+        regMail: registrationForm.elements.email_reg.value,
+        regPass: registrationForm.elements.password_reg.value,
+        errorText: document.getElementById('registrationErrorText'),
     }
 
     if (!checkForm(regData.regName, regData.regMail, regData.regPass)) return false;
@@ -109,11 +112,11 @@ registrationForm.onsubmit=function asincRegistration(event) {
 
     XHR.open('POST', "/PHP_logic/registration/registration.php");
     XHR.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    XHR.send('name_reg='+regData.regName+'&email_reg='+regData.regMail+'&password_reg='+regData.regPass);
+    XHR.send('name_reg=' + regData.regName + '&email_reg=' + regData.regMail + '&password_reg=' + regData.regPass);
 
-    XHR.onreadystatechange=function(){
+    XHR.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            if (XHR.responseText == 1) {
+            if (XHR.responseText.length===0) {
                 document.location.reload();
             } else {
                 regData.errorText.innerText = XHR.responseText;
@@ -121,6 +124,7 @@ registrationForm.onsubmit=function asincRegistration(event) {
             return true
         }
     }
+    
     return true;
 }
 
@@ -143,7 +147,7 @@ function checkForm(name, mail, pass) {
         ErrorText.innerText = 'Введен не корректный пароль';
         return false;
     } else {
-        ErrorText.innerText = ""
+        ErrorText.innerText = "";
         return true;
     }
 

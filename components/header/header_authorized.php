@@ -28,7 +28,7 @@
 
 
     <div class="header__right">
-        <div id="openChat" class="header__link-icon-wrapper header__icon">
+        <div id="msgIcon" class="header__link-icon-wrapper header__icon">
             <span class="material-icons-outlined header__icon">
                 sms
             </span>
@@ -48,7 +48,7 @@
             </div>
         </a>
         <a class="header__link" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/pages/account/myProfile.php">
-            <div class="header__user-icon-wrapper header__icon" title="<?= $_SESSION['user']['id'] ?>">
+            <div class="header__user-icon-wrapper header__icon" title="Ваш профиль">
                 <img class="img_cover" src="<?= $_SESSION['user']['icon'] ?>" alt="">
             </div>
         </a>

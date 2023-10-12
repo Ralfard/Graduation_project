@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once($_SERVER['DOCUMENT_ROOT'] . '/PHP_logic/dataBase/db_connect.php'); //база данных
-require_once($_SERVER['DOCUMENT_ROOT'].'/PHP_logic/functions.php');  //*мои функции
+require_once($_SERVER['DOCUMENT_ROOT'] . '/PHP_logic/functions.php');  //*мои функции
 
 if (isset($_GET['logout'])) {
     unset($_SESSION['user']);
@@ -11,11 +11,16 @@ if (isset($_GET['logout'])) {
 $userID = $_GET['id'];
 
 $sqlUser = "SELECT * FROM `users` WHERE `id`=$userID";
-$requestUser = $mysqli->query($sqlUser);
-$responseUser = $requestUser->fetch_assoc();
+$requestUser = $mysqli->query($sqlUser) or die("Ошибка " . mysqli_error($mysqli));
+$responseUser = $requestUser->fetch_assoc() or die("Ошибка " . mysqli_error($mysqli));
+
+$wallPaper = $mysqli->query("SELECT imgName FROM users__wallpaper WHERE id=" . $userID);
+$wallPaper = $wallPaper->fetch_assoc();
+$wallPaper = $wallPaper === null ? $wallPaper =  "/images/profileWallpaper/default/" . rand(1, 5) . '.jpg' : $wallPaper['imgName'];
+
 
 ?>
-<!DOCTYPE html><!-- стоит тут потому что иначе включится режим совместимости -->
+<!DOCTYPE html>
 <html lang="ru">
 
 <head>
@@ -25,10 +30,11 @@ $responseUser = $requestUser->fetch_assoc();
 
     <div id="links" class="display_none">
         <!-- Иконки -->
-        <link rel="stylesheet preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="font"><!-- Используют предзагрузку что бы шрифты и иконки не показывались пользователю -->
-        <link rel="stylesheet preload" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" as="font"><!-- Используют предзагрузку что бы шрифты и иконки не показывались пользователю -->
-        <!-- Шрифт -->
-        <link rel="stylesheet preload" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" as="font"><!-- Используют предзагрузку что бы шрифты и иконки не показывались пользователю -->
+        <link rel="stylesheet" href="/plugins/node_modules/material-icons/iconfont/material-icons.css">
+        <link rel="stylesheet preload" href="/plugins/node_modules/roboto-fontface/css/roboto/roboto-fontface.css" as="font">
+        <link rel="stylesheet preload" href="/plugins/node_modules/roboto-fontface/css/roboto-slab/roboto-slab-fontface.css" as="font">
+        <link rel="stylesheet preload" href="/plugins/node_modules/roboto-fontface/css/roboto-condensed/roboto-condensed-fontface.css" as="font">
+        <!-- Используют предзагрузку что бы шрифты и иконки не показывались пользователю -->
 
         <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/reset.css">
 
@@ -51,20 +57,6 @@ $responseUser = $requestUser->fetch_assoc();
 <body id="body">
 
 
-    <!--                                                                                                      nav
-    |                    header                              |                                               |=         header     |
-    |_________________________________|                                               |_ _____________|
-    |          |                                                |                                               |                          |
-    |          |                                                |                                               |                          |
-    |          |                                                |                                               |                          |
-    |          |                                                |                                               |       main            |           asaid нету
-    |  nav   |     main                                    |                                               |                          |
-    |          |                                                |                                               |                          |
-    |          |                                                |                                               |                          |
-    |          |                                                |                                               |                          |
-    |          |                                                |                                               |_______________|
-    |          |                                                |                                               | footer-mobile      |
--->
 
 
 
@@ -84,7 +76,7 @@ $responseUser = $requestUser->fetch_assoc();
 
         //MAIN 
         include_once($_SERVER['DOCUMENT_ROOT'] . "/components\userProfile\userProfile.php");
-        
+
         //ASAID
         include_once($_SERVER['DOCUMENT_ROOT'] . '/components/aside/aside.php');
 
@@ -103,7 +95,8 @@ $responseUser = $requestUser->fetch_assoc();
     ?>
 
 
-    <script src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/js/script.js"></script>
+    <script src="/js/script.js"></script>
+
     <div class="display_none">
         <!-- Favicon  -->
         <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/favicons/apple-touch-icon.png">

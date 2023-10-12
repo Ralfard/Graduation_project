@@ -16,7 +16,7 @@
                         <option class="selector__option" value="Технологии">Технологии</option>
                     </select>
                 </div>
-                <input class="editor__title article__content-h1" form='addArticle' name="input-title" type="text" placeholder="Название статьи...">
+                <textarea class="editor__title article__content-h1" oninput='resizeTextarea(event)' form='addArticle' name="input-title" type="text" placeholder="Название статьи..." rows="1"></textarea>
                 <div class="flex-row editorjs__row">
                     <div id="previewON" class="btn">Предпросмотр</div>
                     <div class="editorjs__left-block">
@@ -39,7 +39,7 @@
                     <input type="submit" name="send_article" class="btn" value="Опубликовать">
                 </div>
             </div>
-
+ 
             <div id="preview" class="preview">
                 <div id="preview__field">
 

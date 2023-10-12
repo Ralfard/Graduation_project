@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once('../../PHP_logic/dataBase/db_connect.php'); //база данных
-require_once($_SERVER['DOCUMENT_ROOT'].'/PHP_logic/functions.php');  //*мои функции
+require_once($_SERVER['DOCUMENT_ROOT'] . '/PHP_logic/functions.php');  //*мои функции
 
 
 if (isset($_GET['logout'])) {
@@ -22,10 +22,11 @@ if (isset($_GET['logout'])) {
 
     <div id="links" class="display_none">
         <!-- Иконки -->
-        <link rel="stylesheet preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="font"><!-- Используют предзагрузку что бы шрифты и иконки не показывались пользователю -->
-        <link rel="stylesheet preload" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" as="font"><!-- Используют предзагрузку что бы шрифты и иконки не показывались пользователю -->
-        <!-- Шрифт -->
-        <link rel="stylesheet preload" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" as="font"><!-- Используют предзагрузку что бы шрифты и иконки не показывались пользователю -->
+        <link rel="stylesheet" href="/plugins/node_modules/material-icons/iconfont/material-icons.css">
+        <link rel="stylesheet preload" href="/plugins/node_modules/roboto-fontface/css/roboto/roboto-fontface.css" as="font">
+        <link rel="stylesheet preload" href="/plugins/node_modules/roboto-fontface/css/roboto-slab/roboto-slab-fontface.css" as="font">
+        <link rel="stylesheet preload" href="/plugins/node_modules/roboto-fontface/css/roboto-condensed/roboto-condensed-fontface.css" as="font">
+        <!-- Используют предзагрузку что бы шрифты и иконки не показывались пользователю -->
 
         <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/styles/reset.css">
 
@@ -68,22 +69,22 @@ if (isset($_GET['logout'])) {
     <?php
     //HEADER
     if (isset($_SESSION['user'])) {
-        include_once($_SERVER['DOCUMENT_ROOT'].'/components/header/header_authorized.php');
+        include_once($_SERVER['DOCUMENT_ROOT'] . '/components/header/header_authorized.php');
     } else {
-        header('Location: '.$_SERVER['DOCUMENT_ROOT'].'/index.php');
+        header('Location: ' . $_SERVER['DOCUMENT_ROOT'] . '/index.php');
     }
     ?>
 
     <div id="middleContent" class="middle-content">
         <?php
         //NAV
-        include_once($_SERVER['DOCUMENT_ROOT']."/components/nav/nav.php");
+        include_once($_SERVER['DOCUMENT_ROOT'] . "/components/nav/nav.php");
 
         //MAIN 
-        include_once($_SERVER['DOCUMENT_ROOT'].'/components/myProfile/myProfile.php');
+        include_once($_SERVER['DOCUMENT_ROOT'] . '/components/myProfile/myProfile.php');
 
         //ASAID
-        include_once($_SERVER['DOCUMENT_ROOT'].'/components/aside/aside.php');
+        include_once($_SERVER['DOCUMENT_ROOT'] . '/components/aside/aside.php');
 
         ?>
 
@@ -93,15 +94,16 @@ if (isset($_GET['logout'])) {
     <?php
     //FOOTER
     if (isset($_SESSION['user'])) {
-        include_once($_SERVER['DOCUMENT_ROOT'].'/components/footer/mobile_footer_authorized.php');
+        include_once($_SERVER['DOCUMENT_ROOT'] . '/components/footer/mobile_footer_authorized.php');
     } else {
-        include_once($_SERVER['DOCUMENT_ROOT'].'/components/footer/mobile_footer_not_authorized.php');
+        include_once($_SERVER['DOCUMENT_ROOT'] . '/components/footer/mobile_footer_not_authorized.php');
     }
     ?>
 
 
     <script src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/js/script.js"></script>
     <div class="display_none">
+
         <!-- Favicon  -->
         <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/favicons/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/images/favicons/favicon-16x16.png">
@@ -112,4 +114,5 @@ if (isset($_GET['logout'])) {
     </div>
 
 </body>
+
 </html>

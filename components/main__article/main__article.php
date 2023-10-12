@@ -18,10 +18,10 @@
                 <div class="preview__top-panel">
 
                     <div class="preview__top-panel_left">
-                        <a href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/pages/userProfile.php?id=<?php $Article['id'] ?>">
+                        <a href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/pages/userProfile.php?id=<?php echo $Author['id'] ?>">
                             <div class="preview__tag">
                                 <div class="img__wrapper_tag user-avatar_rectangle">
-                                    <img class="img__cover" src="<?php echo $Author['icon'] ?>" alt="">
+                                    <img class="avatar" src="<?php echo $Author['icon'] ?>" alt="">
                                 </div>
                                 <span class="preview__panel-text preview__top-panel-text author-name"><?php echo $Author['name'] ?></span>
                             </div>
@@ -48,7 +48,7 @@
                 <div class="article__content">
                     <p class="article__content-p"><?php echo $Article['content'] ?></p>
                 </div>
- 
+
                 <?php
                 include_once($_SERVER['DOCUMENT_ROOT'] . '/components\articles__bottom-panel\articles__bottom-panel.php');
                 include_once($_SERVER['DOCUMENT_ROOT'] . '/components\article__comments\article__comments.php');
@@ -78,7 +78,7 @@
         $requestAuthor = $DB->query($sqlAuthor);
 
         $Author = $requestAuthor->fetch_assoc();
-        $Author['icon'] = $Author['icon'] ? $Author['icon'] : "https://placehold.co/40x40/34691E/dddddd?text=" . strtoupper($Author['name'][0]);
+        $Author['icon'] = $Author['icon'] !== '0' ? $Author['icon'] : "https://placehold.co/40x40/34691E/dddddd?text=" . strtoupper($Author['name'][0]);
         return $Author;
     }
     function getImages($id, $DB)

@@ -47,7 +47,7 @@ function user_likes($articleID,  $userID,   $num, $DB) // в зависимос�
         echo "Возникла не предвиденная ошибка в функции user_likes<br>";
     }
 } 
-
+ 
 
 
 function remove_from_array($arr, $delete)

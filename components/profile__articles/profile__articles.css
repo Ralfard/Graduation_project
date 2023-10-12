@@ -41,7 +41,7 @@
 
 @media (min-width: 640px) {
     .profile__articles {
-        padding: 16px;
+        padding:  16px;
     }
 }
 
@@ -51,7 +51,7 @@
 /* Большие девайсы (десктопы, >= 992px) */
 @media (min-width: 992px) {
     .profile__articles {
-        padding: 16px;
+        padding:  64px 16px;
         border-radius: 10px;
     }
 }

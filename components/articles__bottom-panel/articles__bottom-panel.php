@@ -19,14 +19,14 @@
                     <?php
                     $count_comments_sql = "SELECT * FROM `articles__comments` WHERE `article_id`=" . $Article['id'] . "";
                     $count_comments_res=$mysqli->query($count_comments_sql) or die (mysqli_error($mysqli));
-                    echo $count_comments_res->num_rows+1;
+                    echo $count_comments_res->num_rows;
                     ?>
                 </span>
             </button>
         </a>
 
         <button class="preview__bottom-panel-action">
-            <span class="material-icons bookmarksBtn" data-id="<?php echo $Article['id'] ?>">
+            <span class="material-icons bookmarksBtn <?php echo isset($_SESSION['user']) ? (check_likes_of_bookmarks($mysqli, $_SESSION['user'], $Article['id'])) : false ?>" data-id="<?php echo $Article['id'] ?>">
                 turned_in_not
             </span>
         </button>

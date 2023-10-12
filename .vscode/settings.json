@@ -1,3 +1,4 @@
 {
-    "liveServer.settings.multiRootWorkspaceName": "efimov-r.a"
+    "liveServer.settings.multiRootWorkspaceName": "efimov-r.a",
+    "editor.tokenColorCustomizations": { "textMateRules": [ { "name": "PHP Purple Tags", "scope": [ "punctuation.section.embedded.begin.php", "punctuation.section.embedded.end.php" ], "settings": { "foreground": "#b60000" } }, ] }
 }

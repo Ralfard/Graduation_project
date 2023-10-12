@@ -1,14 +1,33 @@
 <nav class="nav">
-    <h3 class="nav__title">Категории</h3>
-    <ul class="nav__ul">
-        <a href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/admin/admins">
-            <li class="nav__li">Администраторы</li>
-        </a>
-        <a href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/admin/news">
-            <li class="nav__li">Новости</li>
-        </a>
-        <a href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/admin/products">
-            <li class="nav__li">Товары</li>
-        </a>
+    <link rel="stylesheet" href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/administan/components/nav/nav.css">
+    <ul id="navBtnsList" class="nav__list">
+        <?php
+        if ($_SESSION['adm']['managing_administrators'] === '1') {
+        ?>
+            <li class="nav__item">Администраторы</li>
+        <?php
+        }
+        ?>
+        <?php
+        if ($_SESSION['adm']['managing_users'] === '1') {
+        ?>
+            <li class="nav__item">Пользователи</li>
+        <?php
+        }
+        ?>
+        <?php
+        if ($_SESSION['adm']['artiles_moderation'] === '1') {
+        ?>
+            <li class="nav__item">Модерация статей</li>
+        <?php
+        }
+        ?>
+
+
+
+
+        <!-- <li class="nav__item">Поддержка</li> -->
+
     </ul>
+    <script src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/administan/components/nav/nav.js"></script>
 </nav>

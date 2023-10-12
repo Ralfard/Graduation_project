@@ -10,3 +10,4 @@
     </a>
     <script src="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/components/add_articles_block/add_articles_block.js"></script>
 </section>
+ 

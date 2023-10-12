@@ -2,7 +2,8 @@
     display: flex;
     justify-content: center;
 }
-.main__wrapper{
+
+.main__wrapper {
     max-width: 640px;
     flex-direction: column;
     display: flex;
@@ -95,6 +96,7 @@
     color: black;
     margin: 12px 20px 8px;
     line-height: 32px;
+    word-wrap: anyware;
 }
 
 .article__content-h2 {
@@ -125,7 +127,6 @@
 
 .article__content-img {
     position: relative;
-    margin: 16px -16px;
 }
 
 .preview__bottom-panel {
@@ -190,23 +191,18 @@
 .preview__view-counter {
     color: #595959;
 }
-.like_active{
+
+.like_active {
     color: rgb(228, 85, 114);
 }
-.bookmark_active{
+
+.bookmark_active {
     color: #06f;
 }
 
-
-
-
-
-
-
-
-
-
-
+.content_main-page .img__cover {
+    object-fit: contain;
+}
 
 @media (min-width: 576px) {
     .preview__time {
@@ -222,7 +218,7 @@
     }
 
     .article__content-img {
-        height: 448px;
+        margin: 16px -16px;
     }
 
     .content-block {
@@ -259,6 +255,4 @@
 }
 
 /* Экстрабольшие девайсы (большие десктопы, >= 1200px) */
-@media (min-width: 1200px) {
-
-}
+@media (min-width: 1200px) {}

@@ -1,20 +1,25 @@
 .nav {
-    width: 20%;
+    width: 310px;
+
     box-sizing: border-box;
+    position: fixed;
+    top: 60px;
+    height: calc(100vh - 60px);
+    border-right: #3D3D3D 1px solid;
 }
-
-
 
 .nav__list {
     width: 100%;
+    padding-top: 12px;
     box-sizing: border-box;
 }
 
 .nav__item {
+    cursor: pointer;
     box-sizing: border-box;
     width: 100%;
     display: block;
-    padding: 5px 30px;
+    padding: 8px 30px;
     font-weight: 600;
     font-size: 16px;
     line-height: 35px;

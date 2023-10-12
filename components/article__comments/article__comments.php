@@ -17,7 +17,7 @@
             $comment_author = getAuthor($comment['author_id'], $mysqli);
         ?>
             <div class="comment">
-                <a href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/pages/userProfile.php?id=<?php $comment_author['id'] ?>">
+                <a href="<?php echo $_SERVER['REQUEST_SCHEME']; ?>://<?php print($_SERVER['HTTP_HOST']); ?>/pages/userProfile.php?id=<?php echo $comment_author['id'] ?>">
                     <div class="comment__top-row">
                         <div class="comment__img-wrapper user-avatar_circle">
                             <img class="img__cover" src="<?= $comment_author['icon'] ?>" alt="">
